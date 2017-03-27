@@ -16,6 +16,10 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 
 call plug#end()
 
@@ -92,6 +96,19 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " Disable default keybind and rebind to close NERDTree and then open CtrlP
 let g:ctrlp_map = '<Nop>'
 map <C-p> :NERDTreeClose \| :CtrlP<CR>
+
+
+" Airline
+set laststatus=2                                 " Always show the status line
+let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
+
+" Removes buggy arrow symbols
+let g:airline_left_sep  = ''
+let g:airline_right_sep = ''
+
+let g:airline_section_error   = '' " Remove error section
+let g:airline_section_warning = '' " Remove warning section
 
 
 " --- Plugin Config End ---
