@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'flazz/vim-colorschemes'
 
 
 call plug#end()
@@ -24,6 +25,7 @@ set ttimeoutlen=50 " Remove delay on ESC
 
 " UI
 syntax enable  " Enable syntax highlighting
+colorscheme jellybeans
 
 set number         " Line numbers
 set relativenumber " Relative line numbers
