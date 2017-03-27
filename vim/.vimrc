@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 
 " Plugins
 Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 
 
 call plug#end()
