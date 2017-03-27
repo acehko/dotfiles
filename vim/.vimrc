@@ -4,10 +4,16 @@ call plug#begin('~/.vim/plugged')
 
 
 " Plugins
+
+" General
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
+
+" NERDTree
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
 
 
 call plug#end()
@@ -44,6 +50,13 @@ set mouse=a        " Allow using the mouse
 
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
+
+" NERDTree
+map <C-b> :NERDTreeTabsToggle<CR>
+let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a directory was opened
+let NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
+let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
+let NERDTreeShowHidden                      = 1         " Show hidden files by default
 
 
 " --- Plugin Config End ---
