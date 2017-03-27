@@ -14,6 +14,18 @@ call plug#end()
 " --- Vim-Plug End ---
 
 
+" --- Vim Config Start ---
+
+" General
+set nocompatible   " Not compatible with Vi
+set autoread       " Detect when a file has changed
+set visualbell     " No beep on errors
+set ttimeoutlen=50 " Remove delay on ESC
+
+
+" --- Vim Config End ---
+
+
 " --- Plugin Config Start ---
 
 
