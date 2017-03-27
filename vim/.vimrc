@@ -10,6 +10,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
@@ -19,6 +20,7 @@ Plug 'jistr/vim-nerdtree-tabs'
 call plug#end()
 
 " --- Vim-Plug End ---
+
 
 
 " --- Vim Config Start ---
@@ -69,11 +71,13 @@ map <C-w>p :tabp<CR>
 " --- Vim Config End ---
 
 
+
 " --- Plugin Config Start ---
 
 
 " EasyMotion
 map <Leader> <Plug>(easymotion-prefix)
+
 
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
@@ -81,6 +85,13 @@ let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a dir
 let NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
 let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
 let NERDTreeShowHidden                      = 1         " Show hidden files by default
+
+
+" CtrlP
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " Ignore files in .gitignore
+" Disable default keybind and rebind to close NERDTree and then open CtrlP
+let g:ctrlp_map = '<Nop>'
+map <C-p> :NERDTreeClose \| :CtrlP<CR>
 
 
 " --- Plugin Config End ---
