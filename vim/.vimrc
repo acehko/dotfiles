@@ -29,6 +29,7 @@ set autoread       " Detect when a file has changed
 set visualbell     " No beep on errors
 set ttimeoutlen=50 " Remove delay on ESC
 
+
 " UI
 syntax enable  " Enable syntax highlighting
 colorscheme jellybeans
@@ -41,6 +42,29 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
+
+
+" Window management
+
+" Window creation
+map <C-w>h :vnew<CR>
+map <C-w>j :below new<CR>
+map <C-w>k :new<CR>
+map <C-w>l :rightb vnew<CR>
+
+map <C-w>x :q<CR> " Close a window
+
+" Window movement
+map <C-h> :wincmd h<CR>
+map <C-j> :wincmd j<CR>
+map <C-k> :wincmd k<CR>
+map <C-l> :wincmd l<CR>
+
+" Tab management
+map <C-w>c :tabe<CR>
+map <C-w>n :tabn<CR>
+map <C-w>p :tabp<CR>
+
 
 " --- Vim Config End ---
 
