@@ -122,29 +122,24 @@ map <C-p> :NERDTreeClose \| :CtrlP<CR>
 set laststatus=2                                 " Always show the status line
 let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
-
-let g:airline_section_error   = '' " Remove error section
-let g:airline_section_warning = '' " Remove warning section
-
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts             = 1    " Use powerline font
+let g:airline_skip_empty_sections         = 1    " Don't display empty sections
 
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_wq				 = 0             " Don't check on close
 let g:syntastic_auto_jump				 = 3             " Auto jump to first error but not warning
 let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checker to tsuquyomi
 
 
+" YouCompleteMe
+let g:ycm_show_diagnostics_ui = 0 " Disable error-checking. Handled by syntastic
+
+
 " Tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
 " Bind TsuquyomiRenameSymbol on F2
-autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol) 
+autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
 " DevIcons
