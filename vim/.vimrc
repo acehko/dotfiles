@@ -13,6 +13,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
+Plug 'raimondi/delimitmate'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -153,6 +154,10 @@ let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''	  " Default icon for
 let g:WebDevIconsUnicodeDecorateFolderNodes            = 1    " Enable icons on folders
 let g:DevIconsEnableFoldersOpenClose                   = 1    " Enable separate icons for opened/closed folder
 let g:DevIconsDefaultFolderOpenSymbol                  = ' ' " Override default icon for opened folder with an extra space
+
+
+" DelimitMate
+let g:delimitMate_expand_cr = 1 " Auto-indent
 
 
 " --- Plugin Config End ---
