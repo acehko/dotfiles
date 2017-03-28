@@ -135,6 +135,8 @@ let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checke
 
 " Tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
+" Bind TsuquyomiRenameSymbol on F2
+autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol) 
 
 
 " DevIcons
