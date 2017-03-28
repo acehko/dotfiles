@@ -32,6 +32,10 @@ Plug 'Quramy/tsuquyomi',           { 'for' : 'typescript' }
 Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
 
+" Golang
+Plug 'fatih/vim-go', { 'for' : 'go' }
+
+
 call plug#end()
 
 " --- Vim-Plug End ---
@@ -164,13 +168,17 @@ let g:airline_skip_empty_sections         = 1    " Don't display empty sections
 
 
 " Syntastic
-let g:syntastic_check_on_wq				 = 0             " Don't check on close
-let g:syntastic_auto_jump				 = 3             " Auto jump to first error but not warning
-let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checker to tsuquyomi
+let g:syntastic_check_on_wq	= 0             " Don't check on close
+let g:syntastic_auto_jump	= 3             " Auto jump to first error but not warning
+
+" Language checkers
+let g:syntastic_typescript_checkers  = ['tsuquyomi']
+let g:syntastic_go_checkers          = ['govet', 'errcheck', 'go']
 
 
 " YouCompleteMe
 let g:ycm_show_diagnostics_ui = 0 " Disable error-checking. Handled by syntastic
+set completeopt-=preview          " Disable preview window
 
 
 " Tsuquyomi
@@ -190,6 +198,11 @@ let g:DevIconsDefaultFolderOpenSymbol                  = ' ' " Override defau
 
 " DelimitMate
 let g:delimitMate_expand_cr = 1 " Auto-indent
+
+
+" vim-go
+let g:go_auto_type_info = 0
+autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 
 
 " --- Plugin Config End ---
