@@ -11,6 +11,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
@@ -19,6 +21,12 @@ Plug 'jistr/vim-nerdtree-tabs'
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+
+" TypeScript
+Plug 'Shougo/vimproc.vim',         { 'for' : 'typescript', 'do' : 'make' }
+Plug 'Quramy/tsuquyomi',           { 'for' : 'typescript' }
+Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
 
 call plug#end()
@@ -109,6 +117,25 @@ let g:airline_right_sep = ''
 
 let g:airline_section_error   = '' " Remove error section
 let g:airline_section_warning = '' " Remove warning section
+
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_stl_format = "[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]"
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_open            = 1             " Check of file open
+let g:syntastic_check_on_wq 		 = 0             " Don't check on close
+let g:syntastic_auto_jump 		 = 3             " Jump to first error but not warning
+let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checker to tsuquyomi
+
+
+" Tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
 
 
 " --- Plugin Config End ---
