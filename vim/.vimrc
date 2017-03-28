@@ -25,7 +25,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
-
 " TypeScript
 Plug 'Shougo/vimproc.vim',         { 'for' : 'typescript', 'do' : 'make' }
 Plug 'Quramy/tsuquyomi',           { 'for' : 'typescript' }
@@ -60,6 +59,15 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
+
+
+" Tabs and spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+set autoindent
+set smartindent
 
 
 " Window management
@@ -128,8 +136,8 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_wq 		 = 0             " Don't check on close
-let g:syntastic_auto_jump 		 = 3             " Jump to first error but not warning
+let g:syntastic_check_on_wq				 = 0             " Don't check on close
+let g:syntastic_auto_jump				 = 3             " Auto jump to first error but not warning
 let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checker to tsuquyomi
 
 
@@ -140,12 +148,12 @@ autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
 " DevIcons
-let g:webdevicons_enable_airline_statusline            = 1
-let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
-let g:WebDevIconsUnicodeDecorateFolderNodes            = 1
-let g:DevIconsEnableFoldersOpenClose                   = 1
-let g:DevIconsDefaultFolderOpenSymbol                  = ' '
+let g:webdevicons_enable_airline_statusline            = 1    " Enabled on airline
+let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''   " Padding after the icon
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''	  " Default icon for unknown file types
+let g:WebDevIconsUnicodeDecorateFolderNodes            = 1    " Enable icons on folders
+let g:DevIconsEnableFoldersOpenClose                   = 1    " Enable separate icons for opened/closed folder
+let g:DevIconsDefaultFolderOpenSymbol                  = ' ' " Override default icon for opened folder with an extra space
 
 
 " --- Plugin Config End ---
