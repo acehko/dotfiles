@@ -107,8 +107,26 @@ map <C-w>n :tabn<CR>
 map <C-w>p :tabp<CR>
 
 
-autocmd BufWritePre * :silent! %s#\($\n\s*\)\+\%$## " Delete empty lines at end of file on save
-autocmd BufWritePre * :%s/\s\+$//e                  " Delete trailing whitespace on save
+" Strip trailing whitespace and empty lines at the end of file
+function! StripWhitespace()
+
+    " Save the current search and cursor position
+    let _s=@/
+    let l = line('.')
+    let c = col('.')
+
+    " Strip the whitespace
+	silent! :%s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
+	silent! :%s/\s\+$//e          " Delete trailing whitespace
+
+    " Restore the saved search and cursor position
+    let @/=_s
+    call cursor(l, c)
+
+endfunction
+
+" Strip whitespace on save
+autocmd BufWritePre * :call StripWhitespace()
 
 
 " --- Vim Config End ---
