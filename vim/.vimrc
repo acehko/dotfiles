@@ -14,13 +14,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
 
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
 " Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" NERDTree
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ryanoasis/vim-devicons'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 
 " TypeScript
@@ -38,6 +41,7 @@ call plug#end()
 " --- Vim Config Start ---
 
 " General
+set encoding=utf8  " UTF-8 FTW
 set nocompatible   " Not compatible with Vi
 set autoread       " Detect when a file has changed
 set visualbell     " No beep on errors
@@ -45,7 +49,7 @@ set ttimeoutlen=50 " Remove delay on ESC
 
 
 " UI
-syntax enable  " Enable syntax highlighting
+syntax enable      " Enable syntax highlighting
 colorscheme jellybeans
 
 set number         " Line numbers
@@ -111,12 +115,10 @@ set laststatus=2                                 " Always show the status line
 let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
 
-" Removes buggy arrow symbols
-let g:airline_left_sep  = ''
-let g:airline_right_sep = ''
-
 let g:airline_section_error   = '' " Remove error section
 let g:airline_section_warning = '' " Remove warning section
+
+let g:airline_powerline_fonts = 1
 
 
 " Syntastic
@@ -136,6 +138,13 @@ let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checke
 
 " Tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
+
+
+" Devicons
+let g:webdevicons_enable_airline_statusline            = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
+let g:WebDevIconsUnicodeDecorateFolderNodes            = 1
 
 
 " --- Plugin Config End ---
