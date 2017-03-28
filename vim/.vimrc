@@ -140,11 +140,13 @@ let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checke
 let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
 
 
-" Devicons
+" DevIcons
 let g:webdevicons_enable_airline_statusline            = 1
 let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''
 let g:WebDevIconsUnicodeDecorateFolderNodes            = 1
+let g:DevIconsEnableFoldersOpenClose                   = 1
+let g:DevIconsDefaultFolderOpenSymbol                  = ' '
 
 
 " --- Plugin Config End ---
