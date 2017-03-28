@@ -92,6 +92,10 @@ map <C-w>n :tabn<CR>
 map <C-w>p :tabp<CR>
 
 
+autocmd BufWritePre * :%s#\($\n\s*\)\+\%$## " Delete empty lines at end of file on save
+autocmd BufWritePre * :%s/\s\+$//e          " Delete trailing whitespace on save
+
+
 " --- Vim Config End ---
 
 
