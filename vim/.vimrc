@@ -126,11 +126,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_stl_format = "[%E{Err: %fe #%e}%B{, }%W{Warn: %fw #%w}]"
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_open            = 1             " Check of file open
 let g:syntastic_check_on_wq 		 = 0             " Don't check on close
 let g:syntastic_auto_jump 		 = 3             " Jump to first error but not warning
 let g:syntastic_typescript_checkers      = ['tsuquyomi'] " Set TypeScript checker to tsuquyomi
