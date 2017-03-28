@@ -71,6 +71,20 @@ set autoindent
 set smartindent
 
 
+" Folding
+setlocal foldmethod=syntax
+set foldlevelstart=20
+
+nnoremap <space> za
+vnoremap <space> zf
+
+augroup AutoSaveFolds
+  autocmd!
+  autocmd BufWinLeave * mkview
+  autocmd BufWinEnter * silent loadview
+augroup END
+
+
 " Window management
 
 " Window creation
