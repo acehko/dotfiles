@@ -168,8 +168,13 @@ let g:airline_skip_empty_sections         = 1    " Don't display empty sections
 
 
 " Syntastic
-let g:syntastic_check_on_wq	= 0             " Don't check on close
-let g:syntastic_auto_jump	= 3             " Auto jump to first error but not warning
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list            = 1
+let g:syntastic_check_on_wq	             = 0
 
 " Language checkers
 let g:syntastic_typescript_checkers  = ['tsuquyomi']
