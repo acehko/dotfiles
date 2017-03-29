@@ -12,7 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'flazz/vim-colorschemes'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer' }
 Plug 'raimondi/delimitmate'
 
 " Airline
