@@ -76,17 +76,14 @@ set smartindent
 
 
 " Folding
-setlocal foldmethod=syntax
 set foldlevelstart=20
 
 nnoremap <space> za
 vnoremap <space> zf
 
-augroup AutoSaveFolds
-  autocmd!
-  autocmd BufWinLeave * silent! mkview
-  autocmd BufWinEnter * silent! loadview
-augroup END
+autocmd FileType    * setlocal foldmethod=syntax
+autocmd BufWinLeave * silent! mkview
+autocmd BufWinEnter * silent! loadview
 
 
 " Window management
