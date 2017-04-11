@@ -192,7 +192,7 @@ autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 " DevIcons
 let g:webdevicons_enable_airline_statusline            = 1    " Enabled on airline
 let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''   " Padding after the icon
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ''	  " Default icon for unknown file types
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ' '  " Default icon for unknown file types
 let g:WebDevIconsUnicodeDecorateFolderNodes            = 1    " Enable icons on folders
 let g:DevIconsEnableFoldersOpenClose                   = 1    " Enable separate icons for opened/closed folder
 let g:DevIconsDefaultFolderOpenSymbol                  = ' ' " Override default icon for opened folder with an extra space
