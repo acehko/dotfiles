@@ -1,4 +1,2 @@
-export DOTFILES=$HOME/dotfiles
-export ZSH_PATH=$DOTFILES/zsh
-
+# Load all configuration files
 for config ($ZSH_PATH/**/*.zsh) source $config
