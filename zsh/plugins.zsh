@@ -38,6 +38,11 @@ ZSH_HIGHLIGHT_STYLES[arg0]=fg=blue
 
 # Brackets
 ZSH_HIGHLIGHT_STYLES[bracket-error]=fg=red
+ZSH_HIGHLIGHT_STYLES[bracket-level-1]=fg=blue
+ZSH_HIGHLIGHT_STYLES[bracket-level-2]=fg=blue
+ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=blue
+ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=blue
+ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=blue
 
 
 
