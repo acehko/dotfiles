@@ -1,3 +1,3 @@
 # Filesystem
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -l  --color'
+alias la='ls -la --color'
