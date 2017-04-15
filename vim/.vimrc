@@ -14,6 +14,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer' }
 Plug 'raimondi/delimitmate'
+Plug 'tpope/vim-fugitive'
 
 " Airline
 Plug 'vim-airline/vim-airline'
