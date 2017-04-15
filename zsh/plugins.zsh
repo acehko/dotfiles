@@ -12,8 +12,8 @@ antigen apply
 
 
 # Autosuggest
-bindkey '^ ' autosuggest-accept  # Bind CTRL + Space to accept the curretn suggestion
-bindkey '^M' autosuggest-execute # Bind CTRL + Enter to execute the current suggestion
+bindkey '^ '   autosuggest-accept  # Bind CTRL + Space to accept the curretn suggestion
+bindkey '^[^M' autosuggest-execute # Bind ALT  + Enter to execute the current suggestion
 
 
 # --- Plugin Config End ---
