@@ -9,3 +9,7 @@ setopt correct      # Prompt misspelled command correction
 # Fix HOME and END keys
 bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
+
+# Enable completion
+autoload -Uz compinit
+compinit
