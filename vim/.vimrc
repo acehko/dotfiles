@@ -23,7 +23,7 @@ Plug 'vim-airline/vim-airline-themes'
 " NERDTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'robinfehr/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
@@ -148,6 +148,10 @@ let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a dir
 let NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
 let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
 let NERDTreeShowHidden                      = 1         " Show hidden files by default
+let NERDTreeDirArrowExpandable              = ""       " Custom collapsed icon
+let NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
+let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
+let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
 
 
 " CtrlP
@@ -191,12 +195,24 @@ autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
 " DevIcons
-let g:webdevicons_enable_airline_statusline            = 1    " Enabled on airline
-let g:WebDevIconsNerdTreeAfterGlyphPadding             = ''   " Padding after the icon
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol = ' '  " Default icon for unknown file types
-let g:WebDevIconsUnicodeDecorateFolderNodes            = 1    " Enable icons on folders
-let g:DevIconsEnableFoldersOpenClose                   = 1    " Enable separate icons for opened/closed folder
-let g:DevIconsDefaultFolderOpenSymbol                  = ' ' " Override default icon for opened folder with an extra space
+let g:webdevicons_enable_airline_statusline              = 1   " Enabled on airline
+let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''  " Padding after the icon
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = '' " Default icon for unknown file types
+let g:WebDevIconsUnicodeDecorateFolderNodes              = 1   " Enable icons on folders
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " Change folder icon
+
+" Custom file extension icons
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['swp'] = ''
+
+" Custom exact match files
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vim']       = ''
+
 
 
 " DelimitMate
