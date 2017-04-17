@@ -1,5 +1,5 @@
 # --- Antigen Start ---
-source $ZSH_PATH/antigen/antigen.zsh
+source $DOTFILES/zsh/antigen/antigen.zsh
 
 
 antigen bundle zsh-users/zsh-autosuggestions
@@ -12,11 +12,10 @@ antigen apply
 
 # --- Plugin Config Start ---
 
-
-
 # Autosuggest
 bindkey '^ '   autosuggest-accept  # Bind CTRL + Space to accept the curretn suggestion
 bindkey '^[^M' autosuggest-execute # Bind ALT  + Enter to execute the current suggestion
+
 
 
 # Syntax Highlighting
@@ -43,7 +42,5 @@ ZSH_HIGHLIGHT_STYLES[bracket-level-2]=fg=blue
 ZSH_HIGHLIGHT_STYLES[bracket-level-3]=fg=blue
 ZSH_HIGHLIGHT_STYLES[bracket-level-4]=fg=blue
 ZSH_HIGHLIGHT_STYLES[bracket-level-5]=fg=blue
-
-
 
 # --- Plugin Config End ---

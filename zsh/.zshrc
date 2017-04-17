@@ -1,2 +1,2 @@
 # Load all configuration files
-for config ($ZSH_PATH/**/*.zsh) source $config
+for config ($DOTFILES/zsh/**/*.zsh) source $config
