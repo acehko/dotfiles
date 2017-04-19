@@ -20,14 +20,14 @@ left_prompt() {
 
 
 	# Colors
-	color_ok="blue"
-	color_error="red"
-	color_branch="green"
-	color_host="blue"
+	color_ok="110"     # Blue
+	color_error="167"  # Red
+	color_branch="107" # Green
+	color_host="110"   # Blue
 
 
 	# Show exclamation mark if running with admin privileges
-	PROMPT="%F{red}%(!. .)%f"
+	PROMPT="%F{167}%(!. .)%f"
 
 
 	# If in a git repository
@@ -36,7 +36,7 @@ left_prompt() {
 		# Git status dirty
 		git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
 		if [[ -n $git_status ]]; then
-			color_branch="yellow"
+			color_branch="215" # Yellow
 		fi
 
 		git_branch=$vcs_info_msg_0_
@@ -66,8 +66,8 @@ right_prompt() {
 
 
 	# Colors
-	color_path="242"
-	color_cmd="blue"
+	color_path="242" # Gray
+	color_cmd="110"  # Blue
 
 	# Vim modes
 	vim_ins_mode=""
