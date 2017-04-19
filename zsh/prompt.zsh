@@ -23,6 +23,7 @@ left_prompt() {
 	color_ok="blue"
 	color_error="red"
 	color_branch="green"
+	color_host="blue"
 
 
 	# Show exclamation mark if running with admin privileges
@@ -45,6 +46,12 @@ left_prompt() {
 
 		PROMPT+="%F{$color_branch}$git_branch%f "
 
+	fi
+
+
+	# If connected through ssh
+	if [[ -n $SSH_CONNECTION ]]; then
+		PROMPT+="@%F{$color_host}$(hostname)%f "
 	fi
 
 
