@@ -1,6 +1,7 @@
 # Filesystem
-alias ll='ls -l  --color=auto'
-alias la='ls -la --color=auto'
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
 
 # Sudo
 alias szsh='sudo -E zsh'
