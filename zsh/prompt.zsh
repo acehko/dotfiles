@@ -46,8 +46,6 @@ precmd () {
 
 # Right prompt
 
-export KEYTIMEOUT=1 # Remove delay on ESC
-
 # Vim modes
 vim_ins_mode=""
 vim_cmd_mode=" %F{blue}[CMD]%f"
