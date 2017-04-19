@@ -1,8 +1,8 @@
 setopt prompt_subst
 autoload -Uz vcs_info
 
-zstyle ':vcs_info:*' enable git   # Enable git
-zstyle ':vcs_info:*' formats '%b' # Load git branch ($vcs_info_msg_0_)
+zstyle ':vcs_info:*' enable git      # Enable git
+zstyle ':vcs_info:*' formats '%b/%S' # Load git branch ($vcs_info_msg_0_)
 
 
 
@@ -24,12 +24,17 @@ precmd () {
 	if [[ -n ${vcs_info_msg_0_} ]]; then
 
 		# Git status dirty
-		git_stauts=$(command git status --porcelain 2> /dev/null | tail -n1)
-		if [[ -n $git_stauts ]]; then
+		git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
+		if [[ -n $git_status ]]; then
 			color_branch='yellow'
 		fi
 
-		PROMPT+="%F{$color_branch}$vcs_info_msg_0_%f "
+		git_branch=$vcs_info_msg_0_
+		if [[ $git_branch[-1] == "." ]]; then
+			git_branch=$git_branch[0,-3]
+		fi
+
+		PROMPT+="%F{$color_branch}$git_branch%f "
 
 	fi
 
