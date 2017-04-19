@@ -8,5 +8,7 @@ setopt correct             # Prompt misspelled command correction
 setopt interactivecomments # Allow comments in the shell
 
 # Enable completion
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+
+# Enable completion menu selection
+zstyle ':completion:*' menu select
