@@ -67,7 +67,7 @@ right_prompt() {
 
 	# Colors
 	color_path="242" # Gray
-	color_cmd="110"  # Blue
+	color_cmd="215"  # Yellow
 
 	# Vim modes
 	vim_ins_mode=""
