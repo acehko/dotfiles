@@ -152,6 +152,7 @@ let NERDTreeDirArrowExpandable              = ""       " Custom collapsed ico
 let NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
 let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
 let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
+hi Directory ctermfg                        = 110       " Change directory color
 
 
 " CtrlP
