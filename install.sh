@@ -51,9 +51,13 @@ for file in $(find "$DOTFILES" -name "*.dot"); do
 done
 
 
-echo -e "\nInstalling vim plugins..."
-
-vim +PlugInstall +qall
+if [ -e $HOME/.vim/autoload/plug.vim ]; then
+	echo -e "\nUpdating vim plugins..."
+	vim +PlugUpdate +qall
+else
+	echo -e "\nInstalling vim plugins..."
+	vim +PlugInstall +qall
+fi
 
 
 echo -e "\nDone"
