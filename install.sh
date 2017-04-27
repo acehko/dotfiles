@@ -60,4 +60,8 @@ else
 fi
 
 
+echo -e "\n\nInstalling zsh plugins..."
+zsh -c "source $DOTFILES/zsh/zshrc.dot"
+
+
 echo -e "\nDone"
