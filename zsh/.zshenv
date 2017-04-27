@@ -5,4 +5,3 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
