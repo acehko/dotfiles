@@ -1,5 +1,4 @@
 export DOTFILES=$HOME/dotfiles
-export DEFAULT_USER=andrija
 export KEYTIMEOUT=1 # Remove delay on ESC
 
 export VISUAL=vim
