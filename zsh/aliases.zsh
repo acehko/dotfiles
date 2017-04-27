@@ -4,4 +4,4 @@ alias ll='ls -l'
 alias la='ls -la'
 
 # Sudo
-alias szsh='sudo -E zsh'
+alias sz='sudo -E zsh'
