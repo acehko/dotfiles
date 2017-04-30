@@ -24,6 +24,8 @@ echo -e "\nOS: $OS"
 # Install os-specific packages
 if [ "$OS" == "Ubuntu" ]; then
 	source $DOTFILES/scripts/ubuntu.sh
+elif [ "$OS" == "Arch Linux" ]; then
+	source $DOTFILES/scripts/arch.sh
 else
 	echo "No package install script for $OS. Skipping..."
 fi
