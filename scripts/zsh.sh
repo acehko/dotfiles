@@ -14,3 +14,10 @@ fi
 # Install plugins
 echo "Installing zsh plugins..."
 zsh -c "source $DOTFILES/zsh/zshrc.dot"
+
+
+# Set zsh as the default shell
+if [ "$SHELL" != "$(which zsh)" ]; then
+	echo -e "\nSetting zsh as the default shell..."
+	chsh -s $(which zsh)
+fi
