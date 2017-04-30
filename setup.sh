@@ -31,6 +31,10 @@ else
 fi
 
 
+# Install node modules
+source $DOTFILES/scripts/npm.sh
+
+
 # Link dotfiles and install vim and zsh plugins
 source $DOTFILES/scripts/links.sh
 source $DOTFILES/scripts/vim.sh
