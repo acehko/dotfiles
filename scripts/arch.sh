@@ -3,7 +3,7 @@
 
 # Install packages
 echo -e "\nInstalling packages..."
-sudo pacman -S --noconfirm \
+sudo pacman -S --needed --noconfirm \
 	clang \
 	cmake \
 	go \
