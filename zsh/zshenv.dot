@@ -1,3 +1,4 @@
+export TERM=screen-256color
 export DOTFILES=$HOME/dotfiles
 export KEYTIMEOUT=1 # Remove delay on ESC
 
