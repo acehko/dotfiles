@@ -4,6 +4,7 @@
 # Install packages
 echo -e "\nInstalling packages..."
 sudo pacman -S --noconfirm \
+	clang \
 	cmake \
 	go \
 	nodejs \
