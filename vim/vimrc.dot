@@ -196,11 +196,11 @@ autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
 " DevIcons
-let g:webdevicons_enable_airline_statusline              = 1   " Enabled on airline
-let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''  " Padding after the icon
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = '' " Default icon for unknown file types
-let g:WebDevIconsUnicodeDecorateFolderNodes              = 1   " Enable icons on folders
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = '' " Change folder icon
+let g:webdevicons_enable_airline_statusline              = 1    " Enabled on airline
+let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after the icon
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
+let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Change folder icon
 
 " Custom file extension icons
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
@@ -210,9 +210,9 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['swp'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git']       = ' '
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vim']       = ''
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vim']       = ' '
 
 
 
