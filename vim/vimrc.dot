@@ -222,6 +222,7 @@ let g:delimitMate_expand_cr = 1 " Auto-indent
 
 " vim-go
 let g:go_auto_type_info = 0
+let g:go_fmt_command    = "goimports"
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 
 
