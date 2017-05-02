@@ -13,7 +13,7 @@ fi
 
 # Install plugins
 echo "Installing zsh plugins..."
-zsh -c "source $DOTFILES/zsh/zshrc.dot"
+zsh -c "source $DOTFILES/zsh/zshrc.symlink"
 
 
 # Set zsh as the default shell
