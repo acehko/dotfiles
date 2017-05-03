@@ -201,6 +201,7 @@ let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after 
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
 let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
 let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Change folder icon
+let g:DevIconsEnableFolderPatternMatching                = 0    " Disable custom icons on folders
 
 " Custom file extension icons
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
@@ -210,10 +211,7 @@ let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['swp'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.git']       = ' '
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vim']       = ' '
-
 
 
 " DelimitMate
