@@ -5,6 +5,3 @@ alias la='ls -la'
 
 # Sudo
 alias sz='sudo -E zsh'
-
-# SSH X11 forwarding
-alias ssh='ssh -Y'
