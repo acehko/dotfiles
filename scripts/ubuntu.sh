@@ -24,7 +24,7 @@ sudo apt-get update && \
 		python-dev \
 		python3-dev \
 		tmux \
-		vim \
+		vim-gtk \
 		vim-nox \
 		xclip \
 		zsh
