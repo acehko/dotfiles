@@ -14,4 +14,5 @@ sudo pacman -S --needed --noconfirm \
 	python \
 	python2 \
 	tmux \
+	xclip \
 	zsh

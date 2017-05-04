@@ -26,4 +26,5 @@ sudo apt-get update && \
 		tmux \
 		vim \
 		vim-nox \
+		xclip \
 		zsh
