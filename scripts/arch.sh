@@ -7,11 +7,11 @@ sudo pacman -S --needed --noconfirm \
 	clang \
 	cmake \
 	go \
+	gvim \
 	nodejs \
 	npm \
 	make \
 	python \
 	python2 \
 	tmux \
-	vim \
 	zsh

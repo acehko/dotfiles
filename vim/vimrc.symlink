@@ -46,11 +46,12 @@ call plug#end()
 " --- Vim Config Start ---
 
 " General
-set encoding=utf8  " UTF-8 FTW
-set nocompatible   " Not compatible with Vi
-set autoread       " Detect when a file has changed
-set visualbell     " No beep on errors
-set ttimeoutlen=50 " Remove delay on ESC
+set encoding=utf8         " UTF-8 FTW
+set nocompatible          " Not compatible with Vi
+set autoread              " Detect when a file has changed
+set visualbell            " No beep on errors
+set ttimeoutlen=50        " Remove delay on ESC
+set clipboard=unnamedplus " Use system clipboard
 
 
 " UI
