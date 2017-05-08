@@ -1,8 +1,8 @@
 setopt prompt_subst
 autoload -Uz vcs_info
 
-zstyle ":vcs_info:*" enable git      # Enable git
-zstyle ":vcs_info:*" formats "%b/%S" # Load git branch ($vcs_info_msg_0_)
+zstyle ":vcs_info:*" enable git   # Enable git
+zstyle ":vcs_info:*" formats "%b" # Load git branch ($vcs_info_msg_0_)
 
 
 
@@ -39,12 +39,7 @@ left_prompt() {
 			color_branch="215" # Yellow
 		fi
 
-		git_branch=$vcs_info_msg_0_
-		if [[ $git_branch[-1] == "." ]]; then
-			git_branch=$git_branch[0,-3]
-		fi
-
-		PROMPT+="%F{$color_branch}$git_branch%f "
+		PROMPT+="%F{$color_branch}$vcs_info_msg_0_%f "
 
 	fi
 
