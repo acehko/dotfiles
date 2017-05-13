@@ -40,6 +40,7 @@ source $DOTFILES/scripts/npm.sh
 source $DOTFILES/scripts/links.sh
 source $DOTFILES/scripts/vim.sh
 source $DOTFILES/scripts/zsh.sh
+source $DOTFILES/scripts/tmux.sh
 
 
 echo -e "\nDone"
