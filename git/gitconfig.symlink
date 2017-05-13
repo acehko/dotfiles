@@ -35,8 +35,9 @@
 
 	# Commit
 	c    = commit
+	ca   = !git add -A && git commit
 	cm   = commit -m
-	wip  = ! git add -A && git commit -am "WIP"
+	wip  = !git add -A && git commit -m "WIP"
 	undo = reset HEAD~
 
 	# Diff
