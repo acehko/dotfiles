@@ -145,15 +145,18 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
-let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a directory was opened
-let NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
-let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
-let NERDTreeShowHidden                      = 1         " Show hidden files by default
-let NERDTreeDirArrowExpandable              = ""       " Custom collapsed icon
-let NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
-let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
-let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
-hi Directory ctermfg                        = 110       " Change directory color
+
+let g:nerdtree_tabs_open_on_console_startup   = 2         " Open NERDTree if a directory was opened
+let g:NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
+let g:NERDTreeQuitOnOpen                      = 1         " Close NERDTree when opening a file
+let g:NERDTreeShowHidden                      = 1         " Show hidden files by default
+let g:NERDTreeDirArrowExpandable              = ""       " Custom collapsed icon
+let g:NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
+let g:NERDTreeGitStatusWithFlags              = 0         " Disable status flags
+let g:NERDTreeGitStatusNodeColorization       = 1         " Enable status colors
+let g:NERDTreeMinimalUI                       = 1         " Hide help text
+
+hi Directory ctermfg                          = 110       " Change directory color
 
 
 " CtrlP
