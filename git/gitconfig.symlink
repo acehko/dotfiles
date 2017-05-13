@@ -1,0 +1,46 @@
+[user]
+	name  = Andrija Čehko
+	email = andrija.cehko@gmail.com
+
+[github]
+	user = acehko
+
+[credential]
+	username = acehko
+
+[core]
+	editor       = vim
+	excludesfile = ~/.gitignore_global
+
+[diff]
+	tool = vimdiff
+
+[difftool]
+	prompt = false
+
+[alias]
+
+	# Checkout
+	co     = checkout
+	cob    = checkout -b
+	master = checkout master
+
+	# Branch
+	b  = branch
+	bd = branch -d
+
+	# Status
+	s  = status --short
+	ss = status
+
+	# Commit
+	c    = commit
+	cm   = commit -m
+	wip  = ! git add -A && git commit -am "WIP"
+	undo = reset HEAD~
+
+	# Diff
+	d = difftool
+
+	# Log
+	l = log --oneline
