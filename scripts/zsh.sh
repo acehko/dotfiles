@@ -3,9 +3,9 @@
 
 # Install Antigen
 echo -en "\nInstalling Antigen... "
-if [ ! -e $DOTFILES/zsh/antigen/antigen.zsh ]; then
+if [ ! -e $HOME/.zsh/antigen/antigen.zsh ]; then
 	echo -e "\n"
-	curl -Lo $DOTFILES/zsh/antigen/antigen.zsh --create-dirs git.io/antigen
+	curl -Lo $HOME/.zsh/antigen/antigen.zsh --create-dirs git.io/antigen
 else
 	echo "Already installed"
 fi

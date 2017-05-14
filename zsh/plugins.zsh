@@ -1,5 +1,5 @@
 # --- Antigen Start ---
-source $DOTFILES/zsh/antigen/antigen.zsh
+source $HOME/.zsh/antigen/antigen.zsh
 
 
 antigen bundle zsh-users/zsh-autosuggestions
