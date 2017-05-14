@@ -4,6 +4,7 @@
 # Install packages
 echo -e "\nInstalling packages..."
 sudo pacman -S --needed --noconfirm \
+	asciiquarium \
 	clang \
 	cmake \
 	go \
