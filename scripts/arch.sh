@@ -12,6 +12,7 @@ sudo pacman -S --needed --noconfirm \
 	nodejs \
 	npm \
 	make \
+	mosh \
 	python \
 	python2 \
 	tmux \

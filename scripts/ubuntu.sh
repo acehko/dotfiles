@@ -22,6 +22,7 @@ sudo apt-get update && \
 		build-essential \
 		cmake \
 		golang-go \
+		mosh \
 		nodejs \
 		python-dev \
 		python3-dev \
