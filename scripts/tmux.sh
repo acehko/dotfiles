@@ -12,6 +12,10 @@ else
 fi
 
 
+# Initialize TPM
+tmux source-file $DOTFILES/tmux/tmux.conf.symlink
+
+
 # Install plugins
 echo "Installing tmux plugins..."
 source $HOME/.tmux/plugins/tpm/bin/install_plugins
