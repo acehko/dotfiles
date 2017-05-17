@@ -17,7 +17,7 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 
 # Install packages
 echo -e "\nInstalling packages..."
-sudo apt-get update && \
+sudo apt-get update; \
 	sudo apt-get install -y \
 		asciiquarium \
 		build-essential \
