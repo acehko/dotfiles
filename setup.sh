@@ -35,6 +35,9 @@ fi
 # Install node modules
 source $DOTFILES/scripts/npm.sh
 
+# Link neofetch config
+source $DOTFILES/scripts/neofetch.sh
+
 
 # Link dotfiles and install vim and zsh plugins
 source $DOTFILES/scripts/links.sh
