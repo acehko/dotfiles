@@ -7,6 +7,7 @@ sudo add-apt-repository -y ppa:longsleep/golang-backports # Golang
 sudo add-apt-repository -y ppa:jonathonf/vim              # Vim
 sudo add-apt-repository -y ppa:pi-rho/dev                 # Tmux
 sudo add-apt-repository -y ppa:ytvwld/asciiquarium        # Asciiquarium
+sudo add-apt-repository -y ppa:keithw/mosh                # Mosh
 
 
 # Node.js
