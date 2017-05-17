@@ -29,8 +29,14 @@ sudo apt-get update; \
 		nodejs \
 		python-dev \
 		python3-dev \
-		tmux \
+		tmux-next \
 		vim-gtk \
 		vim-nox \
 		xclip \
 		zsh
+
+
+# Symlink tmux to tmux-next
+if [ ! -e /usr/bin/tmux ]; then
+	sudo ln -s /usr/bin/tmux-next /usr/bin/tmux
+fi
