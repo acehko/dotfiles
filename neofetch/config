@@ -4,21 +4,21 @@
 
 print_info() {
 
-    info line_break
-    info title
-    info underline
+	info line_break
+	info title
+	info underline
 
-    info "OS    " distro
-    info "Model" model
-    info "Kernel" kernel
-    info "Uptime" uptime
-    info "Shell" shell
-    info "Terminal" term
-    info "CPU" cpu
-    info "GPU" gpu
-    info "Memory" memory
-    info "Disk" disk
-    info "IP" local_ip
+	info "OS"       distro
+	info "Model"    model
+	info "Kernel"   kernel
+	info "Uptime"   uptime
+	info "Shell"    shell
+	info "Terminal" term
+	info "CPU"      cpu
+	info "GPU"      gpu
+	info "Memory"   memory
+	info "Disk"     disk
+	info "IP"       local_ip
 
 }
 
