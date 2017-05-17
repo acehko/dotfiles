@@ -3,12 +3,12 @@
 
 # PPA
 echo -e "\nAdding PPAs..."
-sudo add-apt-repository -y ppa:longsleep/golang-backports # Golang
-sudo add-apt-repository -y ppa:jonathonf/vim              # Vim
-sudo add-apt-repository -y ppa:pi-rho/dev                 # Tmux
-sudo add-apt-repository -y ppa:ytvwld/asciiquarium        # Asciiquarium
-sudo add-apt-repository -y ppa:keithw/mosh                # Mosh
-sudo add-apt-repository -y ppa:dawidd0811/neofetch        # Neofetch
+sudo add-apt-repository -y ppa:gophers/archive     # Golang
+sudo add-apt-repository -y ppa:jonathonf/vim       # Vim
+sudo add-apt-repository -y ppa:pi-rho/dev          # Tmux
+sudo add-apt-repository -y ppa:ytvwld/asciiquarium # Asciiquarium
+sudo add-apt-repository -y ppa:keithw/mosh         # Mosh
+sudo add-apt-repository -y ppa:dawidd0811/neofetch # Neofetch
 
 
 # Node.js
@@ -23,7 +23,7 @@ sudo apt-get update; \
 		asciiquarium \
 		build-essential \
 		cmake \
-		golang-go \
+		golang-1.8 \
 		mosh \
 		neofetch \
 		nodejs \
@@ -39,4 +39,9 @@ sudo apt-get update; \
 # Symlink tmux to tmux-next
 if [ ! -e /usr/bin/tmux ]; then
 	sudo ln -s /usr/bin/tmux-next /usr/bin/tmux
+fi
+
+# Symlink go binary
+if [ ! -e /usr/bin/go ]; then
+	sudo ln -s /usr/lib/go-1.8/bin/go /usr/bin/go
 fi
