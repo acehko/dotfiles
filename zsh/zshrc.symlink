@@ -1,7 +1,5 @@
 # Load all configuration files
 for config ($DOTFILES/zsh/**/*.zsh) source $config
 
-# If not running in tmux, display neofetch
-if [[ ! -n $TMUX ]]; then
-	clear && neofetch
-fi
+# Run startup script
+source $DOTFILES/zsh/startup.sh
