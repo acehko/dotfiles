@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+# Neofetch config
+
+print_info() {
+
+    info line_break
+    info title
+    info underline
+
+    info "OS    " distro
+    info "Model" model
+    info "Kernel" kernel
+    info "Uptime" uptime
+    info "Shell" shell
+    info "Terminal" term
+    info "CPU" cpu
+    info "GPU" gpu
+    info "Memory" memory
+    info "Disk" disk
+    info "IP" local_ip
+
+}
+
+
+# Short uptime text
+uptime_shorthand="tiny"
+
+# Short CPU speed
+speed_shorthand="on"
+
+# Show all disks
+disk_show=($(lsblk -o MOUNTPOINT))
+
+
+
+# Load OS name
+for file in /etc/*-release; do
+	source $file
+done
+
+# Change colors for Arch
+if [ "$NAME" == "Arch Linux" ]; then
+	colors=(4 7 7 4 7 7)
+	ascii_colors=(4 4)
+fi

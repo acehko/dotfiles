@@ -8,6 +8,7 @@ sudo add-apt-repository -y ppa:jonathonf/vim              # Vim
 sudo add-apt-repository -y ppa:pi-rho/dev                 # Tmux
 sudo add-apt-repository -y ppa:ytvwld/asciiquarium        # Asciiquarium
 sudo add-apt-repository -y ppa:keithw/mosh                # Mosh
+sudo add-apt-repository -y ppa:dawidd0811/neofetch        # Neofetch
 
 
 # Node.js
@@ -24,6 +25,7 @@ sudo apt-get update; \
 		cmake \
 		golang-go \
 		mosh \
+		neofetch \
 		nodejs \
 		python-dev \
 		python3-dev \

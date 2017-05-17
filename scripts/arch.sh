@@ -17,4 +17,11 @@ sudo pacman -S --needed --noconfirm \
 	python2 \
 	tmux \
 	xclip \
-	zsh
+	zsh \
+	yaourt
+
+
+# Install AUR packages
+echo -e "\nInstalling AUR packages..."
+yaourt -S --needed --noconfirm \
+	neofetch
