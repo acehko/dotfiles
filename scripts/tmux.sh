@@ -13,7 +13,7 @@ fi
 
 
 # Create a new tmux session
-tmux has || tmux new-session -d -s main
+tmux has &> /dev/null || tmux new-session -d -s main
 
 # Initialize TPM
 tmux source-file $DOTFILES/tmux/tmux.conf.symlink
