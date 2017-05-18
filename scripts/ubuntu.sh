@@ -4,7 +4,7 @@
 # PPA
 echo -e "\nAdding PPAs..."
 sudo add-apt-repository -y ppa:gophers/archive     # Golang
-sudo add-apt-repository -y ppa:jonathonf/vim       # Vim
+sudo add-apt-repository -y ppa:neovim-ppa/unstable # Neovim
 sudo add-apt-repository -y ppa:pi-rho/dev          # Tmux
 sudo add-apt-repository -y ppa:ytvwld/asciiquarium # Asciiquarium
 sudo add-apt-repository -y ppa:keithw/mosh         # Mosh
@@ -26,12 +26,13 @@ sudo apt-get update; \
 		golang-1.8 \
 		mosh \
 		neofetch \
+		neovim \
 		nodejs \
 		python-dev \
+		python-neovim \
 		python3-dev \
+		python3-neovim \
 		tmux-next \
-		vim-gtk \
-		vim-nox \
 		xclip \
 		zsh
 

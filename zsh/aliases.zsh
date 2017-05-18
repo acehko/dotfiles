@@ -9,3 +9,6 @@ alias sz='sudo -E zsh'
 # Tmux
 alias ta='tmux new-session -A -s'
 alias t='ta main'
+
+# Neovim
+alias vim="nvim"

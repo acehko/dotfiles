@@ -8,17 +8,19 @@ sudo pacman -S --needed --noconfirm \
 	clang \
 	cmake \
 	go \
-	gvim \
-	nodejs \
-	npm \
 	make \
 	mosh \
+	neovim \
+	nodejs \
+	npm \
 	python \
+	python-neovim \
 	python2 \
+	python2-neovim \
 	tmux \
 	xclip \
-	zsh \
-	yaourt
+	yaourt \
+	zsh
 
 
 # Install AUR packages
