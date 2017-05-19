@@ -9,7 +9,7 @@
 	username = acehko
 
 [core]
-	editor       = vim
+	editor       = nvim
 	excludesfile = ~/.gitignore_global
 
 [diff]
