@@ -37,6 +37,13 @@ sudo apt-get update; \
 		zsh
 
 
+# Install python support for neovim
+echo -e "\nInstalling python support for neovim"
+pip  install --upgrade neovim
+pip2 install --upgrade neovim
+pip3 install --upgrade neovim
+
+
 # Symlink tmux to tmux-next
 if [ ! -e /usr/bin/tmux ]; then
 	sudo ln -s /usr/bin/tmux-next /usr/bin/tmux
