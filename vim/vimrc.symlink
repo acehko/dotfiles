@@ -15,6 +15,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer' }
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Airline
 Plug 'vim-airline/vim-airline'
