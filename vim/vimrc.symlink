@@ -82,6 +82,7 @@ set listchars=tab:\ " Show tab guides
 
 " Folding
 set foldlevelstart=20
+set viewoptions-=options
 
 nnoremap <space> za
 vnoremap <space> zf
