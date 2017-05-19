@@ -76,6 +76,9 @@ set shiftwidth=4
 set autoindent
 set smartindent
 
+set list
+set listchars=tab:\ " Show tab guides
+
 
 " Folding
 set foldlevelstart=20
