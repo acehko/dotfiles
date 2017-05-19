@@ -18,23 +18,23 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 
 # Install packages
 echo -e "\nInstalling packages..."
-sudo apt-get update; \
-	sudo apt-get install -y \
-		asciiquarium \
-		build-essential \
-		cmake \
-		golang-1.8 \
-		mosh \
-		neofetch \
-		neovim \
-		nodejs \
-		python-dev \
-		python-pip \
-		python3-dev \
-		python3-pip \
-		tmux-next \
-		xclip \
-		zsh
+sudo apt-get update
+sudo apt-get install -y \
+	asciiquarium \
+	build-essential \
+	cmake \
+	golang-1.8 \
+	mosh \
+	neofetch \
+	neovim \
+	nodejs \
+	python-dev \
+	python-pip \
+	python3-dev \
+	python3-pip \
+	tmux-next \
+	xclip \
+	zsh
 
 
 # Install python support for neovim
