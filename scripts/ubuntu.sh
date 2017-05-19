@@ -29,9 +29,9 @@ sudo apt-get update; \
 		neovim \
 		nodejs \
 		python-dev \
-		python-neovim \
+		python-pip \
 		python3-dev \
-		python3-neovim \
+		python3-pip \
 		tmux-next \
 		xclip \
 		zsh
