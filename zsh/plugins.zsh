@@ -23,6 +23,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Main
 ZSH_HIGHLIGHT_STYLES[unknown-token]=fg=167           # Red
+ZSH_HIGHLIGHT_STYLES[reserved-word]=fg=215           # Yellow
 ZSH_HIGHLIGHT_STYLES[precommand]=fg=none
 ZSH_HIGHLIGHT_STYLES[commandseparator]=fg=215        # Yellow
 ZSH_HIGHLIGHT_STYLES[path]=none
