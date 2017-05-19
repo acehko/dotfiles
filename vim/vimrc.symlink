@@ -67,6 +67,7 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
+set guicursor=     " Don't override cursor
 
 
 " Tabs and spaces
