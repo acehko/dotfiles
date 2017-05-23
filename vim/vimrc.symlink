@@ -67,7 +67,9 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
-set guicursor=     " Don't override cursor
+
+" Reset cursor on exit
+autocmd VimLeave * set guicursor=a:hor20-blinkon1
 
 
 " 'Change' and 'delete' saves text in a custom register
