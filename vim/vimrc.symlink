@@ -174,7 +174,6 @@ map <C-b> :NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_console_startup   = 2         " Open NERDTree if a directory was opened
 let g:NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
 let g:NERDTreeQuitOnOpen                      = 1         " Close NERDTree when opening a file
-let g:NERDTreeShowHidden                      = 1         " Show hidden files by default
 let g:NERDTreeDirArrowExpandable              = ""       " Custom collapsed icon
 let g:NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
 let g:NERDTreeGitStatusWithFlags              = 0         " Disable status flags
