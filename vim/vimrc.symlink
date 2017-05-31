@@ -68,6 +68,12 @@ set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
 
+
+" Cursor options
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+	\,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+	\,sm:block-blinkwait175-blinkoff150-blinkon175
+
 " Reset cursor on exit
 autocmd VimLeave * set guicursor=a:hor20-blinkon1
 
