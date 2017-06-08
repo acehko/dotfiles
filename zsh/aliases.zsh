@@ -12,3 +12,6 @@ alias t='ta main'
 
 # Neovim
 alias vim="nvim"
+
+# Kubernetes
+alias k="kubectl"
