@@ -16,6 +16,7 @@ Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer' }
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'airblade/vim-gitgutter'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -68,6 +69,7 @@ set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
 set guicursor=     " Don't change the cursor
+set updatetime=250 " Faster update time
 
 
 " 'Change' and 'delete' saves text in a custom register
