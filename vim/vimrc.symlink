@@ -147,7 +147,6 @@ function! StripWhitespace()
     let l = line('.')
     let c = col('.')
 
-    :normal gg=G
     :retab
     silent! :%s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
     silent! :%s/\s\+$//e          " Delete trailing whitespace
