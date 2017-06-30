@@ -17,6 +17,7 @@ Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'Yggdroot/indentLine'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -263,6 +264,12 @@ let g:gitgutter_sign_modified           = '┃'
 let g:gitgutter_sign_removed            = '┃'
 let g:gitgutter_sign_removed_first_line = '┃'
 let g:gitgutter_sign_modified_removed   = '┃'
+
+
+" indentLine
+let g:indentLine_char = ''
+let g:indentLine_first_char = ''
+let g:indentLine_showFirstIndentLevel = 1
 
 
 
