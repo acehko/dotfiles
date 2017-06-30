@@ -19,6 +19,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 Plug 'Chiel92/vim-autoformat'
+Plug 'scrooloose/nerdcommenter'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -185,6 +186,12 @@ let g:NERDTreeGitStatusNodeColorization       = 1         " Enable status colors
 let g:NERDTreeMinimalUI                       = 1         " Hide help text
 
 hi Directory ctermfg                          = 110       " Change directory color
+
+
+" NERD Commenter
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+map <C-_> <Leader>c<Space>
 
 
 " CtrlP
