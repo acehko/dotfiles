@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
+Plug 'Chiel92/vim-autoformat'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -140,18 +141,19 @@ map <C-w>p :tabp<CR>
 " Strip trailing whitespace and empty lines at the end of file
 function! StripWhitespace()
 
-	" Save the current search and cursor position
-	let _s=@/
-	let l = line('.')
-	let c = col('.')
+    " Save the current search and cursor position
+    let _s=@/
+    let l = line('.')
+    let c = col('.')
 
-	" Strip the whitespace
-	silent! :%s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
-	silent! :%s/\s\+$//e          " Delete trailing whitespace
+    :normal gg=G
+    :retab
+    silent! :%s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
+    silent! :%s/\s\+$//e          " Delete trailing whitespace
 
-	" Restore the saved search and cursor position
-	let @/=_s
-	call cursor(l, c)
+    " Restore the saved search and cursor position
+    let @/=_s
+    call cursor(l, c)
 
 endfunction
 
@@ -207,7 +209,7 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list            = 1
-let g:syntastic_check_on_wq	             = 0
+let g:syntastic_check_on_wq              = 0
 
 " Language checkers
 let g:syntastic_typescript_checkers  = ['tsuquyomi']
@@ -249,10 +251,10 @@ let g:delimitMate_expand_cr = 1 " Auto-indent
 
 
 " vim-go
-let g:go_auto_type_info      = 0           " Don't run GoInfo automatically
-let g:go_fmt_command         = 'goimports' " Use goimports instead of gofmt
-let g:go_highlight_methods   = 1           " Highlight methods
-let g:go_highlight_operators = 1           " Highlight operators
+let g:go_auto_type_info      = 0 " Don't run GoInfo automatically
+let g:go_fmt_autosave        = 0 " Disable gofmt
+let g:go_highlight_methods   = 1 " Highlight methods
+let g:go_highlight_operators = 1 " Highlight operators
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
@@ -270,6 +272,13 @@ let g:gitgutter_sign_modified_removed   = '┃'
 let g:indentLine_char = ''
 let g:indentLine_first_char = ''
 let g:indentLine_showFirstIndentLevel = 1
+
+
+" vim-autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+autocmd BufWritePre *.go :Autoformat
 
 
 
