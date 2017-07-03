@@ -76,23 +76,6 @@ set guicursor=     " Don't change the cursor
 set updatetime=250 " Faster update time
 
 
-" 'Change' and 'delete' saves text in a custom register
-nnoremap c "cc
-vnoremap c "cc
-nnoremap C "cC
-vnoremap C "cC
-
-nnoremap d "dd
-vnoremap d "dd
-nnoremap D "dD
-vnoremap D "dD
-
-nnoremap x "xx
-vnoremap x "xx
-nnoremap X "xX
-vnoremap X "xX
-
-
 " Tabs and spaces
 set tabstop=4
 set softtabstop=4
