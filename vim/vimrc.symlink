@@ -21,6 +21,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
+Plug 'terryma/vim-multiple-cursors'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -274,6 +275,16 @@ autocmd BufWritePre *.go :Autoformat
 " Fix indentLine conflict
 let g:vim_json_syntax_conceal = 0
 
+
+" vim-multiple-cursors
+let g:multi_cursor_use_default_mapping = 2
+let g:multi_cursor_next_key = '<C-n>'
+let g:multi_cursor_prev_key = '<C-m>'
+let g:multi_cursor_skip_key = '<C-x>'
+let g:multi_cursor_quit_key = '<Esc>'
+
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
 
 
 " --- Plugin Config End ---
