@@ -6,6 +6,9 @@ alias la='ls -la'
 # Sudo
 alias sz='sudo -E zsh'
 
+# Grep
+alias grep='grep --color=auto'
+
 # Tmux
 alias ta='tmux new-session -A -s'
 alias t='ta main'
