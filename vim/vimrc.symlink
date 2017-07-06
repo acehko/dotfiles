@@ -12,7 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-syntastic/syntastic'
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer --tern-completer' }
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -34,6 +34,9 @@ Plug 'jistr/vim-nerdtree-tabs'
 Plug 'robinfehr/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" JavaScript
+Plug 'pangloss/vim-javascript', { 'for' : 'javascript' }
 
 " TypeScript
 Plug 'Shougo/vimproc.vim',         { 'for' : 'typescript', 'do' : 'make' }
@@ -203,8 +206,9 @@ let g:syntastic_auto_loc_list            = 1
 let g:syntastic_check_on_wq              = 0
 
 " Language checkers
-let g:syntastic_typescript_checkers  = ['tsuquyomi']
-let g:syntastic_go_checkers          = ['govet', 'errcheck', 'go']
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+let g:syntastic_go_checkers         = ['govet', 'errcheck', 'go']
 
 
 " YouCompleteMe
@@ -269,7 +273,8 @@ let g:indentLine_showFirstIndentLevel = 1
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-autocmd BufWritePre *.go :Autoformat
+
+autocmd BufWritePre *.go,*.js :Autoformat
 
 
 " vim-json

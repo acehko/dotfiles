@@ -4,4 +4,6 @@
 # Install node modules
 echo -e "\nInstalling node modules..."
 sudo npm i -g \
-	typescript
+    jshint \
+    js-beautify \
+    typescript
