@@ -6,4 +6,5 @@ echo -e "\nInstalling node modules..."
 sudo npm i -g \
     jshint \
     js-beautify \
-    typescript
+    typescript \
+    typescript-formatter
