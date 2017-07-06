@@ -14,21 +14,19 @@ _  __  /_  __ \  __/_  /_ __  /__  /_  _ \_  ___/
 
 
 # Load OS name
-for file in /etc/*-release; do
-	source $file
-done
-
+source /etc/os-release
 OS=$NAME
+
 echo -e "\nOS: $OS"
 
 
 # Install os-specific packages
 if [ "$OS" == "Ubuntu" ]; then
-	source $DOTFILES/scripts/ubuntu.sh
+    source $DOTFILES/scripts/ubuntu.sh
 elif [ "$OS" == "Arch Linux" ]; then
-	source $DOTFILES/scripts/arch.sh
+    source $DOTFILES/scripts/arch.sh
 else
-	echo "No package install script for $OS. Skipping..."
+    echo "No package install script for $OS. Skipping..."
 fi
 
 
