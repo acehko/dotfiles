@@ -22,6 +22,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
 
 " Airline
 Plug 'vim-airline/vim-airline'
