@@ -32,7 +32,7 @@ ZSH_HIGHLIGHT_STYLES[back-quoted-argument]=fg=107          # Green
 ZSH_HIGHLIGHT_STYLES[single-quoted-argument]=fg=107        # Green
 ZSH_HIGHLIGHT_STYLES[double-quoted-argument]=fg=107        # Green
 ZSH_HIGHLIGHT_STYLES[dollar-double-quoted-argument]=fg=231 # White
-ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=231   #W hite
+ZSH_HIGHLIGHT_STYLES[back-double-quoted-argument]=fg=231   # White
 ZSH_HIGHLIGHT_STYLES[redirection]=fg=215                   # Yellow
 ZSH_HIGHLIGHT_STYLES[arg0]=fg=110                          # Blue
 
