@@ -46,7 +46,7 @@ Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
 
 " Golang
-Plug 'fatih/vim-go', { 'for' : 'go' }
+Plug 'fatih/vim-go', { 'for' : 'go', 'do': ':GoInstallBinaries' }
 
 
 call plug#end()
