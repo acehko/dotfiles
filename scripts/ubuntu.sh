@@ -20,21 +20,21 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 echo -e "\nInstalling packages..."
 sudo apt-get update
 sudo apt-get install -y \
-	asciiquarium \
-	build-essential \
-	cmake \
-	golang-1.8 \
-	mosh \
-	neofetch \
-	neovim \
-	nodejs \
-	python-dev \
-	python-pip \
-	python3-dev \
-	python3-pip \
-	tmux-next \
-	xclip \
-	zsh
+    asciiquarium \
+    build-essential \
+    cmake \
+    golang-1.8 \
+    mosh \
+    neofetch \
+    neovim \
+    nodejs \
+    python-dev \
+    python-pip \
+    python3-dev \
+    python3-pip \
+    tmux-next \
+    xclip \
+    zsh
 
 
 # Install python support for neovim
@@ -46,10 +46,10 @@ sudo pip3 install --upgrade neovim
 
 # Symlink tmux to tmux-next
 if [ ! -e /usr/bin/tmux ]; then
-	sudo ln -s /usr/bin/tmux-next /usr/bin/tmux
+    sudo ln -s /usr/bin/tmux-next /usr/bin/tmux
 fi
 
 # Symlink go binary
 if [ ! -e /usr/bin/go ]; then
-	sudo ln -s /usr/lib/go-1.8/bin/go /usr/bin/go
+    sudo ln -s /usr/lib/go-1.8/bin/go /usr/bin/go
 fi

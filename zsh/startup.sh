@@ -2,5 +2,5 @@
 
 # If not running in tmux, display neofetch
 if [[ ! -n $TMUX ]]; then
-	neofetch
+    neofetch
 fi

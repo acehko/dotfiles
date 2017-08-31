@@ -8,9 +8,9 @@ zstyle ":vcs_info:*" formats "%b" # Load git branch ($vcs_info_msg_0_)
 
 precmd () {
 
-	vcs_info
-	left_prompt
-	right_prompt
+    vcs_info
+    left_prompt
+    right_prompt
 
 }
 
@@ -19,38 +19,38 @@ precmd () {
 left_prompt() {
 
 
-	# Colors
-	color_ok="110"     # Blue
-	color_error="167"  # Red
-	color_branch="107" # Green
-	color_host="110"   # Blue
+    # Colors
+    color_ok="110"     # Blue
+    color_error="167"  # Red
+    color_branch="107" # Green
+    color_host="110"   # Blue
 
 
-	# Show exclamation mark if running with admin privileges
-	PROMPT="%F{167}%(!. .)%f"
+    # Show exclamation mark if running with admin privileges
+    PROMPT="%F{167}%(!. .)%f"
 
 
-	# If in a git repository
-	if [[ -n ${vcs_info_msg_0_} ]]; then
+    # If in a git repository
+    if [[ -n ${vcs_info_msg_0_} ]]; then
 
-		# Git status dirty
-		git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
-		if [[ -n $git_status ]]; then
-			color_branch="215" # Yellow
-		fi
+        # Git status dirty
+        git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
+        if [[ -n $git_status ]]; then
+            color_branch="215" # Yellow
+        fi
 
-		PROMPT+="%F{$color_branch}$vcs_info_msg_0_%f "
+        PROMPT+="%F{$color_branch}$vcs_info_msg_0_%f "
 
-	fi
-
-
-	# If connected through ssh
-	if [[ -n $SSH_CONNECTION ]]; then
-		PROMPT+="@%F{$color_host}$(hostname)%f "
-	fi
+    fi
 
 
-	PROMPT+="%(?.%F{$color_ok}.%F{$color_error})❯%f "
+    # If connected through ssh
+    if [[ -n $SSH_CONNECTION ]]; then
+        PROMPT+="@%F{$color_host}$(hostname)%f "
+    fi
+
+
+    PROMPT+="%(?.%F{$color_ok}.%F{$color_error})❯%f "
 
 
 }
@@ -60,39 +60,39 @@ left_prompt() {
 right_prompt() {
 
 
-	# Colors
-	color_path="242" # Gray
-	color_cmd="215"  # Yellow
+    # Colors
+    color_path="242" # Gray
+    color_cmd="215"  # Yellow
 
-	# Vim modes
-	vim_ins_mode=""
-	vim_cmd_mode=" %F{$color_cmd}[CMD]%f"
-	vim_mode=$vim_ins_mode
-
-
-	# Update vim mode on change
-	function zle-keymap-select {
-		vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-		zle reset-prompt
-	}
-	zle -N zle-keymap-select
+    # Vim modes
+    vim_ins_mode=""
+    vim_cmd_mode=" %F{$color_cmd}[CMD]%f"
+    vim_mode=$vim_ins_mode
 
 
-	# Reset vim mode
-	function zle-line-finish {
-		vim_mode=$vim_ins_mode
-	}
-	zle -N zle-line-finish
+    # Update vim mode on change
+    function zle-keymap-select {
+        vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+        zle reset-prompt
+    }
+    zle -N zle-keymap-select
 
 
-	# Reset vim mode on CTRL+C
-	function TRAPINT() {
-		vim_mode=$vim_ins_mode
-		return $(( 128 + $1 ))
-	}
+    # Reset vim mode
+    function zle-line-finish {
+        vim_mode=$vim_ins_mode
+    }
+    zle -N zle-line-finish
 
 
-	RPROMPT='%F{$color_path}%~%f$vim_mode'
+    # Reset vim mode on CTRL+C
+    function TRAPINT() {
+        vim_mode=$vim_ins_mode
+        return $(( 128 + $1 ))
+    }
+
+
+    RPROMPT='%F{$color_path}%~%f$vim_mode'
 
 
 }

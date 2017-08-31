@@ -1,47 +1,47 @@
 [user]
-	name  = Andrija Čehko
-	email = andrija.cehko@gmail.com
+    name  = Andrija Čehko
+    email = andrija.cehko@gmail.com
 
 [github]
-	user = acehko
+    user = acehko
 
 [credential]
-	username = acehko
+    username = acehko
 
 [core]
-	editor       = nvim
-	excludesfile = ~/.gitignore_global
+    editor       = nvim
+    excludesfile = ~/.gitignore_global
 
 [diff]
-	tool = vimdiff
+    tool = vimdiff
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [alias]
 
-	# Checkout
-	co     = checkout
-	cob    = checkout -b
-	master = checkout master
+    # Checkout
+    co     = checkout
+    cob    = checkout -b
+    master = checkout master
 
-	# Branch
-	b  = branch
-	bd = branch -d
+    # Branch
+    b  = branch
+    bd = branch -d
 
-	# Status
-	s  = status --short
-	ss = status
+    # Status
+    s  = status --short
+    ss = status
 
-	# Commit
-	c    = commit
-	ca   = !git add -A && git commit
-	cm   = commit -m
-	wip  = !git add -A && git commit -m "WIP"
-	undo = reset HEAD~
+    # Commit
+    c    = commit
+    ca   = !git add -A && git commit
+    cm   = commit -m
+    wip  = !git add -A && git commit -m "WIP"
+    undo = reset HEAD~
 
-	# Diff
-	d = difftool
+    # Diff
+    d = difftool
 
-	# Log
-	l = log --oneline
+    # Log
+    l = log --oneline

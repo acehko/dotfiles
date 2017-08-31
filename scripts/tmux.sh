@@ -4,11 +4,11 @@
 # Install Tmux Pluin Manager
 echo -en "\nInstalling TPM... "
 if [ ! -e $HOME/.tmux/plugins/tpm ]; then
-	echo -e "\n"
-	git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
-	echo -e "\n"
+    echo -e "\n"
+    git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+    echo -e "\n"
 else
-	echo "Already installed"
+    echo "Already installed"
 fi
 
 
