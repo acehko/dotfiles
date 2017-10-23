@@ -2,7 +2,7 @@
 set -e
 
 
-DOTFILES=$HOME/dotfiles
+source ./zsh/zshenv.symlink
 
 
 echo "_________     _______________________
