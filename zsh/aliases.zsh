@@ -18,3 +18,6 @@ alias vim="nvim"
 
 # Kubernetes
 alias k="kubectl"
+
+# Docker
+alias d="docker"
