@@ -2,4 +2,4 @@
 run 'for config in $DOTFILES/tmux/*.conf; do [ "$config" != "$DOTFILES/tmux/plugins.conf" ] && tmux source-file $config; done'
 
 # Plugins must be loaded last
-source-file $DOTFILES/tmux/plugins.conf
+run 'tmux source-file $DOTFILES/tmux/plugins.conf'
