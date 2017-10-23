@@ -93,7 +93,18 @@ set smartindent
 set list
 set listchars=tab:\ " Show tab guides
 
+autocmd FileType * call FourSpaceIndent()
 autocmd FileType yaml call TwoSpaceIndent()
+
+function FourSpaceIndent()
+    set tabstop=4
+    set softtabstop=4
+    set shiftwidth=4
+
+    let g:indentLine_enabled=0
+    :IndentGuidesDisable
+endfunction
+
 function TwoSpaceIndent()
     set tabstop=2
     set softtabstop=2
