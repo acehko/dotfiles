@@ -95,7 +95,7 @@ set list
 set listchars=tab:\ " Show tab guides
 
 autocmd FileType * call FourSpaceIndent()
-autocmd FileType yaml call TwoSpaceIndent()
+autocmd FileType yaml,logstash call TwoSpaceIndent()
 
 function FourSpaceIndent()
     set tabstop=4
