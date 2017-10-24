@@ -58,12 +58,13 @@ call plug#end()
 " --- Vim Config Start ---
 
 " General
-set encoding=utf8         " UTF-8 FTW
-set nocompatible          " Not compatible with Vi
-set autoread              " Detect when a file has changed
-set visualbell            " No beep on errors
-set ttimeoutlen=50        " Remove delay on ESC
-
+set encoding=utf8  " UTF-8 FTW
+set nocompatible   " Not compatible with Vi
+set autoread       " Detect when a file has changed
+set visualbell     " No beep on errors
+set ttimeoutlen=50 " Remove delay on ESC
+set exrc           " Allow per-project configuration files
+set secure         " Don't load other people's per-project configs
 
 " UI
 syntax enable      " Enable syntax highlighting
