@@ -65,6 +65,7 @@ set visualbell     " No beep on errors
 set ttimeoutlen=50 " Remove delay on ESC
 set exrc           " Allow per-project configuration files
 set secure         " Don't load other people's per-project configs
+set ic             " Case-insensitive search
 
 " UI
 syntax enable      " Enable syntax highlighting
