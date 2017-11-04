@@ -147,8 +147,8 @@ map <C-w>n :tabn<CR>
 map <C-w>p :tabp<CR>
 
 
-" Strip trailing whitespace and empty lines at the end of file
-function! StripWhitespace()
+" Trim trailing whitespace and empty lines at the end of file
+function! TrimWhitespace()
 
     " Save the current search and cursor position
     let _s=@/
@@ -165,8 +165,8 @@ function! StripWhitespace()
 
 endfunction
 
-" Strip whitespace on save
-autocmd BufWritePre * :call StripWhitespace()
+" Trim whitespace on save
+autocmd BufWritePre * :call TrimWhitespace()
 
 
 " --- Vim Config End ---
