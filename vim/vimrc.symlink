@@ -298,6 +298,14 @@ function g:Multiple_cursors_after()
 endfunction
 
 
+" Airline
+set laststatus=2                                 " Always show the status line
+let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
+let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
+let g:airline_powerline_fonts             = 1    " Use powerline font
+let g:airline_skip_empty_sections         = 1    " Don't display empty sections
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -311,14 +319,6 @@ let g:NERDTreeGitStatusNodeColorization       = 1         " Enable status colors
 let g:NERDTreeMinimalUI                       = 1         " Hide help text
 
 hi Directory ctermfg                          = 110       " Change directory color
-
-
-" Airline
-set laststatus=2                                 " Always show the status line
-let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
-let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
-let g:airline_powerline_fonts             = 1    " Use powerline font
-let g:airline_skip_empty_sections         = 1    " Don't display empty sections
 
 
 " Tsuquyomi
