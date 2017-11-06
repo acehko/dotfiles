@@ -18,5 +18,10 @@ zstyle ':completion:*' menu select
 bindkey '^[[Z' reverse-menu-complete
 
 # Use arrow keys to search history matching the current buffer
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+autoload -U history-search-end
+
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+
+bindkey '\e[A' history-beginning-search-backward-end
+bindkey '\e[B' history-beginning-search-forward-end
