@@ -37,12 +37,12 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " JavaScript
-Plug 'pangloss/vim-javascript', { 'for' : 'javascript' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " TypeScript
-Plug 'Shougo/vimproc.vim',         { 'for' : 'typescript', 'do' : 'make' }
-Plug 'Quramy/tsuquyomi',           { 'for' : 'typescript' }
-Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
+Plug 'Shougo/vimproc.vim',         { 'for': 'typescript', 'do': 'make' }
+Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 
 " Golang
@@ -324,8 +324,10 @@ let g:NERDTreeMinimalUI                     = 1         " Hide help text
 
 
 " Tsuquyomi
-let g:tsuquyomi_disable_quickfix = 1 " Disable vim quickfix window, syntastic will handle checks
-" Bind TsuquyomiRenameSymbol on F2
+" Disable quickfix window, Neomake will handle checks
+let g:tsuquyomi_disable_quickfix = 1
+
+" Bind TsuquyomiRenameSymbol to F2
 autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
