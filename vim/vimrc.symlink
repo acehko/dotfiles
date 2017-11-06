@@ -244,6 +244,12 @@ let g:gitgutter_sign_removed_first_line = '┃'
 let g:gitgutter_sign_modified_removed   = '┃'
 
 
+" IndentLine
+let g:indentLine_char                 = ''
+let g:indentLine_first_char           = ''
+let g:indentLine_showFirstIndentLevel = 1
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -307,12 +313,6 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-
-
-" indentLine
-let g:indentLine_char = ''
-let g:indentLine_first_char = ''
-let g:indentLine_showFirstIndentLevel = 1
 
 
 " vim-autoformat
