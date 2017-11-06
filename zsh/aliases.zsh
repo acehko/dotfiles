@@ -6,6 +6,9 @@ alias la='ls -la'
 # Sudo
 alias sz='sudo -E zsh'
 
+# Exit
+alias e='exit'
+
 # Grep
 alias grep='grep --color=auto'
 
