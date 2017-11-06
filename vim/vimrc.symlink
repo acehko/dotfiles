@@ -261,6 +261,17 @@ let g:neoformat_only_msg_on_error = 1
 autocmd BufWritePre *.go undojoin | Neoformat
 
 
+" NERD Commenter
+" Add space after comment delimiters
+let g:NERDSpaceDelims = 1
+
+" Align left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Bind to CTRL + /
+map <C-_> <Leader>c<Space>
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -274,12 +285,6 @@ let g:NERDTreeGitStatusNodeColorization       = 1         " Enable status colors
 let g:NERDTreeMinimalUI                       = 1         " Hide help text
 
 hi Directory ctermfg                          = 110       " Change directory color
-
-
-" NERD Commenter
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-map <C-_> <Leader>c<Space>
 
 
 " Airline
