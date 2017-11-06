@@ -289,6 +289,14 @@ let g:multi_cursor_quit_key            = '<Esc>'
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
+" Disable Deoplete when in multiple cursor mode
+function g:Multiple_cursors_before()
+    let g:deoplete#disable_auto_complete = 1
+endfunction
+function g:Multiple_cursors_after()
+    let g:deoplete#disable_auto_complete = 0
+endfunction
+
 
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
