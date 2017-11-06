@@ -252,12 +252,13 @@ let g:indentLine_showFirstIndentLevel = 1
 " Neoformat
 " Enabled formatters
 let g:neoformat_enabled_go = ['goimports']
+let g:neoformat_enabled_js = ['js-beautify']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
 
 " Format on save
-autocmd BufWritePre *.go undojoin | Neoformat
+autocmd BufWritePre *.go,*.js undojoin | Neoformat
 
 
 " NERD Commenter
