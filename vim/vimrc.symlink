@@ -33,8 +33,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'robinfehr/nerdtree-git-plugin'
-Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -323,14 +323,6 @@ let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
 let g:NERDTreeMinimalUI                     = 1         " Hide help text
 
 
-" Tsuquyomi
-" Disable quickfix window, Neomake will handle checks
-let g:tsuquyomi_disable_quickfix = 1
-
-" Bind TsuquyomiRenameSymbol to F2
-autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
-
-
 " DevIcons
 let g:webdevicons_enable_airline_statusline              = 1    " Enabled on airline
 let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after the icon
@@ -340,14 +332,22 @@ let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Change folde
 let g:DevIconsEnableFolderPatternMatching                = 0    " Disable custom icons on folders
 
 " Custom file extension icons
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols        = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['swp'] = ''
 
 " Custom exact match files
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
+let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols               = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
+
+
+" Tsuquyomi
+" Disable quickfix window, Neomake will handle checks
+let g:tsuquyomi_disable_quickfix = 1
+
+" Bind TsuquyomiRenameSymbol to F2
+autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 
 
 " vim-go
