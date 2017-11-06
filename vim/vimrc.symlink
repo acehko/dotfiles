@@ -12,7 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'nanotech/jellybeans.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
-Plug 'Valloric/YouCompleteMe', { 'do' : './install.py --gocode-completer --tern-completer' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimondi/delimitmate'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
@@ -46,6 +46,7 @@ Plug 'leafgarland/typescript-vim', { 'for' : 'typescript' }
 
 
 " Golang
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
 Plug 'fatih/vim-go', { 'for' : 'go', 'do': ':GoInstallBinaries' }
 
 
@@ -211,6 +212,21 @@ autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
 autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
 
 
+" Deoplete
+" Enable at startup
+let g:deoplete#enable_at_startup = 1
+
+" Disable preview window
+set completeopt-=preview
+
+" Fuzzy search
+call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+
+" Cycle with Tab and Shift + Tab
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -238,11 +254,6 @@ let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
 let g:airline_powerline_fonts             = 1    " Use powerline font
 let g:airline_skip_empty_sections         = 1    " Don't display empty sections
-
-
-" YouCompleteMe
-let g:ycm_show_diagnostics_ui = 0 " Disable error-checking. Handled by syntastic
-set completeopt-=preview          " Disable preview window
 
 
 " Tsuquyomi
