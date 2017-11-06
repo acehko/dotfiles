@@ -19,7 +19,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'Chiel92/vim-autoformat'
+Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json'
 Plug 'terryma/vim-multiple-cursors'
@@ -250,6 +250,17 @@ let g:indentLine_first_char           = ''
 let g:indentLine_showFirstIndentLevel = 1
 
 
+" Neoformat
+" Enabled formatters
+let g:neoformat_enabled_go = ['goimports']
+
+" Only show messages on error
+let g:neoformat_only_msg_on_error = 1
+
+" Format on save
+autocmd BufWritePre *.go undojoin | Neoformat
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -313,14 +324,6 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-
-
-" vim-autoformat
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
-
-autocmd BufWritePre *.go,*.js,*.ts :Autoformat
 
 
 " vim-json
