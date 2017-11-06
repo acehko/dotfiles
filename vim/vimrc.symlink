@@ -21,7 +21,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sbdchd/neoformat'
 Plug 'scrooloose/nerdcommenter'
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
 
@@ -272,6 +272,11 @@ let g:NERDDefaultAlign = 'left'
 map <C-_> <Leader>c<Space>
 
 
+" vim-json
+" Fix IndentLine conflict
+let g:vim_json_syntax_conceal = 0
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -329,11 +334,6 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-
-
-" vim-json
-" Fix indentLine conflict
-let g:vim_json_syntax_conceal = 0
 
 
 " vim-multiple-cursors
