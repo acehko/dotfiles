@@ -235,6 +235,15 @@ inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 let g:delimitMate_expand_cr = 1 " Auto-indent
 
 
+" vim-gutter
+" Custom symbols
+let g:gitgutter_sign_added              = '┃'
+let g:gitgutter_sign_modified           = '┃'
+let g:gitgutter_sign_removed            = '┃'
+let g:gitgutter_sign_removed_first_line = '┃'
+let g:gitgutter_sign_modified_removed   = '┃'
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -298,14 +307,6 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-
-
-" vim-gutter
-let g:gitgutter_sign_added              = '┃'
-let g:gitgutter_sign_modified           = '┃'
-let g:gitgutter_sign_removed            = '┃'
-let g:gitgutter_sign_removed_first_line = '┃'
-let g:gitgutter_sign_modified_removed   = '┃'
 
 
 " indentLine
