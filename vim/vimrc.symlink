@@ -47,7 +47,7 @@ Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 
 " Golang
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
-Plug 'fatih/vim-go', { 'for' : 'go', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 
 call plug#end()
