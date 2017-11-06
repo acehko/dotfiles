@@ -136,7 +136,8 @@ map <C-w>j :below new<CR>
 map <C-w>k :new<CR>
 map <C-w>l :rightb vnew<CR>
 
-map <C-w>x :q<CR> " Close a window
+" Close a window
+map <C-w>x :q<CR>
 
 " Window movement
 map <C-h> :wincmd h<CR>
