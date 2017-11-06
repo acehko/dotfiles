@@ -40,9 +40,10 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " TypeScript
-Plug 'Shougo/vimproc.vim',         { 'for': 'typescript', 'do': 'make' }
-Plug 'Quramy/tsuquyomi',           { 'for': 'typescript' }
-Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+Plug 'Shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
+Plug 'Quramy/tsuquyomi',            { 'for': 'typescript' }
+Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
 
 
 " Golang
