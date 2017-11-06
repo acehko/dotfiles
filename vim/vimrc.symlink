@@ -101,8 +101,8 @@ function FourSpaceIndent()
     set softtabstop=4
     set shiftwidth=4
 
-    :IndentLinesEnable
-    :IndentGuidesDisable
+    silent! :IndentLinesEnable
+    silent! :IndentGuidesDisable
 endfunction
 
 function TwoSpaceIndent()
@@ -110,8 +110,8 @@ function TwoSpaceIndent()
     set softtabstop=2
     set shiftwidth=2
 
-    :IndentLinesDisable
-    :IndentGuidesEnable
+    silent! :IndentLinesDisable
+    silent! :IndentGuidesEnable
 endfunction
 
 
@@ -194,7 +194,9 @@ map <C-p> :NERDTreeClose \| :CtrlP<CR>
 
 " NeoMake
 " Run on read and save
-call neomake#configure#automake('rw', 100)
+if exists('neomake#configure#automake')
+    call neomake#configure#automake('rw', 100)
+endif
 
 " Custom colors
 :highlight NeomakeWarning ctermfg=216 ctermbg=233
@@ -220,7 +222,9 @@ let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 
 " Fuzzy search
-call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+if exists('deoplete#custom#set')
+    call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
+endif
 
 " Cycle with Tab and Shift + Tab
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
