@@ -231,6 +231,10 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
+" DelimitMate
+let g:delimitMate_expand_cr = 1 " Auto-indent
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -283,10 +287,6 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols = {}
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
 let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
-
-
-" DelimitMate
-let g:delimitMate_expand_cr = 1 " Auto-indent
 
 
 " vim-go
