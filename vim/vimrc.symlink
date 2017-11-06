@@ -277,6 +277,19 @@ map <C-_> <Leader>c<Space>
 let g:vim_json_syntax_conceal = 0
 
 
+" vim-multiple-cursors
+" Custom key bindings
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-m>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+" Pressing <Esc> does not quit multi cursor mode when in visual or insert mode
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
+
+
 " NERDTree
 map <C-b> :NERDTreeTabsToggle<CR>
 
@@ -334,17 +347,6 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
-
-
-" vim-multiple-cursors
-let g:multi_cursor_use_default_mapping = 2
-let g:multi_cursor_next_key = '<C-n>'
-let g:multi_cursor_prev_key = '<C-m>'
-let g:multi_cursor_skip_key = '<C-x>'
-let g:multi_cursor_quit_key = '<Esc>'
-
-let g:multi_cursor_exit_from_visual_mode = 0
-let g:multi_cursor_exit_from_insert_mode = 0
 
 
 " --- Plugin Config End ---
