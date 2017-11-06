@@ -205,7 +205,7 @@ let g:neomake_warning_sign={'text': '', 'texthl': 'NeomakeWarning'}
 let g:neomake_error_sign={'text': '✘', 'texthl': 'NeomakeError'}
 
 " Open quickfix window
-let g:neomake_open_list = 1
+let g:neomake_open_list = 2
 
 " Close quickfix window when file is closed
 autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
