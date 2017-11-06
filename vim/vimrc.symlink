@@ -307,18 +307,20 @@ let g:airline_skip_empty_sections         = 1    " Don't display empty sections
 
 
 " NERDTree
+" Bind NERDTree to CTRL + B
 map <C-b> :NERDTreeTabsToggle<CR>
 
-let g:nerdtree_tabs_open_on_console_startup   = 2         " Open NERDTree if a directory was opened
-let g:NERDTreeMapActivateNode                 = '<Space>' " Open / close directorties and files with space
-let g:NERDTreeQuitOnOpen                      = 1         " Close NERDTree when opening a file
-let g:NERDTreeDirArrowExpandable              = ""       " Custom collapsed icon
-let g:NERDTreeDirArrowCollapsible             = ""       " Custom expanded icon
-let g:NERDTreeGitStatusWithFlags              = 0         " Disable status flags
-let g:NERDTreeGitStatusNodeColorization       = 1         " Enable status colors
-let g:NERDTreeMinimalUI                       = 1         " Hide help text
+" Custom directory color
+hi Directory ctermfg = 110
 
-hi Directory ctermfg                          = 110       " Change directory color
+let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a directory was opened
+let g:NERDTreeMapActivateNode               = '<Space>' " Open / close directorties and files with space
+let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
+let g:NERDTreeDirArrowExpandable            = ""       " Custom collapsed icon
+let g:NERDTreeDirArrowCollapsible           = ""       " Custom expanded icon
+let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
+let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
+let g:NERDTreeMinimalUI                     = 1         " Hide help text
 
 
 " Tsuquyomi
