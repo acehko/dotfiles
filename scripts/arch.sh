@@ -17,6 +17,7 @@ sudo pacman -S --needed --noconfirm \
     python-neovim \
     python2 \
     python2-neovim \
+    ripgrep \
     tmux \
     xclip \
     yaourt \

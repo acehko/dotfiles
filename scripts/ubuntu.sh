@@ -53,3 +53,8 @@ fi
 if [ ! -e /usr/bin/go ]; then
     sudo ln -s /usr/lib/go-1.8/bin/go /usr/bin/go
 fi
+
+
+# Install ripgrep
+wget -qO- https://github.com/BurntSushi/ripgrep/releases/download/0.7.1/ripgrep-0.7.1-x86_64-unknown-linux-musl.tar.gz | sudo tar xvz -C /opt
+sudo ln -s /opt/ripgrep-0.7.1-x86_64-unknown-linux-musl/rg /usr/bin/rg

@@ -11,7 +11,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'nanotech/jellybeans.vim'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'raimondi/delimitmate'
@@ -24,6 +23,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+
+" Fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -183,15 +186,6 @@ autocmd BufWritePre * :call TrimWhitespace()
 " EasyMotion
 " Map prefix to <Leader> instead of <Leader><Leader>
 map <Leader> <Plug>(easymotion-prefix)
-
-
-" CtrlP
-" Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-" Close NERDTree when opening CtrlP
-let g:ctrlp_map = '<Nop>'
-map <C-p> :NERDTreeClose \| :CtrlP<CR>
 
 
 " Neomake
@@ -361,5 +355,9 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 " Bind rename to F2
 autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 
+
+" fzf
+" Close NERDTree and opent fzf
+map <C-p> :NERDTreeClose \| :FZF<CR>
 
 " --- Plugin Config End ---
