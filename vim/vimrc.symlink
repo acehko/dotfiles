@@ -176,6 +176,10 @@ endfunction
 autocmd BufWritePre * :call TrimWhitespace()
 
 
+" Custom filetypes
+autocmd BufRead,BufNewFile WORKSPACE,BUILD,BUILD.bazel set filetype=python
+
+
 " --- Vim Config End ---
 
 
@@ -246,14 +250,15 @@ let g:indentLine_showFirstIndentLevel = 1
 
 " Neoformat
 " Enabled formatters
-let g:neoformat_enabled_go = ['goimports']
-let g:neoformat_enabled_js = ['js-beautify']
+let g:neoformat_enabled_go     = ['goimports']
+let g:neoformat_enabled_js     = ['js-beautify']
+let g:neoformat_enabled_python = ['autopep8']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
 
 " Format on save
-autocmd BufWritePre *.go,*.js undojoin | Neoformat
+autocmd BufWritePre *.go,*.js,WORKSPACE,BUILD,BUILD.bazel undojoin | Neoformat
 
 
 " NERD Commenter
@@ -359,5 +364,6 @@ autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 " fzf
 " Close NERDTree and opent fzf
 map <C-p> :NERDTreeClose \| :FZF<CR>
+
 
 " --- Plugin Config End ---
