@@ -261,7 +261,7 @@ let g:neoformat_enabled_python = ['autopep8']
 let g:neoformat_only_msg_on_error = 1
 
 " Format on save
-autocmd BufWritePre *.go,*.js,WORKSPACE,BUILD,BUILD.bazel undojoin | Neoformat
+autocmd FileType go,js,bazel autocmd BufWritePre <buffer> undojoin | Neoformat
 
 
 " NERD Commenter
