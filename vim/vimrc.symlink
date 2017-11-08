@@ -180,6 +180,7 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 " Custom filetypes
 autocmd BufRead,BufNewFile WORKSPACE,BUILD,BUILD.bazel set filetype=python
+autocmd BufRead,BufNewFile Gopkg.lock set filetype=toml
 
 
 " --- Vim Config End ---
