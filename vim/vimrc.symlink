@@ -23,6 +23,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'godlygeek/tabular'
+Plug 'shime/vim-livedown'
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
