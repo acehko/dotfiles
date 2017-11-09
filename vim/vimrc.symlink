@@ -155,6 +155,9 @@ map <C-w>c :tabe<CR>
 map <C-w>n :tabn<CR>
 map <C-w>p :tabp<CR>
 
+" Switching between most recent buffers
+nnoremap <Leader>, :b#<CR>
+
 
 " Trim trailing whitespace and empty lines at the end of file
 function! TrimWhitespace()
