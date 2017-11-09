@@ -5,6 +5,8 @@ export FZF_DEFAULT_OPTS='
     --bind=ctrl-space:toggle
     --height 40%
     --no-reverse
+    --multi
+    --prompt="❯ "
     --border
     --no-bold
     --color fg:188,bg:233,hl:215,fg+:110,bg+:233,hl+:215
