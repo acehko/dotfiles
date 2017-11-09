@@ -182,7 +182,8 @@ autocmd BufWritePre * :call TrimWhitespace()
 
 
 " Custom filetypes
-autocmd BufRead,BufNewFile WORKSPACE,BUILD,BUILD.bazel set filetype=python
+autocmd BufRead,BufNewFile WORKSPACE,BUILD,BUILD.bazel set filetype=bazel | set syntax=python
+autocmd FileType bazel set syntax=python
 autocmd BufRead,BufNewFile Gopkg.lock set filetype=toml
 
 
