@@ -200,7 +200,7 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " Neomake
 " Run on read and save
-autocmd BufWinEnter,BufWritePre * Neomake
+autocmd BufWinEnter,BufWritePost * Neomake
 
 " Custom colors
 :highlight NeomakeWarning ctermfg=215 ctermbg=233
