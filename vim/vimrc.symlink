@@ -263,8 +263,8 @@ let g:neoformat_enabled_python = ['autopep8']
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
 
-" Format on save
-autocmd FileType go,js,bzl autocmd BufWritePre <buffer> undojoin | Neoformat
+" Format on CTRL + F
+nnoremap <C-f> :Neoformat<CR>
 
 
 " NERD Commenter
