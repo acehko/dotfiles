@@ -101,6 +101,7 @@ set list
 set listchars=tab:\ " Show tab guides
 
 augroup Indentation
+    autocmd!
     autocmd FileType * call FourSpaceIndent()
     autocmd FileType yaml,toml call TwoSpaceIndent()
 augroup end
@@ -132,6 +133,7 @@ nnoremap <space> za
 vnoremap <space> zf
 
 augroup Folding
+    autocmd!
     autocmd FileType    * setlocal foldmethod=syntax
     autocmd BufWinLeave * silent! mkview
     autocmd BufWinEnter * silent! loadview
@@ -184,6 +186,7 @@ endfunction
 
 " Trim whitespace on save
 augroup TrimWhitespace
+    autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup end
 
@@ -203,6 +206,7 @@ map <Leader> <Plug>(easymotion-prefix)
 " Neomake
 " Run on read and save
 augroup Neomake
+    autocmd!
     autocmd BufWinEnter,BufWritePost * Neomake
 augroup end
 
@@ -219,6 +223,7 @@ let g:neomake_open_list = 2
 
 " Close quickfix window when file is closed
 augroup NeomakeQuickfixClose
+    autocmd!
     autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
     autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
 augroup end
@@ -360,6 +365,7 @@ let g:tsuquyomi_disable_quickfix = 1
 
 " Bind TsuquyomiRenameSymbol to F2
 augroup TypescriptRename
+    autocmd!
     autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 augroup end
 
@@ -373,6 +379,7 @@ let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
 augroup GoRename
+    autocmd!
     autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 augroup end
 
