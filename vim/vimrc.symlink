@@ -100,8 +100,10 @@ set smartindent
 set list
 set listchars=tab:\ " Show tab guides
 
-autocmd FileType * call FourSpaceIndent()
-autocmd FileType yaml,toml,logstash call TwoSpaceIndent()
+augroup Indentation
+    autocmd FileType * call FourSpaceIndent()
+    autocmd FileType yaml,toml,logstash call TwoSpaceIndent()
+augroup end
 
 function FourSpaceIndent()
     set tabstop=4
@@ -129,9 +131,11 @@ set viewoptions-=options
 nnoremap <space> za
 vnoremap <space> zf
 
-autocmd FileType    * setlocal foldmethod=syntax
-autocmd BufWinLeave * silent! mkview
-autocmd BufWinEnter * silent! loadview
+augroup Folding
+    autocmd FileType    * setlocal foldmethod=syntax
+    autocmd BufWinLeave * silent! mkview
+    autocmd BufWinEnter * silent! loadview
+augroup end
 
 
 " Window management
@@ -179,11 +183,15 @@ function! TrimWhitespace()
 endfunction
 
 " Trim whitespace on save
-autocmd BufWritePre * :call TrimWhitespace()
+augroup TrimWhitespace
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup end
 
 
 " Custom filetypes
-autocmd BufRead,BufNewFile Gopkg.lock set filetype=toml
+augroup CustomFiletypes
+    autocmd BufRead,BufNewFile Gopkg.lock set filetype=toml
+augroup end
 
 
 " --- Vim Config End ---
@@ -200,7 +208,9 @@ map <Leader> <Plug>(easymotion-prefix)
 
 " Neomake
 " Run on read and save
-autocmd BufWinEnter,BufWritePost * Neomake
+augroup Neomake
+    autocmd BufWinEnter,BufWritePost * Neomake
+augroup end
 
 " Custom colors
 :highlight NeomakeWarning ctermfg=215 ctermbg=233
@@ -214,8 +224,10 @@ let g:neomake_error_sign={'text': '✘', 'texthl': 'NeomakeError'}
 let g:neomake_open_list = 2
 
 " Close quickfix window when file is closed
-autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
-autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
+augroup NeomakeQuickfixClose
+    autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
+    autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
+augroup end
 
 
 " Deoplete
@@ -353,7 +365,9 @@ let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
 let g:tsuquyomi_disable_quickfix = 1
 
 " Bind TsuquyomiRenameSymbol to F2
-autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
+augroup TypescriptRename
+    autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
+augroup end
 
 
 " vim-go
@@ -364,7 +378,9 @@ let g:go_highlight_operators = 1           " Highlight operators
 let g:go_addtags_transform   = 'camelcase' " Use camelcase for :GoAddTags
 
 " Bind rename to F2
-autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
+augroup GoRename
+    autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
+augroup end
 
 
 " fzf
