@@ -275,7 +275,9 @@ let g:neoformat_enabled_python = ['autopep8']
 let g:neoformat_only_msg_on_error = 1
 
 " Format on CTRL + F
-nnoremap <C-f> :Neoformat<CR>
+augroup Neoformat
+    autocmd BufWritePre *.(go,js,py) undojoin | Neoformat
+augroup end
 
 
 " NERD Commenter
