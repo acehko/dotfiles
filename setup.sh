@@ -33,6 +33,9 @@ fi
 # Install node modules
 source $DOTFILES/scripts/npm.sh
 
+# Install go packages
+source $DOTFILES/scripts/go.sh
+
 # Link neofetch config
 source $DOTFILES/scripts/neofetch.sh
 
