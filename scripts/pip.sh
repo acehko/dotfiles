@@ -4,4 +4,5 @@
 # Install python packages
 echo -e "\nInstalling python packages..."
 sudo pip install \
-    autopep8
+    autopep8 \
+    pyaml
