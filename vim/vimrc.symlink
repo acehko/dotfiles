@@ -102,7 +102,7 @@ set listchars=tab:\ " Show tab guides
 
 augroup Indentation
     autocmd FileType * call FourSpaceIndent()
-    autocmd FileType yaml,toml,logstash call TwoSpaceIndent()
+    autocmd FileType yaml,toml call TwoSpaceIndent()
 augroup end
 
 function FourSpaceIndent()
@@ -185,12 +185,6 @@ endfunction
 " Trim whitespace on save
 augroup TrimWhitespace
     autocmd BufWritePre * :call TrimWhitespace()
-augroup end
-
-
-" Custom filetypes
-augroup CustomFiletypes
-    autocmd BufRead,BufNewFile Gopkg.lock set filetype=toml
 augroup end
 
 
