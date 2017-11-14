@@ -267,10 +267,11 @@ let g:indentLine_showFirstIndentLevel = 1
 
 " Neoformat
 " Enabled formatters
-let g:neoformat_enabled_go     = ['goimports']
-let g:neoformat_enabled_js     = ['js-beautify']
-let g:neoformat_enabled_python = ['autopep8']
-let g:neoformat_enabled_bzl    = ['buildifier']
+let g:neoformat_enabled_go       = ['goimports']
+let g:neoformat_enabled_js       = ['js-beautify']
+let g:neoformat_enabled_python   = ['autopep8']
+let g:neoformat_enabled_bzl      = ['buildifier']
+let g:neoformat_enabled_markdown = ['remark']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
@@ -278,7 +279,7 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.go,*.js,*.py,*.bzl,*.bazel,WORKSPACE undojoin | Neoformat
+    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE undojoin | Neoformat
 augroup end
 
 

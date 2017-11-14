@@ -7,5 +7,6 @@ sudo npm i -g \
     jshint \
     js-beautify \
     livedown \
+    remark-cli \
     typescript \
     typescript-formatter
