@@ -26,6 +26,8 @@ Plug 'godlygeek/tabular'
 Plug 'shime/vim-livedown'
 Plug 'cespare/vim-toml'
 Plug 'bazelbuild/vim-ft-bzl'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -104,6 +106,7 @@ augroup Indentation
     autocmd!
     autocmd FileType * call FourSpaceIndent()
     autocmd FileType yaml,toml call TwoSpaceIndent()
+    autocmd FileType notes call NoIndentGuides()
 augroup end
 
 function FourSpaceIndent()
@@ -122,6 +125,11 @@ function TwoSpaceIndent()
 
     silent! :IndentLinesDisable
     silent! :IndentGuidesEnable
+endfunction
+
+function NoIndentGuides()
+    silent! :IndentLinesDisable
+    silent! :IndentGuidesDisable
 endfunction
 
 
@@ -392,6 +400,10 @@ augroup end
 " fzf
 " Close NERDTree and opent fzf
 map <C-p> :NERDTreeClose \| :FZF<CR>
+
+
+" vim-notes
+let g:notes_directories = ['~/Documents/Notes']
 
 
 " --- Plugin Config End ---
