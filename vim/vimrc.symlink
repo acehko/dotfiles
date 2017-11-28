@@ -53,9 +53,11 @@ Plug 'Shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
 Plug 'Quramy/tsuquyomi',            { 'for': 'typescript' }
 Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
 
-
 " Golang
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
+
+" Vimscript
+Plug 'Shougo/neco-vim'
 
 
 call plug#end()
