@@ -288,7 +288,7 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE undojoin | Neoformat
+    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE silent! undojoin | Neoformat
 augroup end
 
 
