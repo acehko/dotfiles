@@ -391,8 +391,8 @@ augroup end
 
 
 " fzf
-" Close NERDTree and opent fzf
-map <C-p> :NERDTreeClose \| :FZF<CR>
+" Close Tagbar, NERDTree and opent fzf
+map <C-p> :silent! TagbarClose<CR> \| :NERDTreeClose \| :FZF<CR>
 
 
 " vim-notes
@@ -400,8 +400,12 @@ let g:notes_directories = ['~/Documents/Notes']
 
 
 " tagbar
-" Toggle on F8
+" Toggle on CTRL + G
 nmap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
+" Jump between tags with 'n' and 'p'
+let g:tagbar_map_nexttag    = 'n'
+let g:tagbar_map_prevtag    = 'p'
+let g:tagbar_map_togglefold = '<Space>'
 
 
 " --- Plugin Config End ---
