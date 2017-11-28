@@ -4,6 +4,9 @@ source $HOME/.zsh/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle hlissner/zsh-autopair
+antigen bundle Tarrasch/zsh-bd
+antigen bundle zuxfoucault/colored-man-pages_mod
 
 antigen apply
 # --- Antigen End ---
