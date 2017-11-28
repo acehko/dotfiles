@@ -216,7 +216,7 @@ map <Leader> <Plug>(easymotion-prefix)
 " Run on read and save
 augroup Neomake
     autocmd!
-    autocmd BufWinEnter,BufWritePost * Neomake
+    autocmd BufWinEnter,BufWritePost * silent! Neomake
 augroup end
 
 " Custom colors
