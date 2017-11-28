@@ -28,6 +28,7 @@ Plug 'cespare/vim-toml'
 Plug 'bazelbuild/vim-ft-bzl'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'majutsushi/tagbar'
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -395,6 +396,11 @@ map <C-p> :NERDTreeClose \| :FZF<CR>
 
 " vim-notes
 let g:notes_directories = ['~/Documents/Notes']
+
+
+" tagbar
+" Toggle on F8
+nmap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
 
 
 " --- Plugin Config End ---
