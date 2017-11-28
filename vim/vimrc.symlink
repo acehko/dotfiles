@@ -12,7 +12,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'roxma/nvim-completion-manager'
 Plug 'raimondi/delimitmate'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
@@ -55,7 +55,6 @@ Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
 
 
 " Golang
-Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make' }
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 
@@ -237,17 +236,15 @@ augroup NeomakeQuickfixClose
 augroup end
 
 
-" Deoplete
-" Enable at startup
-let g:deoplete#enable_at_startup = 1
+" nvim-completion-manager
+" Hide completion messages
+set shortmess+=c
 
-" Disable preview window
-set completeopt-=preview
+" Insert new line when pressing Enter
+inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
 
-" Fuzzy search
-if exists('deoplete#custom#set')
-    call deoplete#custom#set('_', 'matchers', ['matcher_full_fuzzy'])
-endif
+" Enable fuzzy matching
+let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher', 'case': 'smartcase'}
 
 " Cycle with Tab and Shift + Tab
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -318,14 +315,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 " Pressing <Esc> does not quit multi cursor mode when in visual or insert mode
 let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
-
-" Disable Deoplete when in multiple cursor mode
-function g:Multiple_cursors_before()
-    let g:deoplete#disable_auto_complete = 1
-endfunction
-function g:Multiple_cursors_after()
-    let g:deoplete#disable_auto_complete = 0
-endfunction
 
 
 " Airline
