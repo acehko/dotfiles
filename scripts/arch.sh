@@ -20,6 +20,7 @@ sudo pacman -S --needed --noconfirm \
     python2-neovim \
     ripgrep \
     tmux \
+    the_silver_searcher \
     xclip \
     yaourt \
     zsh
