@@ -25,3 +25,7 @@ zle -N history-beginning-search-forward-end history-search-end
 
 bindkey '\e[A' history-beginning-search-backward-end
 bindkey '\e[B' history-beginning-search-forward-end
+
+# Fixes Home and End keys
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}"  end-of-line
