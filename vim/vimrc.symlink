@@ -13,7 +13,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nanotech/jellybeans.vim'
 Plug 'neomake/neomake'
 Plug 'roxma/nvim-completion-manager'
-Plug 'raimondi/delimitmate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
@@ -254,8 +254,9 @@ inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 
-" DelimitMate
-let g:delimitMate_expand_cr = 1 " Auto-indent
+" auto-pairs
+let g:AutoPairsCenterLine         = 0
+let g:AutoPairsShortcutBackInsert = '<M-e>'
 
 
 " vim-gutter
