@@ -392,8 +392,13 @@ augroup end
 
 
 " fzf
-" Close Tagbar, NERDTree and opent fzf
-nnoremap <C-p> :silent! TagbarClose<CR> \| :NERDTreeClose \| :FZF<CR>
+" Close Tagbar, NERDTree and open fzf
+function OpenFZF()
+    TagbarClose
+    NERDTreeClose
+    FZF
+endfunction
+nnoremap <C-p> :call OpenFZF()<CR>
 
 
 " vim-notes
