@@ -185,8 +185,8 @@ function! TrimWhitespace()
     let c = col('.')
 
     :retab
-    silent! :%s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
-    silent! :%s/\s\+$//e          " Delete trailing whitespace
+    silent! %s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
+    silent! %s/\s\+$//e          " Delete trailing whitespace
 
     " Restore the saved search and cursor position
     let @/=_s
@@ -393,7 +393,7 @@ augroup end
 
 " fzf
 " Close Tagbar, NERDTree and opent fzf
-map <C-p> :silent! TagbarClose<CR> \| :NERDTreeClose \| :FZF<CR>
+nnoremap <C-p> :silent! TagbarClose<CR> \| :NERDTreeClose \| :FZF<CR>
 
 
 " vim-notes
