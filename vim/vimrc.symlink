@@ -402,7 +402,7 @@ let g:notes_directories = ['~/Documents/Notes']
 
 " tagbar
 " Toggle on CTRL + G
-nmap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
+nnoremap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
 " Jump between tags with 'n' and 'p'
 let g:tagbar_map_nexttag    = 'n'
 let g:tagbar_map_prevtag    = 'p'
