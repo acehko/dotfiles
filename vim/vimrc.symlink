@@ -55,7 +55,7 @@ Plug 'Quramy/tsuquyomi',            { 'for': 'typescript' }
 Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
 
 " Golang
-Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 " Vimscript
 Plug 'Shougo/neco-vim'
@@ -281,6 +281,7 @@ let g:neoformat_enabled_js       = ['js-beautify']
 let g:neoformat_enabled_python   = ['autopep8']
 let g:neoformat_enabled_bzl      = ['buildifier']
 let g:neoformat_enabled_markdown = ['remark']
+let g:neoformat_enabled_php      = ['phpcsfixer']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
@@ -288,7 +289,7 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE silent! undojoin | Neoformat
+    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE,*.php silent! undojoin | Neoformat
 augroup end
 
 

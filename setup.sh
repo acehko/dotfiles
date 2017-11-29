@@ -39,6 +39,9 @@ source $DOTFILES/scripts/go.sh
 # Install python packages
 source $DOTFILES/scripts/pip.sh
 
+# Install php packages
+source $DOTFILES/scripts/composer.sh
+
 # Link neofetch config
 source $DOTFILES/scripts/neofetch.sh
 

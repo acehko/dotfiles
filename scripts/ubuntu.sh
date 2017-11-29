@@ -61,3 +61,8 @@ if [ ! -e /usr/bin/rg ]; then
     wget -qO- https://github.com/BurntSushi/ripgrep/releases/download/0.7.1/ripgrep-0.7.1-x86_64-unknown-linux-musl.tar.gz | sudo tar xvz -C /opt
     sudo ln -s /opt/ripgrep-0.7.1-x86_64-unknown-linux-musl/rg /usr/bin/rg
 fi
+
+# Install composer
+if [ ! -e /usr/bin/composer ]; then
+    curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+fi
