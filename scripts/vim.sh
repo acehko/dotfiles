@@ -34,3 +34,4 @@ fi
 echo "Installing vim plugins..."
 nvim +PlugClean! +qa
 nvim +PlugUpdate +qa
+nvim +UpdateRemotePlugins +qa
