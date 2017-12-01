@@ -201,6 +201,13 @@ augroup TrimWhitespace
 augroup end
 
 
+" Custom filetypes
+augroup CustomFileTypes
+    autocmd!
+    autocmd BufRead,BufNewFile .yamllint set filetype=yaml
+augroup end
+
+
 " --- Vim Config End ---
 
 
