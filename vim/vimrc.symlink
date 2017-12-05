@@ -29,6 +29,7 @@ Plug 'bazelbuild/vim-ft-bzl'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'majutsushi/tagbar'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
