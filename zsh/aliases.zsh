@@ -19,6 +19,9 @@ alias t='ta main'
 # Neovim
 alias vim="nvim"
 
+# Minikube
+alias m="minikube"
+
 # Kubernetes
 alias k="kubectl"
 
