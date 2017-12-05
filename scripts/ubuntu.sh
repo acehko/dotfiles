@@ -23,7 +23,7 @@ sudo apt-get install -y \
     asciiquarium \
     build-essential \
     cmake \
-    golang-1.8 \
+    golang-1.9 \
     mosh \
     neofetch \
     neovim \
@@ -52,7 +52,7 @@ fi
 
 # Symlink go binary
 if [ ! -e /usr/bin/go ]; then
-    sudo ln -s /usr/lib/go-1.8/bin/go /usr/bin/go
+    sudo ln -s /usr/lib/go-1.9/bin/go /usr/bin/go
 fi
 
 
