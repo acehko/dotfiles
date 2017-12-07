@@ -1,20 +1,23 @@
 # Filesystem
-alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -la'
+alias ls="ls --color=auto"
+alias ll="ls -l"
+alias la="ls -la"
 
 # Sudo
-alias sz='sudo -E zsh'
+alias sz="sudo -E zsh"
+
+# Clear
+alias c="clear"
 
 # Exit
-alias e='exit'
+alias e="exit"
 
 # Grep
-alias grep='grep --color=auto'
+alias grep="grep --color=auto"
 
 # Tmux
-alias ta='tmux new-session -A -s'
-alias t='ta main'
+alias ta="tmux new-session -A -s"
+alias t="ta main"
 
 # Neovim
 alias vim="nvim"
