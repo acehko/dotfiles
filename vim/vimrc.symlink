@@ -108,7 +108,7 @@ augroup Indentation
     autocmd FileType notes call NoIndentGuides()
 augroup end
 
-function FourSpaceIndent()
+function! FourSpaceIndent()
     set tabstop=4
     set softtabstop=4
     set shiftwidth=4
@@ -117,7 +117,7 @@ function FourSpaceIndent()
     silent! :IndentGuidesDisable
 endfunction
 
-function TwoSpaceIndent()
+function! TwoSpaceIndent()
     set tabstop=2
     set softtabstop=2
     set shiftwidth=2
@@ -126,7 +126,7 @@ function TwoSpaceIndent()
     silent! :IndentGuidesEnable
 endfunction
 
-function NoIndentGuides()
+function! NoIndentGuides()
     silent! :IndentLinesDisable
     silent! :IndentGuidesDisable
 endfunction
@@ -462,7 +462,7 @@ augroup end
 
 " fzf
 " Close Tagbar, NERDTree and open fzf
-function OpenFZF()
+function! OpenFZF()
     TagbarClose
     NERDTreeClose
     FZF
