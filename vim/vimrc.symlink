@@ -35,10 +35,6 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 
-" Airline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
 " NERDTree
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -207,6 +203,71 @@ augroup CustomFileTypes
     autocmd!
     autocmd BufRead,BufNewFile .yamllint set filetype=yaml
 augroup end
+
+
+" Statusline
+hi StatusLine              ctermfg=231 ctermbg=233
+hi StatusLineFileColor     ctermfg=59  ctermbg=233
+hi StatusLineLockedColor   ctermfg=167 ctermbg=233
+hi StatusLinePositionColor ctermfg=110 ctermbg=233
+
+let g:modes={
+    \ 'n'  : 'NORMAL',
+    \ 'v'  : 'VISUAL',
+    \ 'V'  : 'V·LINE',
+    \ '' : 'V·BLOCK',
+    \ 'i'  : 'INSERT',
+    \ 't'  : 'TERMINAL'
+\}
+
+function! StatusLineMode()
+    let m = mode()
+    call StatusLineChangeColor(m)
+    if has_key(g:modes, m)
+        return '['.g:modes[m].']'
+    endif
+    return '['.m.']'
+endfunction
+
+function! StatusLineBranch()
+    let b = fugitive#head()
+    hi StatusLineBranchColor ctermfg=107 ctermbg=233
+
+    if b == ''
+        return ' '
+    else
+        return ''.b.' '
+    endif
+endfunction
+
+function! StatusLineChangeColor(mode)
+    if a:mode == 'n'
+        hi StatusLineModeColor ctermfg=110 ctermbg=233
+    elseif a:mode == 'i'
+        hi StatusLineModeColor ctermfg=107 ctermbg=233
+    elseif a:mode == 'v' || a:mode == 'V' || a:mode == ''
+        hi StatusLineModeColor ctermfg=167 ctermbg=233
+    elseif a:mode == 't'
+        hi StatusLineModeColor ctermfg=215 ctermbg=233
+    else
+        hi StatusLineModeColor ctermfg=110 ctermbg=233
+    endif
+endfunction
+
+function! StatusLineReadOnly()
+    if &readonly || !&modifiable
+        return ''
+    endif
+    return ''
+endfunction
+
+set noshowmode
+set laststatus=2
+set statusline=%#StatusLineModeColor#%{StatusLineMode()}
+set statusline+=\ %#StatusLineBranchColor#%{StatusLineBranch()}
+set statusline+=%#StatusLineFileColor#%f\ %#StatusLineLockedColor#%{StatusLineReadOnly()}%m
+set statusline+=%=%#StatusLineFileColor#%{WebDevIconsGetFileFormatSymbol()}%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=\ %#StatusLinePositionColor#[%l/%L\ (%P)\ :\ %c]
 
 
 " --- Vim Config End ---
