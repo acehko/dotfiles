@@ -231,7 +231,13 @@ endfunction
 
 function! StatusLineBranch()
     let b = fugitive#head()
-    hi StatusLineBranchColor ctermfg=107 ctermbg=233
+    let s = system('command git status --porcelain 2> /dev/null | tail -n1')
+
+	if strlen(s) > 0
+		hi StatusLineBranchColor ctermfg=215 ctermbg=233
+	else
+		hi StatusLineBranchColor ctermfg=107 ctermbg=233
+	endif
 
     if b == ''
         return ' '
@@ -265,7 +271,7 @@ set noshowmode
 set laststatus=2
 set statusline=%#StatusLineModeColor#%{StatusLineMode()}
 set statusline+=\ %#StatusLineBranchColor#%{StatusLineBranch()}
-set statusline+=%#StatusLineFileColor#%f\ %#StatusLineLockedColor#%{StatusLineReadOnly()}%m
+set statusline+=%#StatusLineFileColor#%f\ %#StatusLineLockedColor#%{StatusLineReadOnly()}
 set statusline+=%=%#StatusLineFileColor#%{WebDevIconsGetFileFormatSymbol()}%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
 set statusline+=\ %#StatusLinePositionColor#[%l/%L\ (%P)\ :\ %c]
 
