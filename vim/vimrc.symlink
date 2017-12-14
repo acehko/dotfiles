@@ -270,6 +270,41 @@ set statusline+=%=%#StatusLineFileColor#%{WebDevIconsGetFileFormatSymbol()}%{&fi
 set statusline+=\ %#StatusLinePositionColor#[%l/%L\ (%P)\ :\ %c]
 
 
+" Tabline
+hi TabLineFill ctermfg=LightGreen ctermbg=233
+hi TabLine ctermfg=59 ctermbg=233
+hi TabLineSel ctermfg=110 ctermbg=233
+hi Title ctermfg=59 ctermbg=233
+
+function! Tabline()
+  let t = ''
+  for i in range(tabpagenr('$'))
+
+    let tabnr = i + 1
+    let winnr = tabpagewinnr(tabnr)
+    let buflist = tabpagebuflist(tabnr)
+    let bufnr = buflist[winnr - 1]
+    let bufname = fnamemodify(bufname(bufnr), ':t')
+
+    let t .= '%' . tabnr . 'T'
+    let t .= (tabnr == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
+    let t .= ' [' . tabnr . ':'
+
+    let n = tabpagewinnr(tabnr,'$')
+    if n > 1 | let t .= ':' . n | endif
+
+    let t .= empty(bufname) ? ' No Name' : ' ' . bufname
+    let t .= ']'
+
+    let bufmodified = getbufvar(bufnr, "&mod")
+    if bufmodified | let t .= '+ ' | endif
+  endfor
+  let t .= '%#TabLineFill#'
+  return t
+endfunction
+set tabline=%!Tabline()
+
+
 " --- Vim Config End ---
 
 
