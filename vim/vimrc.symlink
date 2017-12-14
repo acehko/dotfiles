@@ -391,14 +391,6 @@ let g:multi_cursor_exit_from_visual_mode = 0
 let g:multi_cursor_exit_from_insert_mode = 0
 
 
-" Airline
-set laststatus=2                                 " Always show the status line
-let g:airline#extensions#tabline#enabled  = 1    " Always show all buffers
-let g:airline#extensions#tabline#fnamemod = ':t' " Show only filename in buffers
-let g:airline_powerline_fonts             = 1    " Use powerline font
-let g:airline_skip_empty_sections         = 1    " Don't display empty sections
-
-
 " NERDTree
 " Bind NERDTree to CTRL + B
 map <C-b> :NERDTreeTabsToggle<CR>
