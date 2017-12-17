@@ -1,5 +1,7 @@
+#!/usr/bin/env zsh
+
 export DOTFILES=$HOME/dotfiles
-export KEYTIMEOUT=1 # Remove delay on ESC
+export KEYTIMEOUT=1
 
 export VISUAL=vim
 export EDITOR=$VISUAL

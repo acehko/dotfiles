@@ -1,5 +1,12 @@
-# Load all configuration files
-for config ($DOTFILES/zsh/**/*.zsh) source $config
+#!/usr/bin/env zsh
 
-# Run startup script
-source $DOTFILES/zsh/startup.sh
+# Load plugins
+. $DOTFILES/zsh/plugins/plugins.zsh
+
+# Load configs
+for config ($DOTFILES/zsh/*.zsh) . $config
+
+# If not running in tmux, display neofetch
+if [[ ! -n $TMUX ]]; then
+    neofetch
+fi

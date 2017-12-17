@@ -1,34 +1,26 @@
-# Filesystem
-alias ls="ls --color=auto"
-alias ll="ls -l"
-alias la="ls -la"
+#!/usr/bin/env zsh
 
-# Sudo
-alias sz="sudo -E zsh"
+# Aliases
 
-# Clear
-alias c="clear"
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -la'
 
-# Exit
-alias e="exit"
+alias sz='sudo -E zsh'
 
-# Grep
-alias grep="grep --color=auto"
+alias c='clear'
+alias e='exit'
 
-# Tmux
-alias ta="tmux new-session -A -s"
-alias t="ta main"
+alias grep='grep --color=auto'
 
-# Neovim
-alias vim="nvim"
+alias ta='tmux new-session -A -s'
+alias t='ta main'
 
-# Minikube
-alias m="minikube"
+alias vim='nvim'
 
-# Kubernetes
-alias k="kubectl"
+alias m='minikube'
+alias k='kubectl'
 
-# Docker
-alias d="docker"
-alias dc="docker-compose"
-alias dm="docker-machine"
+alias d='docker'
+alias dc='docker-compose'
+alias dm='docker-machine'
