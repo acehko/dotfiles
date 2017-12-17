@@ -84,6 +84,6 @@ right_prompt() {
         return $(( 128 + $1 ))
     }
 
-    RPROMPT='%F{$color_path}%~%f$vim_mode'
+    RPROMPT="%F{$color_path}%~%f$vim_mode"
 
 }
