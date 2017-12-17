@@ -3,11 +3,13 @@
 # Plugins
 source $HOME/.zsh/antigen/antigen.zsh
 
-antigen bundle hlissner/zsh-autopair
-antigen bundle tarrasch/zsh-bd
-antigen bundle zuxfoucault/colored-man-pages_mod
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundles <<EOF
+    hlissner/zsh-autopair
+    tarrasch/zsh-bd
+    zuxfoucault/colored-man-pages_mod
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+EOF
 
 antigen apply
 
