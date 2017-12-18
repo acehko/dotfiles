@@ -20,6 +20,7 @@ alias vim='nvim'
 
 alias m='minikube'
 alias k='kubectl'
+alias ks='kubectl config use-context'
 
 alias d='docker'
 alias dc='docker-compose'
