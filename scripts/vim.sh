@@ -24,7 +24,7 @@ else
         mkdir -p $HOME/.config/nvim
     fi
 
-    ln -s $DOTFILES/vim/nvim.vim $HOME/.config/nvim/init.vim
+    ln -s $DOTFILES/vim/init.vim $HOME/.config/nvim/init.vim
     echo -en "\n"
 
 fi

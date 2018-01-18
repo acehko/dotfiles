@@ -1,35 +1,33 @@
-" --- Vim-Plug Start ---
-
+" --- Plugins Start ---
 call plug#begin('~/.vim/plugged')
 
-
-" Plugins
-
 " General
-Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'nanotech/jellybeans.vim'
-Plug 'neomake/neomake'
-Plug 'roxma/nvim-completion-manager'
-Plug 'jiangmiao/auto-pairs'
-Plug 'AndrewRadev/splitjoin.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'sbdchd/neoformat'
-Plug 'scrooloose/nerdcommenter'
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-Plug 'shime/vim-livedown'
-Plug 'cespare/vim-toml'
+Plug 'andrewradev/splitjoin.vim'
 Plug 'bazelbuild/vim-ft-bzl'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes'
+Plug 'cespare/vim-toml'
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'nanotech/jellybeans.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neomake/neomake'
 Plug 'majutsushi/tagbar'
 Plug 'martinda/Jenkinsfile-vim-syntax'
+Plug 'sbdchd/neoformat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'shime/vim-livedown', { 'for': 'markdown' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes', { 'do': 'mkdir -p $HOME/.vim/notes' }
+Plug 'yggdroot/indentline'
+Plug 'sirver/ultisnips'
+Plug 'roxma/nvim-completion-manager'
+Plug 'easymotion/vim-easymotion'
+Plug 'dominikduda/vim_current_word'
+Plug 'haya14busa/incsearch.vim'
 
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
@@ -37,7 +35,6 @@ Plug 'junegunn/fzf.vim'
 
 " NERDTree
 Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
 Plug 'robinfehr/nerdtree-git-plugin'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'ryanoasis/vim-devicons'
@@ -46,27 +43,21 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " TypeScript
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-Plug 'Shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
-Plug 'Quramy/tsuquyomi',            { 'for': 'typescript' }
 Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
+Plug 'quramy/tsuquyomi',            { 'for': 'typescript' }
+Plug 'shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
 
-" Golang
+" Go
 Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 
-" Vimscript
-Plug 'Shougo/neco-vim'
-
+" Vim
+Plug 'shougo/neco-vim'
 
 call plug#end()
+" --- Plugins End ---
 
-" --- Vim-Plug End ---
-
-
-
-" --- Vim Config Start ---
-
-" General
+" --- General Start ---
 set encoding=utf8  " UTF-8 FTW
 set nocompatible   " Not compatible with Vi
 set autoread       " Detect when a file has changed
@@ -75,12 +66,8 @@ set ttimeoutlen=50 " Remove delay on ESC
 set exrc           " Allow per-project configuration files
 set secure         " Don't load other people's per-project configs
 set ic             " Case-insensitive search
-let mapleader=','  " map <Leader> to ","
-
-" UI
-syntax enable      " Enable syntax highlighting
-silent! colorscheme jellybeans
-
+set incsearch      " Incremental search
+let mapleader=','  " map <Leader> to ','
 set number         " Line numbers
 set relativenumber " Relative line numbers
 set wrap           " Word wrap
@@ -89,11 +76,57 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
-set guicursor=     " Don't change the cursor
-set updatetime=250 " Faster update time
+set updatetime=50  " Faster update time
 
+syntax enable      " Enable syntax highlighting
+silent! colorscheme jellybeans
 
-" Tabs and spaces
+hi CurrentWord cterm=underline
+let g:vim_current_word#highlight_current_word = 1
+
+" Custom filetypes
+augroup CustomFileTypes
+    autocmd!
+    autocmd BufRead,BufNewFile .yamllint set filetype=yaml
+augroup end
+
+" hi SameWord cterm=underline
+" augroup SameWord
+    " autocmd!
+    " autocmd! CursorMoved * exe printf('match SameWord /\V\<%s\>/', escape(expand('<cword>'), '/\'))
+" augroup end
+
+" hi Search ctermfg=233 ctermbg=231
+" hi IncSearch ctermfg=233 ctermbg=231
+
+" --- General End ---
+
+" --- Window Start ---
+" Window creation
+map <C-w>h :vnew<CR>
+map <C-w>j :below new<CR>
+map <C-w>k :new<CR>
+map <C-w>l :rightb vnew<CR>
+
+" Close a window
+map <C-w>x :q<CR>
+
+" Window movement
+map <C-h> :wincmd h<CR>
+map <C-j> :wincmd j<CR>
+map <C-k> :wincmd k<CR>
+map <C-l> :wincmd l<CR>
+
+" Tab management
+map <C-w>c :tabe<CR>
+map <C-w>n :tabn<CR>
+map <C-w>p :tabp<CR>
+
+" Switching between most recent buffers
+nnoremap <Leader>, :b#<CR>
+" --- Window End ---
+
+" --- Indentation Start ---
 set expandtab
 set autoindent
 set smartindent
@@ -103,9 +136,9 @@ set listchars=tab:\ " Show tab guides
 
 augroup Indentation
     autocmd!
-    autocmd FileType * call FourSpaceIndent()
-    autocmd FileType yaml,toml call TwoSpaceIndent()
-    autocmd FileType notes call NoIndentGuides()
+    autocmd FileType *         call FourSpaceIndent()
+    autocmd FileType yaml,toml,javascript call TwoSpaceIndent()
+    autocmd FileType notes     call NoIndentGuides()
 augroup end
 
 function! FourSpaceIndent()
@@ -130,49 +163,9 @@ function! NoIndentGuides()
     silent! :IndentLinesDisable
     silent! :IndentGuidesDisable
 endfunction
+" --- Indentation End ---
 
-
-" Folding
-set foldlevelstart=20
-set viewoptions-=options
-
-nnoremap <space> za
-vnoremap <space> zf
-
-augroup Folding
-    autocmd!
-    autocmd FileType    * setlocal foldmethod=syntax
-    autocmd BufWinLeave * silent! mkview
-    autocmd BufWinEnter * silent! loadview
-augroup end
-
-
-" Window management
-
-" Window creation
-map <C-w>h :vnew<CR>
-map <C-w>j :below new<CR>
-map <C-w>k :new<CR>
-map <C-w>l :rightb vnew<CR>
-
-" Close a window
-map <C-w>x :q<CR>
-
-" Window movement
-map <C-h> :wincmd h<CR>
-map <C-j> :wincmd j<CR>
-map <C-k> :wincmd k<CR>
-map <C-l> :wincmd l<CR>
-
-" Tab management
-map <C-w>c :tabe<CR>
-map <C-w>n :tabn<CR>
-map <C-w>p :tabp<CR>
-
-" Switching between most recent buffers
-nnoremap <Leader>, :b#<CR>
-
-
+" --- Whitespace Start ---
 " Trim trailing whitespace and empty lines at the end of file
 function! TrimWhitespace()
 
@@ -196,21 +189,32 @@ augroup TrimWhitespace
     autocmd!
     autocmd BufWritePre * :call TrimWhitespace()
 augroup end
+" --- Whitespace End ---
 
+" --- Folds Start ---
+set foldlevelstart=20
+set viewoptions-=options
 
-" Custom filetypes
-augroup CustomFileTypes
+nnoremap <space> za
+vnoremap <space> zf
+
+augroup Folding
     autocmd!
-    autocmd BufRead,BufNewFile .yamllint set filetype=yaml
+    autocmd FileType    * setlocal foldmethod=syntax
+    autocmd BufWinLeave * silent! mkview
+    autocmd BufWinEnter * silent! loadview
 augroup end
+" --- Folds End ---
 
+" --- Statusline Start ---
+hi StatusLine         ctermfg=231 ctermbg=233
+hi StatusLineMode     ctermfg=110 ctermbg=233
+hi StatusLineFile     ctermfg=59  ctermbg=233
+hi StatusLineFileType ctermfg=59  ctermbg=233
+hi StatusLineLocked   ctermfg=167 ctermbg=233
+hi StatusLinePosition ctermfg=110 ctermbg=233
 
-" Statusline
-hi StatusLine              ctermfg=231 ctermbg=233
-hi StatusLineFileColor     ctermfg=59  ctermbg=233
-hi StatusLineLockedColor   ctermfg=167 ctermbg=233
-hi StatusLinePositionColor ctermfg=110 ctermbg=233
-
+" Mode titles
 let g:modes={
     \ 'n'  : 'NORMAL',
     \ 'v'  : 'VISUAL',
@@ -220,6 +224,7 @@ let g:modes={
     \ 't'  : 'TERMINAL'
 \}
 
+" Returns the mode text
 function! StatusLineMode()
     let m = mode()
     call StatusLineChangeColor(m)
@@ -229,58 +234,74 @@ function! StatusLineMode()
     return '['.m.']'
 endfunction
 
+function! Strip(str)
+    return substitute(a:str, '^\s*\(.\{-}\)\s*$', '\1', '')
+endfunction
+
+" Returns the current git branch
 function! StatusLineBranch()
-    let b = fugitive#head()
-    let s = system('command git status --porcelain 2> /dev/null | tail -n1')
+    if !exists('g:git_branch')
+        let branch = system("git branch 2> /dev/null | grep '^*' | sed 's/^* //'")
+        let g:git_branch = substitute(branch, '\n\+$', '', '')
+        let g:git_status = system('command git status --porcelain 2> /dev/null | tail -n1')
+    endif
 
-	if strlen(s) > 0
-		hi StatusLineBranchColor ctermfg=215 ctermbg=233
-	else
-		hi StatusLineBranchColor ctermfg=107 ctermbg=233
-	endif
-
-    if b == ''
-        return ' '
+    if strlen(g:git_status) > 0
+        hi StatusLineBranch ctermfg=215 ctermbg=233
     else
-        return ''.b.' '
+        hi StatusLineBranch ctermfg=107 ctermbg=233
+    endif
+
+    if g:git_branch == ''
+        return ''
+    else
+        return ''.g:git_branch.' '
     endif
 endfunction
 
+" Changes status line mode color based on the current mode
 function! StatusLineChangeColor(mode)
     if a:mode == 'n'
-        hi StatusLineModeColor ctermfg=110 ctermbg=233
+        hi StatusLineMode ctermfg=110
     elseif a:mode == 'i'
-        hi StatusLineModeColor ctermfg=107 ctermbg=233
+        hi StatusLineMode ctermfg=107
     elseif a:mode == 'v' || a:mode == 'V' || a:mode == ''
-        hi StatusLineModeColor ctermfg=167 ctermbg=233
+        hi StatusLineMode ctermfg=167
     elseif a:mode == 't'
-        hi StatusLineModeColor ctermfg=215 ctermbg=233
+        hi StatusLineMode ctermfg=215
     else
-        hi StatusLineModeColor ctermfg=110 ctermbg=233
+        hi StatusLineMode ctermfg=110
     endif
 endfunction
 
-function! StatusLineReadOnly()
+" Updates file name color if modified
+" and returns a lock icon if read only
+function! StatusLineFile()
+    if &modified
+        hi StatusLineFile ctermfg=215
+    else
+        hi StatusLineFile ctermfg=59
+    endif
+
     if &readonly || !&modifiable
-        return ''
+        return '🔒'
     endif
     return ''
 endfunction
 
 set noshowmode
 set laststatus=2
-set statusline=%#StatusLineModeColor#%{StatusLineMode()}
-set statusline+=\ %#StatusLineBranchColor#%{StatusLineBranch()}
-set statusline+=%#StatusLineFileColor#%f\ %#StatusLineLockedColor#%{StatusLineReadOnly()}
-set statusline+=%=%#StatusLineFileColor#%{WebDevIconsGetFileFormatSymbol()}%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
-set statusline+=\ %#StatusLinePositionColor#[%l/%L\ (%P)\ :\ %c]
+set statusline=%#StatusLineMode#%{StatusLineMode()}
+set statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
+set statusline+=%#StatusLineFileType#»%#StatusLineFile#\ %f\ %#StatusLineLocked#%{StatusLineFile()}
+set statusline+=%=%#StatusLineFileType#%{WebDevIconsGetFileTypeSymbol()}%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=\ %#StatusLineMode#[%l/%L\ \ %c]
+" --- Statusline End ---
 
-
-" Tabline
-hi TabLineFill ctermfg=LightGreen ctermbg=233
-hi TabLine ctermfg=59 ctermbg=233
-hi TabLineSel ctermfg=110 ctermbg=233
-hi Title ctermfg=59 ctermbg=233
+" --- Tabline Start ---
+hi TabLine    ctermfg=59 ctermbg=233
+hi TabLineSel cterm=NONE ctermfg=110 ctermbg=233
+hi Title      ctermfg=59 ctermbg=233
 
 function! Tabline()
   let t = ''
@@ -293,14 +314,11 @@ function! Tabline()
     let bufname = fnamemodify(bufname(bufnr), ':t')
 
     let t .= '%' . tabnr . 'T'
-    let t .= (tabnr == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-    let t .= ' [' . tabnr . ':'
-
-    let n = tabpagewinnr(tabnr,'$')
-    if n > 1 | let t .= ':' . n | endif
+    let t .= (tabnr == tabpagenr() ? '%#TabLineSel# [' : '%#TabLine#  ')
+    let t .= tabnr . ':'
 
     let t .= empty(bufname) ? ' No Name' : ' ' . bufname
-    let t .= ']'
+    let t .= (tabnr == tabpagenr() ? ']' : ' ')
 
     let bufmodified = getbufvar(bufnr, "&mod")
     if bufmodified | let t .= '+ ' | endif
@@ -308,86 +326,57 @@ function! Tabline()
   let t .= '%#TabLineFill#'
   return t
 endfunction
+
 set tabline=%!Tabline()
+" --- Tabline End ---
 
+" --- Plugins Config Start ---
+" --- Auto Pairs Start ---
+let g:AutoPairsMapCR              = 0       " Don't autoatically remap <CR>
+let g:AutoPairsCenterLine         = 0       " Don't change scroll position
+let g:AutoPairsShortcutBackInsert = '<M-e>' " Bind ALT + E to jump back and insert closed pair
+" --- Auto Pairs End ---
 
-" --- Vim Config End ---
+" --- DevIcons Start ---
+let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after the icon
+let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
+let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
+let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Directory icon
+let g:DevIconsEnableFolderPatternMatching                = 0    " Disable custom icons on folders
+" --- DevIcons End ---
 
-
-
-" --- Plugin Config Start ---
-
-
-" EasyMotion
+" --- EasyMotion Start ---
 " Map prefix to <Leader> instead of <Leader><Leader>
 map <Leader> <Plug>(easymotion-prefix)
+" --- EasyMotion End ---
 
+" --- FZF Start ---
+" Close Tagbar, NERDTree and open FZF
+function! OpenFZF()
+    TagbarClose
+    NERDTreeClose
+    FZF
+endfunction
 
-" Neomake
-" Run on read and save
-augroup Neomake
-    autocmd!
-    autocmd BufWinEnter,BufWritePost * silent! Neomake
-augroup end
-
-" Custom colors
-:highlight NeomakeWarning ctermfg=215 ctermbg=233
-:highlight NeomakeError ctermfg=160 ctermbg=233
-
-" Custom symbols
-let g:neomake_warning_sign={'text': '', 'texthl': 'NeomakeWarning'}
-let g:neomake_error_sign={'text': '✘', 'texthl': 'NeomakeError'}
-
-" Open quickfix window
-let g:neomake_open_list = 2
-
-" Close quickfix window when file is closed
-augroup NeomakeQuickfixClose
-    autocmd!
-    autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<cr>:lclose<cr>
-    autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
-augroup end
-
-
-" nvim-completion-manager
-" Hide completion messages
-set shortmess+=c
-
-" Insert new line when pressing Enter
-inoremap <expr> <CR> (pumvisible() ? "\<c-y>\<cr>" : "\<CR>")
+" Bind OpenFZF to CTRL + P
+nnoremap <C-p> :call OpenFZF()<CR>
 
 " Enable fuzzy matching
 let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher', 'case': 'smartcase'}
+" --- FZF End ---
 
-" Cycle with Tab and Shift + Tab
-inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
-inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
-
-
-" auto-pairs
-let g:AutoPairsCenterLine         = 0
-let g:AutoPairsShortcutBackInsert = '<M-e>'
-
-
-" vim-gutter
-" Custom symbols
-let g:gitgutter_sign_added              = '┃'
-let g:gitgutter_sign_modified           = '┃'
-let g:gitgutter_sign_removed            = '┃'
-let g:gitgutter_sign_removed_first_line = '┃'
-let g:gitgutter_sign_modified_removed   = '┃'
-
-
-" IndentLine
+" --- IndentLine Start ---
 let g:indentLine_char                 = ''
 let g:indentLine_first_char           = ''
 let g:indentLine_showFirstIndentLevel = 1
+" --- IndentLine End ---
 
-
-" Neoformat
+" --- Neoformat Start ---
 " Enabled formatters
 let g:neoformat_enabled_go       = ['goimports']
-let g:neoformat_enabled_js       = ['js-beautify']
+let g:neoformat_enabled_javascript = ['eslint_d']
+let g:neoformat_enabled_json     = ['jsbeautify']
+let g:neoformat_enabled_typescript = ['jsbeautify']
 let g:neoformat_enabled_python   = ['autopep8']
 let g:neoformat_enabled_bzl      = ['buildifier']
 let g:neoformat_enabled_markdown = ['remark']
@@ -395,51 +384,62 @@ let g:neoformat_enabled_php      = ['phpcsfixer']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
+" let g:neoformat_verbose = 1
 
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.go,*.js,*.py,*md,*.bzl,*.bazel,WORKSPACE,*.php silent! undojoin | Neoformat
+    autocmd BufWritePre *.go,*.js,*.html,*.css,*.json,*.py,*md,*.bzl,*.bazel,BUILD.*,WORKSPACE,*.php silent! undojoin | Neoformat
 augroup end
+" --- Neoformat End ---
+
+" --- Neomake Start ---
+" Run on read and save
+" augroup Neomake
+    " autocmd!
+    " autocmd BufWinEnter,BufWritePost * silent! Neomake
+" augroup end
+call neomake#configure#automake('rw', 50)
+
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 
-" NERD Commenter
-" Add space after comment delimiters
-let g:NERDSpaceDelims = 1
+" Custom colors
+hi NeomakeWarning ctermfg=215 ctermbg=233
+hi NeomakeError   ctermfg=160 ctermbg=233
+
+" Custom symbols
+let g:neomake_warning_sign = {'text': '', 'texthl': 'NeomakeWarning'}
+let g:neomake_error_sign   = {'text': '✘', 'texthl': 'NeomakeError'}
+
+" Open quickfix window
+let g:neomake_open_list = 2
+
+" Close quickfix window when file is closed
+augroup NeomakeQuickfixClose
+    autocmd!
+    autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<CR>:lclose<CR>
+    autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
+augroup end
+" --- Neomake End ---
+
+" --- NERDCommenter Start ---
+let g:NERDSpaceDelims       = 1 " Add space after comment delimiters
+let g:NERDCommentEmptyLines = 1 " Comment empty lines
 
 " Align left instead of following code indentation
 let g:NERDDefaultAlign = 'left'
 
 " Bind to CTRL + /
-map <C-_> <Leader>c<Space>
+map <C-_> <Plug>NERDCommenterInvert
+" --- NERDCommenter End ---
 
+" --- NERDTree Start ---
+hi Directory ctermfg=110
 
-" vim-json
-" Fix IndentLine conflict
-let g:vim_json_syntax_conceal = 0
-
-
-" vim-multiple-cursors
-" Custom key bindings
-let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_next_key            = '<C-n>'
-let g:multi_cursor_prev_key            = '<C-m>'
-let g:multi_cursor_skip_key            = '<C-x>'
-let g:multi_cursor_quit_key            = '<Esc>'
-
-" Pressing <Esc> does not quit multi cursor mode when in visual or insert mode
-let g:multi_cursor_exit_from_visual_mode = 0
-let g:multi_cursor_exit_from_insert_mode = 0
-
-
-" NERDTree
 " Bind NERDTree to CTRL + B
-map <C-b> :NERDTreeTabsToggle<CR>
+map <C-b> :NERDTreeToggle<CR>
 
-" Custom directory color
-hi Directory ctermfg = 110
-
-let g:nerdtree_tabs_open_on_console_startup = 2         " Open NERDTree if a directory was opened
 let g:NERDTreeMapActivateNode               = '<Space>' " Open / close directorties and files with space
 let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
 let g:NERDTreeDirArrowExpandable            = ""       " Custom collapsed icon
@@ -448,27 +448,44 @@ let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
 let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
 let g:NERDTreeMinimalUI                     = 1         " Hide help text
 
+augroup NERDTreeOpenOnDir
+    autocmd!
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * | if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+augroup end
+" --- NERDTree End ---
 
-" DevIcons
-let g:webdevicons_enable_airline_statusline              = 1    " Enabled on airline
-let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after the icon
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
-let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Change folder icon
-let g:DevIconsEnableFolderPatternMatching                = 0    " Disable custom icons on folders
+" --- nvim-completion-manager Start ---
+" Hide completion messages
+set shortmess+=c
 
-" Custom file extension icons
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols        = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExtensionSymbols['swp'] = ''
+" Expand ultisnips command with CTRL + U
+inoremap <silent> <C-u> <C-r>=cm#sources#ultisnips#trigger_or_popup("\<Plug>(ultisnips_expand)")<CR>
 
-" Custom exact match files
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols               = {}
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.npmignore'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.gitignore'] = ''
-let g:WebDevIconsUnicodeDecorateFileNodesExactSymbols['.vimrc']     = ''
+" Expand ultisnips command on enter, or insert a new line instead
+imap <expr> <silent> <CR>  (pumvisible() ?  "\<c-y>\<Plug>(expand_or_nl)" : "\<CR>\<C-R>=AutoPairsReturn()\<CR>")
+imap <expr> <Plug>(expand_or_nl) (cm#completed_is_snippet() ? "\<C-U>":"\<CR>")
 
+" Cycle with Tab and Shift + Tab
+inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+inoremap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
-" Tsuquyomi
+" Custom completion menu colors
+hi Pmenu    ctermfg=231 ctermbg=235
+hi PmenuSel ctermfg=232 ctermbg=110
+" --- nvim-completion-menu End ---
+
+" --- Tagbar Start ---
+" Toggle on CTRL + G
+nnoremap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
+
+" Jump between tags with CTRL + J and CTRL + K
+let g:tagbar_map_nexttag    = '<C-j>'
+let g:tagbar_map_prevtag    = '<C-k>'
+let g:tagbar_map_togglefold = '<Space>'
+" --- Tagbar End ---
+
+" --- Tsuquyomi Start ---
 " Disable quickfix window, Neomake will handle checks
 let g:tsuquyomi_disable_quickfix = 1
 
@@ -477,9 +494,29 @@ augroup TypescriptRename
     autocmd!
     autocmd FileType typescript nmap <buffer> <F2> <Plug>(TsuquyomiRenameSymbol)
 augroup end
+" --- Tsuquyomi End ---
 
+" --- UltiSnips Start ---
+let g:UltiSnipsJumpForwardTrigger  = '<M-M>'                    " Bind CTRL + Enter to jump to the next tabstop
+let g:UltiSnipsJumpBackwardTrigger = '<M-CR>'                   " Bind ALT + Enter to jumo to the previous tabstop
+let g:UltiSnipsEditSplit           = 'vertical'                 " Open a vertical split when running :UltiSnipsEditSplit
+let g:UltiSnipsExpandTrigger       = '<Plug>(ultisnips_expand)' " Trigger keybinding
 
-" vim-go
+" Snippets directory
+let g:UltiSnipsSnippetDir         = '/home/andrija/.vim/ultisnips'
+let g:UltiSnipsSnippetDirectories = ['/home/andrija/.vim/ultisnips']
+" --- UltiSnips End ---
+
+" --- vim-gitgutter Start ---
+" Custom symbols
+let g:gitgutter_sign_added              = '┃'
+let g:gitgutter_sign_modified           = '┃'
+let g:gitgutter_sign_removed            = '┃'
+let g:gitgutter_sign_removed_first_line = '┃'
+let g:gitgutter_sign_modified_removed   = '┃'
+" --- vim-gitgutter End ---
+
+" --- vim-go Start ---
 let g:go_auto_type_info      = 0           " Don't run GoInfo automatically
 let g:go_fmt_autosave        = 0           " Disable gofmt
 let g:go_highlight_methods   = 1           " Highlight methods
@@ -491,29 +528,34 @@ augroup GoRename
     autocmd!
     autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 augroup end
+" --- vim-go End ---
 
+" --- vim-json Start ---
+" Fix IndentLine conflict
+let g:vim_json_syntax_conceal = 0
+" --- vim-json End ---
 
-" fzf
-" Close Tagbar, NERDTree and open fzf
-function! OpenFZF()
-    TagbarClose
-    NERDTreeClose
-    FZF
-endfunction
-nnoremap <C-p> :call OpenFZF()<CR>
+" --- vim-multiple-cursors Start ---
+" Custom key bindings
+let g:multi_cursor_use_default_mapping = 0
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-m>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
+" Pressing <Esc> does not quit multi cursor mode when in visual or insert mode
+let g:multi_cursor_exit_from_visual_mode = 0
+let g:multi_cursor_exit_from_insert_mode = 0
+" --- vim-multiple-cursors End ---
 
-" vim-notes
-let g:notes_directories = ['~/Documents/Notes']
+" --- vim-notes Start ---
+" Notes directory
+let g:notes_directories = ['$HOME/.vim/notes']
+" --- vim-notes End ---
 
-
-" tagbar
-" Toggle on CTRL + G
-nnoremap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
-" Jump between tags with 'n' and 'p'
-let g:tagbar_map_nexttag    = '<C-j>'
-let g:tagbar_map_prevtag    = '<C-k>'
-let g:tagbar_map_togglefold = '<Space>'
-
-
-" --- Plugin Config End ---
+" --- incsearch Start ---
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" --- incsearch End ---
+" --- Plugins Config End ---

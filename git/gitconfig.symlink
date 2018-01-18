@@ -45,3 +45,6 @@
 
     # Log
     l = log --oneline
+
+    # Restore
+    restore = checkout --
