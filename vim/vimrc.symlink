@@ -5,6 +5,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'acehko/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewradev/splitjoin.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+
 Plug 'bazelbuild/vim-ft-bzl'
 Plug 'cespare/vim-toml'
 Plug 'elzr/vim-json', { 'for': 'json' }
@@ -32,12 +34,6 @@ Plug 'haya14busa/incsearch.vim'
 " Fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
-
-" NERDTree
-Plug 'scrooloose/nerdtree'
-Plug 'robinfehr/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'ryanoasis/vim-devicons'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -301,7 +297,7 @@ set laststatus=2
 set statusline=%#StatusLineMode#%{StatusLineMode()}
 set statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
 set statusline+=%#StatusLineFileType#»%#StatusLineFile#\ %f\ %#StatusLineLocked#%{StatusLineFile()}
-set statusline+=%=%#StatusLineFileType#%{WebDevIconsGetFileTypeSymbol()}%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=%=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
 set statusline+=\ %#StatusLineMode#[%l/%L\ \ %c]
 " --- Statusline End ---
 
@@ -383,19 +379,24 @@ hi GitGutterDelete ctermfg=167 ctermbg=NONE
 hi link GitGutterChangeDelete GitGutterChange
 " --- vim-gitgutter End ---
 
+" --- NERDTree Start ---
+hi Directory ctermfg=110
+
+" Bind NERDTree to CTRL + B
+map <C-b> :NERDTreeToggle<CR>
+
+let g:NERDTreeMapActivateNode     = '<Space>' " Open / close directorties and files with space
+let g:NERDTreeQuitOnOpen          = 1         " Close NERDTree when opening a file
+let g:NERDTreeDirArrowExpandable  = ""       " Custom collapsed icon
+let g:NERDTreeDirArrowCollapsible = ""       " Custom expanded icon
+let g:NERDTreeMinimalUI           = 1         " Hide help text
+" --- NERDTree End ---
+
 " --- Auto Pairs Start ---
 let g:AutoPairsMapCR              = 0       " Don't autoatically remap <CR>
 let g:AutoPairsCenterLine         = 0       " Don't change scroll position
 let g:AutoPairsShortcutBackInsert = '<M-e>' " Bind ALT + E to jump back and insert closed pair
 " --- Auto Pairs End ---
-
-" --- DevIcons Start ---
-let g:WebDevIconsNerdTreeAfterGlyphPadding               = ''   " Padding after the icon
-let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
-let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
-let g:WebDevIconsUnicodeDecorateFolderNodesDefaultSymbol = ' ' " Directory icon
-let g:DevIconsEnableFolderPatternMatching                = 0    " Disable custom icons on folders
-" --- DevIcons End ---
 
 " --- EasyMotion Start ---
 " Map prefix to <Leader> instead of <Leader><Leader>
@@ -406,7 +407,9 @@ map <Leader> <Plug>(easymotion-prefix)
 " Close Tagbar, NERDTree and open FZF
 function! OpenFZF()
     TagbarClose
-    NERDTreeClose
+    if exists(':NERDTreeClose')
+        NERDTreeClose
+    endif
     FZF
 endfunction
 
@@ -455,27 +458,6 @@ let g:NERDDefaultAlign = 'left'
 " Bind to CTRL + /
 map <C-_> <Plug>NERDCommenterInvert
 " --- NERDCommenter End ---
-
-" --- NERDTree Start ---
-hi Directory ctermfg=110
-
-" Bind NERDTree to CTRL + B
-map <C-b> :NERDTreeToggle<CR>
-
-let g:NERDTreeMapActivateNode               = '<Space>' " Open / close directorties and files with space
-let g:NERDTreeQuitOnOpen                    = 1         " Close NERDTree when opening a file
-let g:NERDTreeDirArrowExpandable            = ""       " Custom collapsed icon
-let g:NERDTreeDirArrowCollapsible           = ""       " Custom expanded icon
-let g:NERDTreeGitStatusWithFlags            = 0         " Disable status flags
-let g:NERDTreeGitStatusNodeColorization     = 1         " Enable status colors
-let g:NERDTreeMinimalUI                     = 1         " Hide help text
-
-augroup NERDTreeOpenOnDir
-    autocmd!
-    autocmd StdinReadPre * let s:std_in=1
-    autocmd VimEnter * | if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-augroup end
-" --- NERDTree End ---
 
 " --- nvim-completion-manager Start ---
 " Hide completion messages
