@@ -2,7 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'w0rp/ale'
+Plug 'acehko/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'bazelbuild/vim-ft-bzl'
@@ -395,7 +395,7 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.html,*.css,*.json,*.py,*md,*.bzl,*.bazel,BUILD.*,WORKSPACE,*.php silent! undojoin | Neoformat
+    autocmd BufWritePre *.html,*.css,*.json,*.py,*md,*.php silent! undojoin | Neoformat
 augroup end
 " --- Neoformat End ---
 
@@ -421,6 +421,7 @@ let g:ale_linters = {
 
 " Enabled fixers
 let g:ale_fixers = {
+\   'bzl': ['buildifier'],
 \   'javascript': ['eslint'],
 \   'go': ['goimports']
 \}
