@@ -4,9 +4,7 @@
 # Install node modules
 echo -e "\nInstalling node modules..."
 sudo npm i -g \
-    jshint \
-    js-beautify \
+    eslint \
     livedown \
-    remark-cli \
     typescript \
-    typescript-formatter
+    yarn
