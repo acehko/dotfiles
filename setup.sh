@@ -12,45 +12,18 @@ _  __  /_  __ \  __/_  /_ __  /__  /_  _ \_  ___/
 \__,_/  \____/\__/ /_/    /_/  /_/  \___//____/
 "
 
-
-# Load OS name
-source /etc/os-release
-OS=$NAME
-
-echo -e "\nOS: $OS"
-
-
-# Install os-specific packages
-if [ "$OS" == "Ubuntu" ]; then
-    source $DOTFILES/scripts/ubuntu.sh
-elif [ "$OS" == "Arch Linux" ]; then
-    source $DOTFILES/scripts/arch.sh
-else
-    echo "No package install script for $OS. Skipping..."
-fi
-
-
-# Install node modules
+# Install packages
+source $DOTFILES/scripts/pacman.sh
 source $DOTFILES/scripts/npm.sh
-
-# Install go packages
 source $DOTFILES/scripts/go.sh
-
-# Install python packages
 source $DOTFILES/scripts/pip.sh
-
-# Install php packages
 source $DOTFILES/scripts/composer.sh
 
-# Link neofetch config
+# Link and setup configs
 source $DOTFILES/scripts/neofetch.sh
-
-
-# Link dotfiles and install vim and zsh plugins
 source $DOTFILES/scripts/links.sh
 source $DOTFILES/scripts/vim.sh
 source $DOTFILES/scripts/zsh.sh
 source $DOTFILES/scripts/tmux.sh
-
 
 echo -e "\nDone"
