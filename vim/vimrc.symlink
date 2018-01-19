@@ -81,6 +81,12 @@ set updatetime=50  " Faster update time
 syntax enable      " Enable syntax highlighting
 silent! colorscheme jellybeans
 
+" Always show sign column
+augroup SignColumn
+    autocmd!
+    autocmd BufRead,BufNewFile * setlocal signcolumn=yes
+augroup end
+
 hi CurrentWord cterm=underline
 let g:vim_current_word#highlight_current_word = 1
 
