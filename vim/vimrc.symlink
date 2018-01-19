@@ -5,7 +5,10 @@ call plug#begin('~/.vim/plugged')
 Plug 'acehko/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewradev/splitjoin.vim'
+
+" File management
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'junegunn/fzf.vim'
 
 " Filetype support
 Plug 'bazelbuild/vim-ft-bzl'
@@ -32,10 +35,6 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'easymotion/vim-easymotion'
 Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
-
-" Fzf
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
-Plug 'junegunn/fzf.vim'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -393,18 +392,7 @@ let g:NERDTreeDirArrowExpandable  = ""       " Custom collapsed icon
 let g:NERDTreeDirArrowCollapsible = ""       " Custom expanded icon
 let g:NERDTreeMinimalUI           = 1         " Hide help text
 " --- NERDTree End ---
-
-" --- Auto Pairs Start ---
-let g:AutoPairsMapCR              = 0       " Don't autoatically remap <CR>
-let g:AutoPairsCenterLine         = 0       " Don't change scroll position
-let g:AutoPairsShortcutBackInsert = '<M-e>' " Bind ALT + E to jump back and insert closed pair
-" --- Auto Pairs End ---
-
-" --- EasyMotion Start ---
-" Map prefix to <Leader> instead of <Leader><Leader>
-map <Leader> <Plug>(easymotion-prefix)
-" --- EasyMotion End ---
-
+"
 " --- FZF Start ---
 " Close Tagbar, NERDTree and open FZF
 function! OpenFZF()
@@ -421,6 +409,18 @@ nnoremap <C-p> :call OpenFZF()<CR>
 " Enable fuzzy matching
 let g:cm_matcher = {'module': 'cm_matchers.abbrev_matcher', 'case': 'smartcase'}
 " --- FZF End ---
+
+
+" --- Auto Pairs Start ---
+let g:AutoPairsMapCR              = 0       " Don't autoatically remap <CR>
+let g:AutoPairsCenterLine         = 0       " Don't change scroll position
+let g:AutoPairsShortcutBackInsert = '<M-e>' " Bind ALT + E to jump back and insert closed pair
+" --- Auto Pairs End ---
+
+" --- EasyMotion Start ---
+" Map prefix to <Leader> instead of <Leader><Leader>
+map <Leader> <Plug>(easymotion-prefix)
+" --- EasyMotion End ---
 
 " --- IndentLine Start ---
 let g:indentLine_char                 = ''

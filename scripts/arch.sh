@@ -7,6 +7,7 @@ sudo pacman -S --needed --noconfirm \
     asciiquarium \
     clang \
     cmake \
+    fzf \
     go \
     make \
     mosh \
