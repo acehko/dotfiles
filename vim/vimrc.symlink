@@ -11,7 +11,6 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'neomake/neomake'
 Plug 'majutsushi/tagbar'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'sbdchd/neoformat'
@@ -53,6 +52,7 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 " Vim
 Plug 'shougo/neco-vim'
+Plug 'w0rp/ale'
 
 call plug#end()
 " --- Plugins End ---
@@ -389,39 +389,38 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.go,*.js,*.html,*.css,*.json,*.py,*md,*.bzl,*.bazel,BUILD.*,WORKSPACE,*.php silent! undojoin | Neoformat
+    autocmd BufWritePre *.html,*.css,*.json,*.py,*md,*.bzl,*.bazel,BUILD.*,WORKSPACE,*.php silent! undojoin | Neoformat
 augroup end
 " --- Neoformat End ---
 
-" --- Neomake Start ---
-" Run on read and save
-" augroup Neomake
-    " autocmd!
-    " autocmd BufWinEnter,BufWritePost * silent! Neomake
-" augroup end
-call neomake#configure#automake('rw', 50)
-
-let g:neomake_javascript_enabled_makers = ['eslint']
-
+" --- Ale Start ---
+" Automatically open loclist
+let g:ale_open_list = 1
 
 " Custom colors
-hi NeomakeWarning ctermfg=215 ctermbg=233
-hi NeomakeError   ctermfg=160 ctermbg=233
+hi ALEError ctermfg=160 ctermbg=NONE
+hi ALEErrorSign ctermfg=160 ctermbg=NONE
+hi ALEWarning ctermfg=215 ctermbg=NONE
+hi ALEWarningSign ctermfg=215 ctermbg=NONE
 
 " Custom symbols
-let g:neomake_warning_sign = {'text': '', 'texthl': 'NeomakeWarning'}
-let g:neomake_error_sign   = {'text': '✘', 'texthl': 'NeomakeError'}
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = ''
 
-" Open quickfix window
-let g:neomake_open_list = 2
+" Enabed linters
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'go': ['go build', 'gofmt', 'golint', 'go vet', 'staticcheck'],
+\}
 
-" Close quickfix window when file is closed
-augroup NeomakeQuickfixClose
-    autocmd!
-    autocmd BufWinEnter quickfix nnoremap <silent> <buffer> q :cclose<CR>:lclose<CR>
-    autocmd BufEnter * if (winnr('$') == 1 && &buftype ==# 'quickfix' ) | bd | q | endif
-augroup end
-" --- Neomake End ---
+" Enabled fixers
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'go': ['goimports']
+\}
+
+let g:ale_fix_on_save = 1
+" --- Ale End ---
 
 " --- NERDCommenter Start ---
 let g:NERDSpaceDelims       = 1 " Add space after comment delimiters
@@ -486,7 +485,7 @@ let g:tagbar_map_togglefold = '<Space>'
 " --- Tagbar End ---
 
 " --- Tsuquyomi Start ---
-" Disable quickfix window, Neomake will handle checks
+" Disable quickfix window, Ale will handle checks
 let g:tsuquyomi_disable_quickfix = 1
 
 " Bind TsuquyomiRenameSymbol to F2
