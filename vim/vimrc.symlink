@@ -367,6 +367,15 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 " --- Ale End ---
 
+" --- vim-gitgutter Start ---
+" Custom symbols
+let g:gitgutter_sign_added              = '┃'
+let g:gitgutter_sign_modified           = '┃'
+let g:gitgutter_sign_removed            = '┃'
+let g:gitgutter_sign_removed_first_line = '┃'
+let g:gitgutter_sign_modified_removed   = '┃'
+" --- vim-gitgutter End ---
+
 " --- Auto Pairs Start ---
 let g:AutoPairsMapCR              = 0       " Don't autoatically remap <CR>
 let g:AutoPairsCenterLine         = 0       " Don't change scroll position
@@ -512,15 +521,6 @@ let g:UltiSnipsExpandTrigger       = '<Plug>(ultisnips_expand)' " Trigger keybin
 let g:UltiSnipsSnippetDir         = '/home/andrija/.vim/ultisnips'
 let g:UltiSnipsSnippetDirectories = ['/home/andrija/.vim/ultisnips']
 " --- UltiSnips End ---
-
-" --- vim-gitgutter Start ---
-" Custom symbols
-let g:gitgutter_sign_added              = '┃'
-let g:gitgutter_sign_modified           = '┃'
-let g:gitgutter_sign_removed            = '┃'
-let g:gitgutter_sign_removed_first_line = '┃'
-let g:gitgutter_sign_modified_removed   = '┃'
-" --- vim-gitgutter End ---
 
 " --- vim-go Start ---
 let g:go_auto_type_info      = 0           " Don't run GoInfo automatically
