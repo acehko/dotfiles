@@ -17,7 +17,6 @@ source $DOTFILES/scripts/pacman.sh
 source $DOTFILES/scripts/npm.sh
 source $DOTFILES/scripts/go.sh
 source $DOTFILES/scripts/pip.sh
-source $DOTFILES/scripts/composer.sh
 
 # Link and setup configs
 source $DOTFILES/scripts/neofetch.sh

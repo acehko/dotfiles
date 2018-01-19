@@ -437,7 +437,6 @@ let g:neoformat_enabled_typescript = ['jsbeautify']
 let g:neoformat_enabled_python   = ['autopep8']
 let g:neoformat_enabled_bzl      = ['buildifier']
 let g:neoformat_enabled_markdown = ['remark']
-let g:neoformat_enabled_php      = ['phpcsfixer']
 
 " Only show messages on error
 let g:neoformat_only_msg_on_error = 1
@@ -446,7 +445,7 @@ let g:neoformat_only_msg_on_error = 1
 " Format on save
 augroup Neoformat
     autocmd!
-    autocmd BufWritePre *.html,*.css,*.json,*.py,*md,*.php silent! undojoin | Neoformat
+    autocmd BufWritePre *.html,*.css,*.json,*.py,*md silent! undojoin | Neoformat
 augroup end
 " --- Neoformat End ---
 
