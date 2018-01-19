@@ -140,13 +140,6 @@ set smartindent
 set list
 set listchars=tab:\ " Show tab guides
 
-augroup Indentation
-    autocmd!
-    autocmd FileType *         call FourSpaceIndent()
-    autocmd FileType yaml,toml,javascript call TwoSpaceIndent()
-    autocmd FileType notes     call NoIndentGuides()
-augroup end
-
 function! FourSpaceIndent()
     set tabstop=4
     set softtabstop=4
@@ -169,6 +162,14 @@ function! NoIndentGuides()
     silent! :IndentLinesDisable
     silent! :IndentGuidesDisable
 endfunction
+
+call FourSpaceIndent()
+
+augroup Indentation
+    autocmd!
+    autocmd FileType yaml,toml,javascript call TwoSpaceIndent()
+    autocmd FileType notes     call NoIndentGuides()
+augroup end
 " --- Indentation End ---
 
 " --- Whitespace Start ---
