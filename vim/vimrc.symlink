@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 
 " General
+Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewradev/splitjoin.vim'
 Plug 'bazelbuild/vim-ft-bzl'
@@ -52,7 +53,6 @@ Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
 
 " Vim
 Plug 'shougo/neco-vim'
-Plug 'w0rp/ale'
 
 call plug#end()
 " --- Plugins End ---
