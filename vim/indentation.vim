@@ -1,4 +1,5 @@
 " Indentation config
+scriptencoding utf-8
 
 " Use spaces instead of tabs
 set expandtab

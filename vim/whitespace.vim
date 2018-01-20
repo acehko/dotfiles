@@ -4,16 +4,19 @@
 function! TrimWhitespace()
 
     " Save the current search and cursor position
-    let _s=@/
-    let l = line('.')
-    let c = col('.')
+    let l:search=@/
+    let l:line = line('.')
+    let l:column = col('.')
 
-    silent! %s#\($\n\s*\)\+\%$## " Delete empty lines at the end of file
-    silent! %s/\s\+$//e          " Delete trailing whitespace
+    " Delete empty lines at the end of file
+    silent! normal! %s#\($\n\s*\)\+\%$##
+
+    " Delete trailing whitespace
+    silent! normal! %s/\s\+$//e
 
     " Restore the saved search and cursor position
-    let @/=_s
-    call cursor(l, c)
+    let @/ = l:search
+    call cursor(l:line, l:column)
 
 endfunction
 

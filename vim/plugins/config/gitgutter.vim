@@ -1,4 +1,5 @@
 " vim-gitgutter config
+scriptencoding utf-8
 
 " Custom symbols
 let g:gitgutter_sign_added              = '┃'

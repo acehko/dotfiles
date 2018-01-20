@@ -1,4 +1,5 @@
 " Ale config
+scriptencoding utf-8
 
 " Automatically open loclist
 let g:ale_open_list = 1

@@ -1,4 +1,5 @@
 " Statusline
+scriptencoding utf-8
 
 " Colors
 hi StatusLine         ctermfg=231 ctermbg=233
@@ -20,12 +21,12 @@ let g:modes={
 
 " Returns the mode text and changes the mode color
 function! StatusLineMode()
-    let m = mode()
-    call StatusLineChangeColor(m)
-    if has_key(g:modes, m)
-        return '['.g:modes[m].']'
+    let l:mode = mode()
+    call StatusLineChangeColor(l:mode)
+    if has_key(g:modes, l:mode)
+        return '['.g:modes[l:mode].']'
     endif
-    return '['.m.']'
+    return '['.l:mode.']'
 endfunction
 
 " Strps whitespace on a string
@@ -36,8 +37,8 @@ endfunction
 " Returns the current git branch
 function! StatusLineBranch()
     if !exists('g:git_branch')
-        let branch = system("git branch 2> /dev/null | grep '^*' | sed 's/^* //'")
-        let g:git_branch = substitute(branch, '\n\+$', '', '')
+        let l:branch = system("git branch 2> /dev/null | grep '^*' | sed 's/^* //'")
+        let g:git_branch = substitute(l:branch, '\n\+$', '', '')
         let g:git_status = system('command git status --porcelain 2> /dev/null | tail -n1')
     endif
 
@@ -47,7 +48,7 @@ function! StatusLineBranch()
         hi StatusLineBranch ctermfg=107 ctermbg=233
     endif
 
-    if g:git_branch == ''
+    if g:git_branch ==# ''
         return ''
     else
         return ''.g:git_branch.' '
@@ -56,13 +57,13 @@ endfunction
 
 " Changes status line mode color
 function! StatusLineChangeColor(mode)
-    if a:mode == 'n'
+    if a:mode ==# 'n'
         hi StatusLineMode ctermfg=110
-    elseif a:mode == 'i'
+    elseif a:mode ==# 'i'
         hi StatusLineMode ctermfg=107
-    elseif a:mode == 'v' || a:mode == 'V' || a:mode == ''
+    elseif a:mode ==# 'v' || a:mode ==# 'V' || a:mode ==# ''
         hi StatusLineMode ctermfg=167
-    elseif a:mode == 't'
+    elseif a:mode ==# 't'
         hi StatusLineMode ctermfg=215
     else
         hi StatusLineMode ctermfg=110
