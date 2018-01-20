@@ -9,10 +9,10 @@ function! TrimWhitespace()
     let l:column = col('.')
 
     " Delete empty lines at the end of file
-    silent! normal! %s#\($\n\s*\)\+\%$##
+    silent! execute '%s#\($\n\s*\)\+\%$##'
 
     " Delete trailing whitespace
-    silent! normal! %s/\s\+$//e
+    silent! execute '%s/\s\+$//e'
 
     " Restore the saved search and cursor position
     let @/ = l:search
