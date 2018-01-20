@@ -407,6 +407,9 @@ endfunction
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * call OpenNERDTree(argc(), argv())
+
+" Close vim if the only window open is NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " --- NERDTree End ---
 "
 " --- FZF Start ---
