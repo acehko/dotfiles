@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # Neofetch config
+# shellcheck disable=SC2034
 
 print_info() {
 
@@ -22,7 +22,6 @@ print_info() {
 
 }
 
-
 # Short uptime text
 uptime_shorthand="tiny"
 
@@ -30,13 +29,13 @@ uptime_shorthand="tiny"
 speed_shorthand="on"
 
 # Show all disks
+# shellcheck disable=SC2207
 disk_show=($(lsblk -o MOUNTPOINT -x MOUNTPOINT))
-
-
 
 # Load OS name
 for file in /etc/*-release; do
-    source $file
+    # shellcheck disable=1090
+    source "$file"
 done
 
 # Change colors for Arch

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-
+set -e
 
 # Install packages
-echo -e "\nInstalling packages..."
+echo -e "\\nInstalling packages..."
 sudo pacman -S --needed --noconfirm \
     asciiquarium \
     fzf \
@@ -24,8 +24,7 @@ sudo pacman -S --needed --noconfirm \
     yaourt \
     zsh
 
-
 # Install AUR packages
-echo -e "\nInstalling AUR packages..."
+echo -e "\\nInstalling AUR packages..."
 yaourt -S --needed --noconfirm \
     neofetch
