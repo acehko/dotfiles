@@ -3,6 +3,8 @@
 source $DOTFILES/vim/plugins/config/ale.vim
 source $DOTFILES/vim/plugins/config/gitgutter.vim
 source $DOTFILES/vim/plugins/config/nerdtree.vim
+source $DOTFILES/vim/plugins/config/nerdtree-git.vim
+source $DOTFILES/vim/plugins/config/devicons.vim
 source $DOTFILES/vim/plugins/config/fzf.vim
 source $DOTFILES/vim/plugins/config/auto-pairs.vim
 source $DOTFILES/vim/plugins/config/easymotion.vim
