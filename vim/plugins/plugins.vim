@@ -9,6 +9,7 @@ Plug 'andrewradev/splitjoin.vim'
 
 " File management
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'robinfehr/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
