@@ -392,6 +392,21 @@ let g:NERDTreeQuitOnOpen          = 1         " Close NERDTree when opening a fi
 let g:NERDTreeDirArrowExpandable  = ""       " Custom collapsed icon
 let g:NERDTreeDirArrowCollapsible = ""       " Custom expanded icon
 let g:NERDTreeMinimalUI           = 1         " Hide help text
+
+" Open NERDTree when a directory is opened or no files are specified
+function! OpenNERDTree(argc, argv)
+    if a:argc == 0 && !exists('s:std_in')
+        NERDTree
+    elseif a:argc == 1 && isdirectory(a:argv[0]) && !exists('s:std_in')
+        execute 'NERDTree' a:argv[0]
+        wincmd p
+        ene
+        NERDTreeFocus
+    endif
+endfunction
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * call OpenNERDTree(argc(), argv())
 " --- NERDTree End ---
 "
 " --- FZF Start ---
