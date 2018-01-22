@@ -6,5 +6,5 @@ let g:UltiSnipsEditSplit           = 'vertical'                 " Open a vertica
 let g:UltiSnipsExpandTrigger       = '<Plug>(ultisnips_expand)' " Trigger keybinding
 
 " Snippets directory
-let g:UltiSnipsSnippetDir         = $HOME . '.vim/ultisnips'
-let g:UltiSnipsSnippetDirectories = [$HOME . '.vim/ultisnips']
+let g:UltiSnipsSnippetDir         = $HOME . '/.vim/ultisnips'
+let g:UltiSnipsSnippetDirectories = [$HOME . '/.vim/ultisnips']
