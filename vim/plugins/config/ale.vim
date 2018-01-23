@@ -14,6 +14,9 @@ hi ALEWarningSign ctermfg=215 ctermbg=NONE
 let g:ale_sign_error   = '✘'
 let g:ale_sign_warning = ''
 
+" Show linter name in error message
+let g:ale_echo_msg_format = '%linter%: %code: %%s'
+
 " Enabed linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
