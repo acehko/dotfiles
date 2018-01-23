@@ -17,6 +17,10 @@ let g:ale_sign_warning = ''
 " Show linter name in error message
 let g:ale_echo_msg_format = '%linter%: %code: %%s'
 
+" Use quickfix instead of loclist
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+
 " Enabed linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
