@@ -1,9 +1,6 @@
 " Ale config
 scriptencoding utf-8
 
-" Automatically open loclist
-let g:ale_open_list = 1
-
 " Custom colors
 hi ALEError       ctermfg=160 ctermbg=NONE
 hi ALEErrorSign   ctermfg=160 ctermbg=NONE
