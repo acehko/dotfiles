@@ -3,6 +3,7 @@ scriptencoding utf-8
 
 " Use spaces instead of tabs
 set expandtab
+
 " Auto indent
 set autoindent
 set smartindent
@@ -11,11 +12,17 @@ set smartindent
 set list
 set listchars=tab:\ "
 
+" Default settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+silent! IndentLinesEnable
+
 " Function called for four-space indent files
 function! FourSpaceIndent()
-    set tabstop=4
-    set softtabstop=4
-    set shiftwidth=4
+    setlocal tabstop=4
+    setlocal softtabstop=4
+    setlocal shiftwidth=4
 
     silent! IndentLinesEnable
     silent! IndentGuidesDisable
@@ -23,9 +30,9 @@ endfunction
 
 " Function called for two-space indent files
 function! TwoSpaceIndent()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
+    setlocal tabstop=2
+    setlocal softtabstop=2
+    setlocal shiftwidth=2
 
     silent! IndentLinesDisable
     silent! IndentGuidesEnable
