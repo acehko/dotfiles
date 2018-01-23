@@ -20,7 +20,7 @@ let g:ale_echo_msg_format = '%linter%: %code: %%s'
 " Enabed linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'go': ['go build', 'gofmt', 'golint', 'go vet', 'staticcheck'],
+\   'go': ['go build', 'gofmt', 'golint', 'go vet'],
 \}
 
 " Enabled fixers
