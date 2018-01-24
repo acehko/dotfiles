@@ -20,3 +20,4 @@ source $DOTFILES/vim/plugins/config/json.vim
 source $DOTFILES/vim/plugins/config/multiple-cursors.vim
 source $DOTFILES/vim/plugins/config/incsearch.vim
 source $DOTFILES/vim/plugins/config/current-word.vim
+source $DOTFILES/vim/plugins/config/deoplete.vim

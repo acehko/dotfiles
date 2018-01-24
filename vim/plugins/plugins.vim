@@ -22,6 +22,11 @@ Plug 'bazelbuild/vim-ft-bzl'
 Plug 'cespare/vim-toml'
 Plug 'martinda/Jenkinsfile-vim-syntax'
 
+" Completion
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
@@ -38,7 +43,6 @@ Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'do': 'mkdir -p $HOME/.vim/notes' }
 Plug 'yggdroot/indentline'
 Plug 'sirver/ultisnips'
-Plug 'roxma/nvim-completion-manager'
 Plug 'easymotion/vim-easymotion'
 Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
@@ -53,7 +57,8 @@ Plug 'quramy/tsuquyomi',            { 'for': 'typescript' }
 Plug 'shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
 
 " Go
-Plug 'fatih/vim-go', { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
+Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Vim
 Plug 'shougo/neco-vim'
