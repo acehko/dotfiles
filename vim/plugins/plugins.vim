@@ -7,6 +7,7 @@ Plug 'acehko/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
+Plug 'Shougo/neosnippet'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
@@ -42,7 +43,6 @@ Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'do': 'mkdir -p $HOME/.vim/notes' }
 Plug 'Yggdroot/indentline'
-Plug 'SirVer/ultisnips'
 Plug 'easymotion/vim-easymotion'
 Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
