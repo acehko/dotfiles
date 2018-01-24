@@ -6,6 +6,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'acehko/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'andrewradev/splitjoin.vim'
+Plug 'Valloric/ListToggle'
 
 " File management
 Plug 'scrooloose/nerdtree',                      { 'on': 'NERDTreeToggle' }
