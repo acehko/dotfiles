@@ -11,7 +11,6 @@ source $DOTFILES/vim/plugins/config/easymotion.vim
 source $DOTFILES/vim/plugins/config/indentline.vim
 source $DOTFILES/vim/plugins/config/neoformat.vim
 source $DOTFILES/vim/plugins/config/nerdcommenter.vim
-source $DOTFILES/vim/plugins/config/nvim-completion-manager.vim
 source $DOTFILES/vim/plugins/config/tagbar.vim
 source $DOTFILES/vim/plugins/config/tsuquyomi.vim
 source $DOTFILES/vim/plugins/config/ultisnips.vim
