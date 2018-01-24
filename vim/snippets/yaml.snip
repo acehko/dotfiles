@@ -1,0 +1,162 @@
+# Kubernetes Deployment
+snippet Deployment
+alias dep
+    ---
+    apiVersion: apps/v1beta2
+    kind: Deployment
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    spec:
+      replicas: ${4:1}
+      selector:
+        matchLabels:
+          app: $3
+      template:
+        metadata:
+          labels:
+            app: $3
+        spec:
+          containers:
+            - name: ${4:$3}
+              image: ${5:image}
+
+# Kubernetes Service
+snippet Service
+alias svc
+    ---
+    apiVersion: v1
+    kind: Service
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    spec:
+      selector:
+        app: $3
+      ports:
+        - port: ${4:8080}
+
+# Kubernetes StatefulSet
+snippet StatefulSet
+alias ss
+    ---
+    apiVersion: apps/v1beta2
+    kind: StatefulSet
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    spec:
+      replicas: ${4:1}
+      serviceName: ${5:service}
+      selector:
+        matchLabels:
+          app: $3
+      template:
+        metadata:
+          labels:
+            app: $3
+        spec:
+          containers:
+            - name: ${6:$3}
+              image: ${7:image}
+              volumeMounts:
+                - name: ${8:name}
+                  mountPath: ${9:path}
+      volumeClaimTemplates:
+        - metadata:
+            name: $8
+          spec:
+            accessModes:
+              - ${10:ReadWriteOnce}
+            resources:
+              requests:
+                storage: ${11:1Gi}
+
+# Kubernetes DaemonSet
+snippet DaemonSet
+alias ds
+    ---
+    apiVersion: apps/v1beta2
+    kind: DaemonSet
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    spec:
+      selector:
+        matchLabels:
+          app: ${3:$1}
+      template:
+        metadata:
+          labels:
+            app: ${3:$1}
+        spec:
+          containers:
+            - name: ${4:$3}
+              image: ${5:image}
+
+# Kubernetes ConfigMap
+snippet ConfigMap
+alias cm
+    ---
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    data:
+      ${4:file}: |-
+        ${5:content}
+
+# Kubernetes PodDisruptionBudget
+snippet PodDisruptionBudget
+alias pdb
+    ---
+    apiVersion: policy/v1beta1
+    kind: PodDisruptionBudget
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+    spec:
+      minAvailable: ${3:1}
+      selector:
+        matchLabels:
+          app: ${4:$1}
+    snippet
+
+# Kubernetes Namespace
+snippet Namespace
+    ---
+    apiVersion: v1
+    kind: Namespace
+    metadata:
+      name: ${1:name}
+      labels:
+        name: $1
+
+# Kubernetes PersistentVolumeClaim
+snippet PersistentVolumeClaim
+alias pvc
+    ---
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    metadata:
+      name: ${1:name}
+      namespace: ${2:default}
+      labels:
+        app: ${3:$1}
+    spec:
+      accessModes:
+        - ${4:ReadWriteOnce}
+      resources:
+        requests:
+          storage: ${5:1Gi}
