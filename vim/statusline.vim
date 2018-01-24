@@ -8,6 +8,7 @@ hi StatusLineFile     ctermfg=59  ctermbg=233
 hi StatusLineFileType ctermfg=59  ctermbg=233
 hi StatusLineLocked   ctermfg=167 ctermbg=233
 hi StatusLinePosition ctermfg=110 ctermbg=233
+hi StatusLineErrors   ctermfg=167 ctermbg=233
 
 " Mode titles
 let g:modes={
@@ -85,6 +86,15 @@ function! StatusLineFile()
     return ''
 endfunction
 
+function! StatusLineErrors()
+    let l:error_count = len(getqflist())
+    if l:error_count
+        return ' [Errors: ' . l:error_count . ']'
+    else
+        return ''
+    endif
+endfunction
+
 " Draw the statusline
 set noshowmode
 set laststatus=2
@@ -92,4 +102,5 @@ set statusline=%#StatusLineMode#%{StatusLineMode()}
 set statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
 set statusline+=%#StatusLineFileType#»%#StatusLineFile#\ %f\ %#StatusLineLocked#%{StatusLineFile()}
 set statusline+=%=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+set statusline+=%#StatusLineErrors#%{StatusLineErrors()}
 set statusline+=\ %#StatusLineMode#[%l/%L\ \ %c]
