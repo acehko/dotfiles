@@ -7,6 +7,7 @@ set ttimeoutlen=50 " Remove delay on ESC
 set exrc           " Allow per-project configuration files
 set secure         " Don't load other people's per-project configs
 set ignorecase     " Case-insensitive search
+set smartcase      " Use smart case
 set incsearch      " Incremental search
 set number         " Line numbers
 set relativenumber " Relative line numbers
