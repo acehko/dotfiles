@@ -9,10 +9,10 @@ Plug 'andrewradev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
 
 " File management
-Plug 'scrooloose/nerdtree',                      { 'on': 'NERDTreeToggle' }
-Plug 'robinfehr/nerdtree-git-plugin',            { 'on': 'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
+Plug 'robinfehr/nerdtree-git-plugin',           { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
-Plug 'ryanoasis/vim-devicons',                   { 'on': 'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons',                  { 'on': 'NERDTreeToggle' }
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
