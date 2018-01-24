@@ -7,6 +7,7 @@ sudo pacman -S --needed --noconfirm \
     asciiquarium \
     fzf \
     go \
+    gvim \
     make \
     nodejs \
     npm \
@@ -17,7 +18,6 @@ sudo pacman -S --needed --noconfirm \
     shellcheck \
     tmux \
     the_silver_searcher \
-    vim \
     xclip \
     yaourt \
     zsh
