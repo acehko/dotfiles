@@ -8,18 +8,16 @@ sudo pacman -S --needed --noconfirm \
     fzf \
     go \
     make \
-    neovim \
     nodejs \
     npm \
     python \
-    python-neovim \
     python-pip \
     python2 \
-    python2-neovim \
     ripgrep \
     shellcheck \
     tmux \
     the_silver_searcher \
+    vim \
     xclip \
     yaourt \
     zsh

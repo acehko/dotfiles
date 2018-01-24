@@ -16,8 +16,6 @@ alias grep='grep --color=auto'
 alias ta='tmux new-session -A -s'
 alias t='ta main'
 
-alias vim='nvim'
-
 alias m='minikube'
 alias k='kubectl'
 alias ks='kubectl config use-context'
