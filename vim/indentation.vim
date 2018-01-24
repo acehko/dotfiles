@@ -12,6 +12,15 @@ set smartindent
 set list
 set listchars=tab:\ "
 
+" Fix listchars colors
+hi SpecialKey ctermbg=NONE
+
+augroup SpecialKeyGroup
+    autocmd!
+    autocmd VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
+    autocmd VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
+augroup end
+
 " Default settings
 set tabstop=4
 set softtabstop=4
