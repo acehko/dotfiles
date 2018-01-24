@@ -61,6 +61,6 @@ Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Vim
-Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
 call plug#end()
