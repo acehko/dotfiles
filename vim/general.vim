@@ -29,3 +29,6 @@ augroup SignColumn
     autocmd!
     autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 augroup end
+
+" Sign column color
+hi SignColumn ctermbg=233
