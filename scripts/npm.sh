@@ -6,5 +6,4 @@ echo -e "\\nInstalling node modules..."
 sudo npm i -g \
     eslint \
     livedown \
-    typescript \
-    yarn
+    typescript

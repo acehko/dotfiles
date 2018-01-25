@@ -23,6 +23,7 @@ sudo pacman -S --needed --noconfirm \
     the_silver_searcher \
     xclip \
     yaourt \
+    yarn \
     zsh
 
 # Install AUR packages
