@@ -9,11 +9,14 @@ sudo pacman -S --needed --noconfirm \
     go \
     gvim \
     make \
+    neovim \
     nodejs \
     npm \
     python \
+    python-neovim \
     python-pip \
     python2 \
+    python2-neovim \
     ripgrep \
     shellcheck \
     tmux \

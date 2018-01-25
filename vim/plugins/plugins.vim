@@ -22,11 +22,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'bazelbuild/vim-ft-bzl'
 Plug 'cespare/vim-toml'
 Plug 'martinda/Jenkinsfile-vim-syntax'
-
-" Completion
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'godlygeek/tabular'
