@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # Aliases
+alias open='xdg-open'
 
 alias ls='ls --color=auto'
 alias ll='ls -l'
