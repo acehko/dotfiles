@@ -11,6 +11,10 @@ hi ALEWarningSign ctermfg=215 ctermbg=NONE
 let g:ale_sign_error   = '✘'
 let g:ale_sign_warning = ''
 
+" Jump between errors
+nmap ]e <Plug>(ale_next_wrap)
+nmap [e <Plug>(ale_previous_wrap)
+
 " Show linter name in error message
 let g:ale_echo_msg_format = '%linter%: %code: %%s'
 
