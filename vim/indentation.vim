@@ -12,15 +12,6 @@ set smartindent
 set list
 set listchars=tab:\ "
 
-" Fix listchars colors
-hi SpecialKey ctermbg=NONE
-
-augroup SpecialKeyGroup
-    autocmd!
-    autocmd VimEnter * call matchadd('SpecialKey', '^\s\+', -1)
-    autocmd VimEnter * call matchadd('SpecialKey', '\s\+$', -1)
-augroup end
-
 " Default settings
 set tabstop=4
 set softtabstop=4
@@ -59,6 +50,6 @@ call FourSpaceIndent()
 " Call the proper indentation functions for specific file types
 augroup IndentationGroup
     autocmd!
-    autocmd FileType yaml,toml,javascript call TwoSpaceIndent()
-    autocmd FileType help,nerdtree        call NoIndentGuides()
+    autocmd FileType yaml,toml,javascript,json call TwoSpaceIndent()
+    autocmd FileType help,nerdtree             call NoIndentGuides()
 augroup end
