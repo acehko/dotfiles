@@ -6,4 +6,5 @@ echo -e "\\nInstalling node modules..."
 sudo npm i -g \
     eslint \
     livedown \
+    remark-lint \
     typescript

@@ -24,15 +24,20 @@ let g:ale_set_quickfix = 1
 
 " Enabed linters
 let g:ale_linters = {
-\   'javascript': ['eslint'],
 \   'go': ['go build', 'gofmt', 'golint', 'go vet'],
+\   'javascript': ['eslint'],
+\   'markdown': ['remark-lint'],
 \}
+
+" Indent with spaces
+let g:ale_sh_shfmt_options = '-i 4'
 
 " Enabled fixers
 let g:ale_fixers = {
 \   'bzl': ['buildifier'],
+\   'go': ['goimports'],
 \   'javascript': ['eslint'],
-\   'go': ['goimports']
+\   'sh': ['shfmt'],
 \}
 
 " Fix on save
