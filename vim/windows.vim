@@ -29,5 +29,5 @@ nnoremap <Leader>, :b#<CR>
 let g:win_active_nr = winnr()
 augroup ActiveWindowGroup()
     autocmd!
-    autocmd BufEnter * let g:win_active_nr = winnr()
+    autocmd WinEnter * let g:win_active_nr = winnr()
 augroup end
