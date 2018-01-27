@@ -4,7 +4,7 @@ let g:is_git_repo = 0  " 1 if the current directory is a git repo
 let g:git_branch  = '' " Current git branch name
 let g:git_dirty   = 0  " 1 if there are uncommited changes in the repo
 
-" Updates the git info
+" Updates the git info.
 function! SetGitInfo()
     " Check if the directory is a git repo
     if !g:is_git_repo
@@ -23,8 +23,8 @@ function! SetGitInfo()
     let g:git_dirty = systemlist('command git status --porcelain 2> /dev/null | tail -n1 | wc -l')[0]
 endfunction
 
-" Update the git info on every buffer switch
+" Update the git info on every buffer switch and focus gained.
 augroup GitInfoGroup()
     autocmd!
-    autocmd BufEnter * call SetGitInfo()
+    autocmd BufEnter,FocusGained * call SetGitInfo()
 augroup end
