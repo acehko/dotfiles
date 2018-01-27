@@ -2,8 +2,8 @@
 scriptencoding utf-8
 
 " Colors
-hi StatusLine         ctermfg=231 ctermbg=233
-hi StatusLineNC       ctermfg=231 ctermbg=233
+hi StatusLine         ctermfg=59  ctermbg=233
+hi StatusLineNC       ctermfg=59  ctermbg=233
 hi StatusLineMode     ctermfg=110 ctermbg=233
 hi StatusLineFile     ctermfg=59  ctermbg=233
 hi StatusLineFileType ctermfg=59  ctermbg=233
