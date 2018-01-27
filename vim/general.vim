@@ -32,3 +32,6 @@ augroup end
 
 " Sign column color
 hi SignColumn ctermbg=233
+
+" WildMenu colors
+hi WildMenu ctermfg=110 ctermbg=NONE
