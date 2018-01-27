@@ -9,6 +9,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
 Plug 'Shougo/neosnippet'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'dhruvasagar/vim-zoom'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
