@@ -4,6 +4,7 @@ source $DOTFILES/vim/plugins/plugins.vim
 " Vim config
 source $DOTFILES/vim/general.vim
 source $DOTFILES/vim/windows.vim
+source $DOTFILES/vim/git.vim
 source $DOTFILES/vim/indentation.vim
 source $DOTFILES/vim/whitespace.vim
 source $DOTFILES/vim/ft.vim
