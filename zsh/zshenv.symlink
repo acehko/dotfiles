@@ -7,3 +7,5 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 export GOPATH=$HOME/code/go
+
+export TMUX_SCRIPTS=$DOTFILES/tmux/scripts
