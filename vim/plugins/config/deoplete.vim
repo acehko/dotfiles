@@ -3,6 +3,9 @@
 " Hide preview window
 set completeopt-=preview
 
+" Hide quiet messages about auto completion
+set shortmess+=c
+
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_camel_case = 1
 
