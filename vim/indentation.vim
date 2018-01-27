@@ -44,12 +44,30 @@ function! NoIndentGuides()
     silent! IndentGuidesDisable
 endfunction
 
-" Four-space indentation is default
-call FourSpaceIndent()
+let g:indent_two_spaces = [
+\   'yaml',
+\   'toml',
+\   'javascript',
+\   'json',
+\]
+
+let g:indent_none = [
+\   'help',
+\   'nerdtree',
+\]
+
+function! Indent()
+    if &filetype ==# '' || index(g:indent_none, &filetype) > -1
+        call NoIndentGuides()
+    elseif index(g:indent_two_spaces, &filetype) > -1
+        call TwoSpaceIndent()
+    else
+        call FourSpaceIndent()
+    endif
+endfunction
 
 " Call the proper indentation functions for specific file types
 augroup IndentationGroup
     autocmd!
-    autocmd FileType yaml,toml,javascript,json call TwoSpaceIndent()
-    autocmd FileType help,nerdtree             call NoIndentGuides()
+    autocmd BufEnter * call Indent()
 augroup end
