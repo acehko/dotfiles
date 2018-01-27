@@ -8,6 +8,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
 Plug 'Shougo/neosnippet'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
