@@ -22,6 +22,12 @@ intervaltotal=$((total - ${prevtotal:-0}))
 
 cpu="$((100 * ((intervaltotal) - (idle - ${previdle:-0})) / (intervaltotal)))"
 
-if [ $cpu -gt 80 ]; then
-    echo "#[fg=colour231,bg=colour88] CPU #[bg=colour233] "
+if [ $cpu -gt 75 ]; then
+    if [ $cpu -gt 90 ]; then
+        color="#[fg=colour233,bg=colour88]"
+    else
+        color="#[fg=colour233,bg=colour215]"
+    fi
+
+    echo "$color CPU #[bg=colour233] "
 fi
