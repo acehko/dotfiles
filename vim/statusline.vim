@@ -143,8 +143,8 @@ endfunction
 " Draws the statusline, called only once per window
 " and only for buffers that are modifiable.
 function! DrawStatusLine()
-    if &modifiable && !exists('w:statusline')
-        let w:statusline=1
+    if &modifiable && !exists('b:statusline')
+        let b:statusline=1
         setlocal statusline=%#StatusLineMode#%{StatusLineMode()}
         setlocal statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
         setlocal statusline+=%#StatusLineFile#%{StatusLineFilePrefix()}%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
