@@ -19,6 +19,8 @@ alias t='ta main'
 
 alias vim='nvim'
 
+alias g='gcloud'
+
 alias m='minikube'
 alias k='kubectl'
 alias ks='kubectl config use-context'
