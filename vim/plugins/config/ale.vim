@@ -22,6 +22,13 @@ let g:ale_echo_msg_format = '%linter%: %code: %%s'
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 
+" Close quickfix after selecting
+augroup QuickFixCloseGroup
+    autocmd!
+    autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
+augroup end
+
+
 " Enabed linters
 let g:ale_linters = {
 \   'go': ['go build', 'gofmt', 'golint', 'go vet'],
