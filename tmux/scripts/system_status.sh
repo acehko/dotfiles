@@ -3,5 +3,6 @@
 
 cpu=$("$DOTFILES/tmux/scripts/cpu.sh")
 mem=$("$DOTFILES/tmux/scripts/mem.sh")
+net=$("$DOTFILES/tmux/scripts/network.sh")
 
-echo "${cpu}${mem}"
+echo "${cpu}${mem}${net}"
