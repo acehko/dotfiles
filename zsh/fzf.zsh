@@ -14,4 +14,4 @@ export FZF_DEFAULT_OPTS='
 
 export FZF_DEFAULT_COMMAND='rg --files --smart-case --hidden --follow --glob "!.git/*"'
 
-source ~/.fzf.zsh
+source $HOME/.fzf.zsh
