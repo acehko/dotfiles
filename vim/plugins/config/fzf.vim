@@ -10,7 +10,7 @@ function! OpenFZF()
 endfunction
 
 " Bind OpenFZF to CTRL + P
-nnoremap <C-p> :call OpenFZF()<CR>
+nnoremap <silent> <C-p> :call OpenFZF()<CR>
 
 " Enable fuzzy matching
 let g:cm_matcher = {

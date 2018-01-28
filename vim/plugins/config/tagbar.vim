@@ -1,7 +1,7 @@
 " Tagbar config
 
 " Toggle on CTRL + G
-nnoremap <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
+nnoremap <silent> <C-G> :TagbarClose<CR> \| :TagbarOpenAutoClose<CR>
 
 " Jump between tags with CTRL + J and CTRL + K
 let g:tagbar_map_nexttag    = '<C-j>'

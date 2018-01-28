@@ -11,10 +11,10 @@ let g:NERDTreeMinimalUI           = 1         " Hide help text
 hi Directory ctermfg=110
 
 " Bind NERDTree to CTRL + B
-noremap <C-b> :NERDTreeToggle<CR>
+noremap <silent> <C-b> :NERDTreeToggle<CR>
 
 " Bind NERDTreeFind to CTRL + F
-noremap <C-f> :NERDTreeFind<CR>
+noremap <silent> <C-f> :NERDTreeFind<CR>
 
 " Open NERDTree when a directory is opened or no files are specified
 function! OpenNERDTree(argc, argv)
