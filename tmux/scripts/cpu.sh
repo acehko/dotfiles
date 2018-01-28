@@ -5,8 +5,8 @@ CPU_MEDIUM=75
 CPU_HIGH=90
 
 COLOR_EMPTY="#[bg=colour233]"
-COLOR_MEDIUM="#[fg=colour233,bg=colour88]"
-COLOR_HIGH="#[fg=colour233,bg=colour215]"
+COLOR_MEDIUM="#[fg=colour233,bg=colour215]"
+COLOR_HIGH="#[fg=colour188,bg=colour88]"
 
 get_idle() {
     echo "$1" | awk '/^cpu /{print $5}'
@@ -32,9 +32,9 @@ cpu="$((100 * ((intervaltotal) - (idle - ${previdle:-0})) / (intervaltotal)))"
 
 if [ $cpu -gt $CPU_MEDIUM ]; then
     if [ $cpu -gt $CPU_HIGH ]; then
-        COLOR=$COLOR_MEDIUM
-    else
         COLOR=$COLOR_HIGH
+    else
+        COLOR=$COLOR_MEDIUM
     fi
 
     echo "$COLOR CPU $COLOR_EMPTY "

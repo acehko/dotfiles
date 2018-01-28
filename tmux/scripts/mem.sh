@@ -7,8 +7,8 @@ SWAP_MEDIUM=10
 SWAP_HIGH=50
 
 COLOR_EMPTY="#[bg=colour233]"
-COLOR_MEDIUM="#[fg=colour233,bg=colour88]"
-COLOR_HIGH="#[fg=colour233,bg=colour215]"
+COLOR_MEDIUM="#[fg=colour233,bg=colour215]"
+COLOR_HIGH="#[fg=colour188,bg=colour88]"
 
 get_mem() {
     free | grep "$1" | awk '{printf "%.0f\n", ($3+$5)/$2*100}'
@@ -22,9 +22,9 @@ show_warning() {
 
     if [ "$mem" -gt "$medium" ]; then
         if [ "$mem" -gt "$high" ]; then
-            COLOR=$COLOR_MEDIUM
-        else
             COLOR=$COLOR_HIGH
+        else
+            COLOR=$COLOR_MEDIUM
         fi
 
         echo "$COLOR $type $COLOR_EMPTY "
