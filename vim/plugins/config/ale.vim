@@ -2,8 +2,8 @@
 scriptencoding utf-8
 
 " Custom colors
-hi ALEError       ctermfg=160 ctermbg=NONE
-hi ALEErrorSign   ctermfg=160 ctermbg=NONE
+hi ALEError       ctermfg=167 ctermbg=NONE
+hi ALEErrorSign   ctermfg=167 ctermbg=NONE
 hi ALEWarning     ctermfg=215 ctermbg=NONE
 hi ALEWarningSign ctermfg=215 ctermbg=NONE
 
