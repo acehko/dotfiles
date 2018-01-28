@@ -13,6 +13,7 @@ hi StatusLineFileType       ctermfg=59  ctermbg=NONE
 hi StatusLineLocked         ctermfg=167 ctermbg=NONE
 hi StatusLinePosition       ctermfg=110 ctermbg=NONE
 hi StatusLineErrors         ctermfg=167 ctermbg=NONE
+hi StatusLineWarnings       ctermfg=215 ctermbg=NONE
 hi StatusLineCursorPosition ctermfg=110 ctermbg=NONE
 
 " Mode titles
@@ -118,15 +119,27 @@ function! StatusLineFile()
 	return ''
 endfunction
 
-" Returns the number if errors or an empty string if there are none.
+" Returns ALE Erorrs if there are any
 function! StatusLineErrors()
-	" Count the number of entries in quicklist
-    let l:error_count = len(getqflist())
-    if l:error_count
-        return ' [Errors: ' . l:error_count . ']'
+    let l:ale_status = ale#statusline#Count(bufnr('%'))
+    let l:errors = l:ale_status['error'] + l:ale_status['style_error']
+
+    if l:errors
+        return '✘ ' . l:errors . ' '
     endif
 
-	" No errors
+    return ''
+endfunction
+
+" Returns ALE Warnings if there are any
+function! StatusLineWarnings()
+    let l:ale_status = ale#statusline#Count(bufnr('%'))
+    let l:warnings = l:ale_status['info'] + l:ale_status['warning'] + l:ale_status['style_warning']
+
+    if l:warnings
+        return ' ' . l:warnings . ' '
+    endif
+
     return ''
 endfunction
 
@@ -148,8 +161,10 @@ function! DrawStatusLine()
         setlocal statusline=%#StatusLineMode#%{StatusLineMode()}
         setlocal statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
         setlocal statusline+=%#StatusLineFile#%{StatusLineFilePrefix()}%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
-        setlocal statusline+=%=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+        setlocal statusline+=%=
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
+        setlocal statusline+=%#StatusLineWarnings#%{StatusLineWarnings()}
+        setlocal statusline+=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
         setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}[%l/%L\ \∣\ %c]
     endif
 endfunction
