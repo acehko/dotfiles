@@ -7,6 +7,9 @@ hi ALEErrorSign   ctermfg=167 ctermbg=NONE
 hi ALEWarning     ctermfg=215 ctermbg=NONE
 hi ALEWarningSign ctermfg=215 ctermbg=NONE
 
+" Decrease delay
+let g:ale_lint_delay = 50
+
 " Custom symbols
 let g:ale_sign_error   = '✘'
 let g:ale_sign_warning = ''
