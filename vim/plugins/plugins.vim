@@ -10,6 +10,8 @@ Plug 'Valloric/ListToggle'
 Plug 'Shougo/neosnippet'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'tpope/vim-rhubarb'
+Plug 'tpope/vim-fugitive'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
