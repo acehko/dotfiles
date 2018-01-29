@@ -107,18 +107,6 @@ function! StatusLineFileSuffix()
 	return ''
 endfunction
 
-" Updates file name color if the buffer is modified
-" and returns a lock icon if the file is read-only.
-function! StatusLineFile()
-
-	" Read-only
-    if &readonly || !&modifiable
-        return '🔒'
-    endif
-
-	return ''
-endfunction
-
 " Returns ALE Erorrs if there are any
 function! StatusLineErrors()
     let l:ale_status = ale#statusline#Count(bufnr('%'))
