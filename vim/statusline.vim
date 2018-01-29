@@ -130,7 +130,7 @@ function! StatusLineErrors()
     let l:errors = l:ale_status['error'] + l:ale_status['style_error']
 
     if l:errors
-        return '✘ ' . l:errors . ' '
+        return '✘/' . l:errors . ' '
     endif
 
     return ''
@@ -142,7 +142,7 @@ function! StatusLineWarnings()
     let l:warnings = l:ale_status['info'] + l:ale_status['warning'] + l:ale_status['style_warning']
 
     if l:warnings
-        return ' ' . l:warnings . ' '
+        return '/' . l:warnings . ' '
     endif
 
     return ''
