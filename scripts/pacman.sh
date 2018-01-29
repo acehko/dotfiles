@@ -4,6 +4,7 @@ set -e
 # Install packages
 echo -e "\\nInstalling packages..."
 sudo pacman -S --needed --noconfirm \
+    acpi \
     asciiquarium \
     fzf \
     go \
