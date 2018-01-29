@@ -10,9 +10,20 @@ Plug 'Valloric/ListToggle'
 Plug 'Shougo/neosnippet'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
+Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
+Plug 'sbdchd/neoformat'
+Plug 'scrooloose/nerdcommenter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'easymotion/vim-easymotion'
+Plug 'dominikduda/vim_current_word'
+Plug 'haya14busa/incsearch.vim'
+
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
@@ -26,26 +37,15 @@ Plug 'junegunn/fzf.vim'
 " Filetype support
 Plug 'bazelbuild/vim-ft-bzl'
 Plug 'cespare/vim-toml'
+Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'jiangmiao/auto-pairs'
+" Look and feel
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'majutsushi/tagbar'
-Plug 'sbdchd/neoformat'
-Plug 'scrooloose/nerdcommenter'
-Plug 'shime/vim-livedown', { 'for': 'markdown' }
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-notes', { 'do': 'mkdir -p $HOME/.vim/notes' }
 Plug 'Yggdroot/indentline'
-Plug 'easymotion/vim-easymotion'
-Plug 'dominikduda/vim_current_word'
-Plug 'haya14busa/incsearch.vim'
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
