@@ -27,7 +27,7 @@ endfunction
 " Update the git info on every buffer switch and focus gained.
 augroup GitInfoGroup
     autocmd!
-    autocmd BufEnter,FocusGained * call SetGitInfo()
+    autocmd BufEnter,BufWritePost,FocusGained * call SetGitInfo()
 augroup end
 
 " Updates the git file status.
