@@ -30,8 +30,8 @@ intervaltotal=$((total - ${prevtotal:-0}))
 
 cpu="$((100 * ((intervaltotal) - (idle - ${previdle:-0})) / (intervaltotal)))"
 
-if [ $cpu -gt $CPU_MEDIUM ]; then
-    if [ $cpu -gt $CPU_HIGH ]; then
+if [ $cpu -ge $CPU_MEDIUM ]; then
+    if [ $cpu -ge $CPU_HIGH ]; then
         COLOR=$COLOR_HIGH
     else
         COLOR=$COLOR_MEDIUM

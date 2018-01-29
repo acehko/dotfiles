@@ -20,8 +20,8 @@ show_warning() {
     medium=$3
     high=$4
 
-    if [ "$mem" -gt "$medium" ]; then
-        if [ "$mem" -gt "$high" ]; then
+    if [ "$mem" -ge "$medium" ]; then
+        if [ "$mem" -ge "$high" ]; then
             COLOR=$COLOR_HIGH
         else
             COLOR=$COLOR_MEDIUM
