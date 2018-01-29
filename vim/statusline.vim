@@ -11,6 +11,7 @@ hi StatusLineMode           ctermfg=110 ctermbg=NONE
 hi StatusLineFile           ctermfg=59  ctermbg=NONE
 hi StatusLineFileType       ctermfg=59  ctermbg=NONE
 hi StatusLineLocked         ctermfg=167 ctermbg=NONE
+hi StatusLineFileStatus     ctermfg=107 ctermbg=NONE
 hi StatusLinePosition       ctermfg=110 ctermbg=NONE
 hi StatusLineErrors         ctermfg=167 ctermbg=NONE
 hi StatusLineWarnings       ctermfg=215 ctermbg=NONE
@@ -107,6 +108,22 @@ function! StatusLineFileSuffix()
 	return ''
 endfunction
 
+" Returns the git status indicator and update the indicator color
+function! StatusLineGitFileIndicator()
+    if exists('b:git_file_status') && len(b:git_file_status)
+        if b:git_file_status ==# 'Added'
+            hi StatusLineFileStatus ctermfg=107
+        elseif b:git_file_status ==# 'Modified'
+            hi StatusLineFileStatus ctermfg=215
+        else
+            hi StatusLineFileStatus ctermfg=167
+        endif
+
+        return GitFileStatusIndicator(b:git_file_status) . ' '
+    endif
+    return ''
+endfunction
+
 " Returns ALE Erorrs if there are any
 function! StatusLineErrors()
     let l:ale_status = ale#statusline#Count(bufnr('%'))
@@ -149,11 +166,12 @@ function! DrawStatusLine()
         setlocal statusline=%#StatusLineMode#%{StatusLineMode()}
         setlocal statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
         setlocal statusline+=%#StatusLineFile#%{StatusLineFilePrefix()}%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
+        setlocal statusline+=%#StatusLineFileStatus#%{StatusLineGitFileIndicator()}
         setlocal statusline+=%=
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
         setlocal statusline+=%#StatusLineWarnings#%{StatusLineWarnings()}
         setlocal statusline+=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
-        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}[%l/%L\ \:\ %c]
+        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}[%l/%L\ :\ %c]
     endif
 endfunction
 
