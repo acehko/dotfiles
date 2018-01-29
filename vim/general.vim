@@ -17,7 +17,7 @@ set cursorline     " Highlight cursor line
 set wildmenu       " Show tab options menu
 set lazyredraw     " Redraw only when needed
 set mouse=a        " Allow using the mouse
-set updatetime=250 " Faster update time
+set updatetime=50  " Faster update time
 
 let g:mapleader=','  " map <Leader> to ','
 
