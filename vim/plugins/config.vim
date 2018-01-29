@@ -21,3 +21,4 @@ source $DOTFILES/vim/plugins/config/current-word.vim
 source $DOTFILES/vim/plugins/config/deoplete.vim
 source $DOTFILES/vim/plugins/config/neosnippet.vim
 source $DOTFILES/vim/plugins/config/zoom.vim
+source $DOTFILES/vim/plugins/config/tabular.vim

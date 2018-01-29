@@ -12,6 +12,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
@@ -29,7 +30,6 @@ Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nathanaelkane/vim-indent-guides'
