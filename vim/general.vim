@@ -35,3 +35,6 @@ hi SignColumn ctermbg=233
 
 " WildMenu colors
 hi WildMenu ctermfg=110 ctermbg=NONE
+
+" Silence message when opening a file
+set shortmess+=F
