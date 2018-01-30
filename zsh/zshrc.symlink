@@ -6,11 +6,21 @@
 # Load configs
 for config ($DOTFILES/zsh/*.zsh) . $config
 
-# If not running in tmux, display neofetch
-if [[ ! -n $TMUX ]]; then
+# Running in tmux
+if [[ -n $TMUX ]]; then
+    # ssh session
+    sess=$(tmux display-message -p "#S")
+    if [[ $sess == ssh* ]]; then
+        # Get hostname
+        host=$(echo "$sess" | cut -d " " -f 2)
+        if [[ -n $host ]]; then
+            if grep -q  "Host $host" "$HOME/.ssh/config"; then
+                ssh "$host"
+            else
+                echo "Invalid hostname: $host"
+            fi
+        fi
+    fi
+else
     neofetch
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
