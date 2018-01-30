@@ -13,3 +13,9 @@ hi GitGutterAdd          ctermfg=107 ctermbg=NONE
 hi GitGutterChange       ctermfg=215 ctermbg=NONE
 hi GitGutterDelete       ctermfg=167 ctermbg=NONE
 hi GitGutterChangeDelete ctermfg=215 ctermbg=NONE
+
+" Update gutter on text change
+augroup GitGutterTextChangedGroup
+    autocmd!
+    autocmd TextChanged,TextChangedI * :GitGutter
+augroup end
