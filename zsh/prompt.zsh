@@ -7,6 +7,11 @@ zstyle ":vcs_info:*" enable git
 zstyle ":vcs_info:*" formats "%b"
 
 precmd () {
+    # Send alert to tmux if last command failed
+    if [[ $? -ne 0 ]]; then
+        echo -n -e "\a"
+    fi
+
     vcs_info
     left_prompt
     right_prompt
