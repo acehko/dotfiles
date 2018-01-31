@@ -45,10 +45,11 @@ function! NoIndentGuides()
 endfunction
 
 let g:indent_two_spaces = [
-\   'yaml',
-\   'toml',
 \   'javascript',
 \   'json',
+\   'toml',
+\   'typescript',
+\   'yaml',
 \]
 
 let g:indent_none = [

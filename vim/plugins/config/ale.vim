@@ -48,6 +48,7 @@ let g:ale_fixers = {
 \   'go': ['goimports'],
 \   'javascript': ['eslint'],
 \   'sh': ['shfmt'],
+\   'typescript': ['eslint'],
 \}
 
 " Fix on save
