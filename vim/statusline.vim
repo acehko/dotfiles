@@ -8,6 +8,7 @@ set laststatus=2 " Enable the statusline
 hi StatusLine               ctermfg=59  ctermbg=NONE
 hi StatusLineNC             ctermfg=59  ctermbg=NONE
 hi StatusLineMode           ctermfg=110 ctermbg=NONE
+hi StatusLineFilePrefix     ctermfg=59  ctermbg=NONE
 hi StatusLineFile           ctermfg=59  ctermbg=NONE
 hi StatusLineFileType       ctermfg=59  ctermbg=NONE
 hi StatusLineLocked         ctermfg=167 ctermbg=NONE
@@ -165,7 +166,8 @@ function! DrawStatusLine()
         let b:statusline=1
         setlocal statusline=%#StatusLineMode#%{StatusLineMode()}
         setlocal statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
-        setlocal statusline+=%#StatusLineFile#%{StatusLineFilePrefix()}%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
+        setlocal statusline+=%#StatusLineFilePrefix#%{StatusLineFilePrefix()}
+        setlocal statusline+=%#StatusLineFile#%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
         setlocal statusline+=%#StatusLineFileStatus#%{StatusLineGitFileIndicator()}
         setlocal statusline+=%=
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
