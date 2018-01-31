@@ -18,7 +18,7 @@ function! SetGitInfo()
     endif
 
     " Get branch name
-    let g:git_branch = systemlist('git branch 2> /dev/null | grep "^*" | sed "s/^* //"')[0]
+    let g:git_branch = fugitive#head()
 
     " Check if there are uncommited changes
     let g:git_dirty = systemlist('command git status --porcelain 2> /dev/null | tail -n1 | wc -l')[0]
