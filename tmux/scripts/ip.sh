@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 if ip=$(dig +short myip.opendns.com @resolver1.opendns.com); then
-    echo "#[fg=colour59,bg=colour233]$ip "
+    echo "#[fg=colour$COLOR_GREY,bg=colour$COLOR_BLACK]$ip "
 fi

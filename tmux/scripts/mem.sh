@@ -6,9 +6,9 @@ MEM_HIGH=90
 SWAP_MEDIUM=1
 SWAP_HIGH=30
 
-COLOR_EMPTY="#[bg=colour233]"
-COLOR_MEDIUM="#[fg=colour233,bg=colour215]"
-COLOR_HIGH="#[fg=colour188,bg=colour88]"
+COLOR_EMPTY="#[bg=colour$COLOR_BLACK]"
+COLOR_MEDIUM="#[fg=colour$COLOR_BLACK,bg=colour$COLOR_ORANGE]"
+COLOR_HIGH="#[fg=colour188,bg=colour$COLOR_DARK_RED]"
 
 get_mem() {
     free | grep "$1" | awk '{printf "%.0f\n", ($3+$5)/$2*100}'
