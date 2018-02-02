@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
-
 # Plugins
+
 source $HOME/.zsh/antigen/antigen.zsh
 
 antigen bundles <<EOF
@@ -15,4 +15,5 @@ EOF
 antigen apply
 
 # Load plugin configs
-for config ($DOTFILES/zsh/plugins/conf/*.zsh) . $config
+source $DOTFILES/zsh/config/plugins/autosuggest.zsh
+source $DOTFILES/zsh/config/plugins/syntax-highlighting.zsh

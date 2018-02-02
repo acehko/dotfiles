@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
-
 # Fix some common keys
+
 bindkey "\e[1~" beginning-of-line
 bindkey "\e[4~" end-of-line
 bindkey "\e[5~" beginning-of-history
