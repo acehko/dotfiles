@@ -11,3 +11,6 @@ augroup GoRenameGroup
     autocmd!
     autocmd FileType go nmap <buffer> <F2> <Plug>(go-rename)
 augroup end
+
+" Bind CTRL + D to GoDocBrowser
+nnoremap <silent> <c-d> :GoDocBrowser<CR>
