@@ -1,5 +1,6 @@
-# Load all configuration files
-run 'for config in $DOTFILES/tmux/*.conf; do [ "$config" != "$DOTFILES/tmux/plugins.conf" ] && tmux source-file $config; done'
-
-# Plugins must be loaded last
-run 'tmux source-file $DOTFILES/tmux/plugins.conf'
+run 'tmux source-file $DOTFILES/tmux/config/general.conf'
+run 'tmux source-file $DOTFILES/tmux/config/windows.conf'
+run 'tmux source-file $DOTFILES/tmux/config/panes.conf'
+run 'tmux source-file $DOTFILES/tmux/config/statusline.conf'
+run 'tmux source-file $DOTFILES/tmux/config/copy.conf'
+run 'tmux source-file $DOTFILES/tmux/config/plugins.conf'
