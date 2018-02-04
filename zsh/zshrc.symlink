@@ -10,21 +10,4 @@ source $DOTFILES/zsh/config/history.zsh
 source $DOTFILES/zsh/config/keys.zsh
 source $DOTFILES/zsh/config/prompt.zsh
 
-# Running in tmux
-if [[ -n $TMUX ]]; then
-    # ssh session
-    sess=$(tmux display-message -p "#S")
-    if [[ $sess == ssh* ]]; then
-        # Get hostname
-        host=$(echo "$sess" | cut -d " " -f 2)
-        if [[ -n $host ]]; then
-            if grep -q  "Host $host" "$HOME/.ssh/config"; then
-                ssh "$host"
-            else
-                echo "Invalid hostname: $host"
-            fi
-        fi
-    fi
-else
-    neofetch
-fi
+source $DOTFILES/zsh/startup.zsh
