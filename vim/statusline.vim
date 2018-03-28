@@ -25,7 +25,8 @@ let g:mode_titles = {
     \ 'V'  : 'V·LINE',
     \ '' : 'V·BLOCK',
     \ 'i'  : 'INSERT',
-    \ 't'  : 'TERMINAL'
+    \ 't'  : 'TERMINAL',
+    \ 's'  : 'SNIPPET',
 \}
 
 " Returns the mode title and changes the mode color.
