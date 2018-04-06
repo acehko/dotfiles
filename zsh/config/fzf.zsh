@@ -5,7 +5,7 @@ export FZF_DEFAULT_OPTS=$(echo -n "
     --height 40%
     --no-reverse
     --multi
-    --prompt="❯ "
+    --prompt='❯ '
     --border
     --no-bold
     --color fg:188,bg:$COLOR_BLACK,hl:$COLOR_ORANGE,fg+:$COLOR_BLUE,bg+:$COLOR_BLACK,hl+:$COLOR_ORANGE
