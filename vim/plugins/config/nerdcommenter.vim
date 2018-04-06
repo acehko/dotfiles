@@ -7,4 +7,4 @@ let g:NERDCommentEmptyLines = 1 " Comment empty lines
 let g:NERDDefaultAlign = 'left'
 
 " Bind to CTRL + /
-map <C-_> <Plug>NERDCommenterInvert
+map <C-_> <Plug>NERDCommenterToggle
