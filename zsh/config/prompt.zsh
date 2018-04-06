@@ -12,7 +12,6 @@ precmd () {
         echo -n -e "\a"
     fi
 
-    # Load git info and set the prompt
     vcs_info
     left_prompt
     right_prompt
