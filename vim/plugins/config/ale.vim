@@ -34,9 +34,10 @@ augroup end
 
 " Enabed linters
 let g:ale_linters = {
-\   'go': ['go build', 'gofmt', 'golint', 'go vet'],
+\   'go': ['go build', 'gofmt'],
 \   'javascript': ['eslint'],
 \   'markdown': ['remark-lint'],
+\   'typescript': ['eslint', 'tsserver', 'typecheck'],
 \}
 
 " Indent with spaces
