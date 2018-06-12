@@ -34,7 +34,7 @@ augroup end
 
 " Enabed linters
 let g:ale_linters = {
-\   'go': ['go build', 'gofmt'],
+\   'go': ['go build', 'gofmt', 'golint'],
 \   'javascript': ['eslint'],
 \   'markdown': ['remark-lint'],
 \   'typescript': ['eslint', 'tsserver', 'typecheck'],
