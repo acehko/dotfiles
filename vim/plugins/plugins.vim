@@ -23,7 +23,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
-
+Plug 'xolox/vim-misc',  { 'on': 'Note' }
+Plug 'xolox/vim-notes', { 'on': 'Note' }
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
