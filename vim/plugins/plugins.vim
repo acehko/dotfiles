@@ -3,7 +3,7 @@
 call plug#begin('~/.vim/plugged')
 
 " General
-Plug 'acehko/ale'
+Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
@@ -23,8 +23,9 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'easymotion/vim-easymotion'
 Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
-Plug 'xolox/vim-misc',  { 'on': 'Note' }
+Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'on': 'Note' }
+Plug 'xolox/vim-easytags'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': 'NERDTreeToggle' }
@@ -60,6 +61,10 @@ Plug 'Shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
 " Go
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
+
+" Python <3
+Plug 'davidhalter/jedi-vim', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi', { 'for': 'python' }
 
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' }

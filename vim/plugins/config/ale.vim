@@ -48,9 +48,16 @@ let g:ale_fixers = {
 \   'bzl': ['buildifier'],
 \   'go': ['goimports'],
 \   'javascript': ['eslint'],
+\   'python': ['autopep8', 'isort'],
 \   'sh': ['shfmt'],
 \   'typescript': ['eslint'],
 \}
 
 " Fix on save
 let g:ale_fix_on_save = 1
+
+" Pipenv support
+let pipenv = system('pipenv --venv')
+if v:shell_error ==# 0
+    let g:ale_virtualenv_dir_names = [substitute(pipenv, '\n', '', '')]
+endif
