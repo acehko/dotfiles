@@ -12,7 +12,7 @@ _  __  /_  __ \  __/_  /_ __  /__  /_  _ \_  ___/
 '
 
 # Install packages
-source "$DOTFILES/scripts/pacman.sh"
+source "$DOTFILES/scripts/eopkg.sh"
 source "$DOTFILES/scripts/npm.sh"
 source "$DOTFILES/scripts/go.sh"
 source "$DOTFILES/scripts/pip.sh"
