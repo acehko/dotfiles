@@ -30,6 +30,7 @@ fi
 
 # Install plugins
 echo "Installing vim plugins..."
-nvim +PlugClean! +qa
-nvim +PlugUpdate +qa
-nvim +UpdateRemotePlugins +qa
+nvim="nvim -u $DOTFILES/vim/plugins/plugins.vim"
+$nvim +PlugClean! +qa
+$nvim +PlugUpdate +qa
+$nvim +UpdateRemotePlugins +qa
