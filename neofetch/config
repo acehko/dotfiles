@@ -31,15 +31,3 @@ speed_shorthand="on"
 # Show all disks
 # shellcheck disable=SC2207
 disk_show=($(lsblk -o MOUNTPOINT -x MOUNTPOINT))
-
-# Load OS name
-for file in /etc/*-release; do
-    # shellcheck disable=1090
-    source "$file"
-done
-
-# Change colors for Arch
-if [ "$NAME" == "Arch Linux" ]; then
-    colors=(4 7 7 4 7 7)
-    ascii_colors=(4 4)
-fi
