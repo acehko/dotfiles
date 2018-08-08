@@ -14,4 +14,4 @@ export FZF_DEFAULT_OPTS=$(echo -n "
 
 export FZF_DEFAULT_COMMAND='rg --files --smart-case --hidden --follow --glob "!.git/*"'
 
-source $HOME/.fzf.zsh
+source $HOME/.fzf/shell/key-bindings.zsh
