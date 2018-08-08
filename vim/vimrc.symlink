@@ -10,6 +10,7 @@ source $DOTFILES/vim/whitespace.vim
 source $DOTFILES/vim/ft.vim
 source $DOTFILES/vim/folding.vim
 source $DOTFILES/vim/statusline.vim
+source $DOTFILES/vim/abbrevations.vim
 
 " Plugin config
 source $DOTFILES/vim/plugins/config.vim
