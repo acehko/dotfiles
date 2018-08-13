@@ -3,7 +3,7 @@
 export DOTFILES=$HOME/dotfiles
 export KEYTIMEOUT=1
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 export GOPATH=$HOME/code/go
