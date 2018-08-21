@@ -11,6 +11,7 @@
 [core]
     editor       = nvim
     excludesfile = ~/.gitignore_global
+	askpass =
 
 [diff]
     tool = vimdiff
