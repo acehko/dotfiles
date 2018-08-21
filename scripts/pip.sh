@@ -3,6 +3,6 @@ set -e
 
 # Install python packages
 echo -e "\\nInstalling python packages..."
-sudo pip install \
+sudo pip3 install \
     vim-vint \
     yamllint

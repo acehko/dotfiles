@@ -3,7 +3,7 @@ set -e
 
 # Install node modules
 echo -e "\\nInstalling node modules..."
-sudo npm i -g \
+yarn global add \
     eslint \
     livedown \
     remark-lint \

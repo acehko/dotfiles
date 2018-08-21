@@ -12,15 +12,13 @@ else
     echo "Already installed"
 fi
 
-
 # Create a new tmux session
-tmux has &> /dev/null || tmux new-session -d -s main
+tmux has &>/dev/null || tmux new-session -d -s main
 
 # Initialize TPM
 tmux source-file "$DOTFILES/tmux/tmux.conf.symlink"
 
-
 # Install plugins
 echo "Installing tmux plugins..."
 source "$HOME/.tmux/plugins/tpm/bin/install_plugins"
-source "$HOME/.tmux/plugins/tpm/bin/update_plugins"
+source "$HOME/.tmux/plugins/tpm/bin/update_plugins" all
