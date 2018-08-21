@@ -7,6 +7,8 @@
 
 [credential]
     username = acehko
+	helper = store
+	helper = cache
 
 [core]
     editor       = nvim
