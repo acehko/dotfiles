@@ -42,7 +42,7 @@ left_prompt() {
         PROMPT+="@%F{$COLOR_BLUE}$(hostname)%f "
     fi
 
-    PROMPT+="%(?.%F{$COLOR_BLUE}.%F{$COLOR_RED})❯%f "
+    PROMPT+="%(?.%F{$COLOR_BLUE}.%F{$COLOR_RED}%? )❯%f "
 
 }
 
