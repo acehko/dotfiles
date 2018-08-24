@@ -53,10 +53,11 @@ Plug 'Yggdroot/indentline'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
 " TypeScript
-Plug 'leafgarland/typescript-vim',  { 'for': 'typescript' }
-Plug 'mhartington/nvim-typescript', { 'for': 'typescript' }
-Plug 'Quramy/tsuquyomi',            { 'for': 'typescript' }
-Plug 'Shougo/vimproc.vim',          { 'for': 'typescript', 'do': 'make' }
+Plug 'leafgarland/typescript-vim',   { 'for': 'typescript' }
+Plug 'HerringtonDarkholme/yats.vim', { 'for': 'typescript' }
+Plug 'mhartington/nvim-typescript',  { 'for': 'typescript', 'do': './install.sh' }
+Plug 'Quramy/tsuquyomi',             { 'for': 'typescript' }
+Plug 'Shougo/vimproc.vim',           { 'for': 'typescript', 'do': 'make' }
 
 " Go
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
