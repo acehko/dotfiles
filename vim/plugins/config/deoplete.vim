@@ -15,7 +15,7 @@ call deoplete#custom#source('go', 'rank', 9999)
 call deoplete#custom#source('vim', 'rank', 9999)
 
 " If completion menu is visible use tag to cycle through it otherwise expand snippet
-imap <silent><expr><tab>   pumvisible() ? "\<c-n>" : (neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>")
+imap <silent><expr><tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Custom completion menu colors

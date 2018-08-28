@@ -7,7 +7,6 @@ Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'Valloric/ListToggle'
-Plug 'Shougo/neosnippet'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'dhruvasagar/vim-zoom'
 Plug 'tpope/vim-surround'
@@ -65,7 +64,7 @@ Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
 " Python <3
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
-Plug 'zchee/deoplete-jedi', { 'for': 'python' }
+Plug 'zchee/deoplete-jedi',  { 'for': 'python' }
 
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' }
