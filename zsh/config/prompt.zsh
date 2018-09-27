@@ -72,6 +72,13 @@ right_prompt() {
         return $(( 128 + $1 ))
     }
 
-    RPROMPT="%F{$COLOR_GREY}%~%f$vim_mode"
+    RPROMPT="%F{$COLOR_GREY}%~%f"
+
+    # Python virtualenv
+    if [[ -n $VIRTUAL_ENV ]]; then
+        RPROMPT+="%F{$COLOR_GREY} ( $(basename $VIRTUAL_ENV))%f"
+    fi
+
+    RPROMPT+="$vim_mode"
 
 }
