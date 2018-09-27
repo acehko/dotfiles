@@ -38,3 +38,15 @@ hi WildMenu ctermfg=110 ctermbg=NONE
 
 " Silence message when opening a file
 set shortmess+=F
+
+" Move visible lines instead of rows
+nnoremap j gj
+nnoremap k gk
+
+" Move rows
+nnoremap gj j
+nnoremap gk k
+
+" Yank to clipboard
+nnoremap YY "+Y
+vnoremap Y "+y
