@@ -10,7 +10,7 @@ set smartindent
 
 " Show tab guides
 set list
-set listchars=tab:\ "
+set listchars=tab:\ ,trail:·"
 
 " Default settings
 set tabstop=4
