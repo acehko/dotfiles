@@ -27,10 +27,10 @@ Plug 'xolox/vim-notes', { 'on': 'Note' }
 Plug 'xolox/vim-easytags'
 
 " File management
-Plug 'scrooloose/nerdtree',                     { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'robinfehr/nerdtree-git-plugin',           { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
-Plug 'ryanoasis/vim-devicons',                  { 'on': ['NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'scrooloose/nerdtree',                     { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'robinfehr/nerdtree-git-plugin',           { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
+Plug 'ryanoasis/vim-devicons',                  { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc' }
 Plug 'junegunn/fzf.vim'
