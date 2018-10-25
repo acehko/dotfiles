@@ -37,10 +37,21 @@ hi SignColumn ctermbg=233
 hi WildMenu ctermfg=110 ctermbg=NONE
 
 " Search color
-hi Search ctermfg=233 ctermbg=215
+hi Search cterm=NONE ctermfg=188 ctermbg=59
 
 " Clear search
 nnoremap & :noh<CR>
+
+" Keep search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+nnoremap * *zz
+nnoremap # #zz
+nnoremap g* g*zz
+nnoremap g# g#zz
+
+" Scroll offset
+set scrolloff=5
 
 " Silence message when opening a file
 set shortmess+=F
