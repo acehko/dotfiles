@@ -20,6 +20,7 @@ hi StatusLineCursorPosition ctermfg=110 ctermbg=NONE
 
 " Mode titles
 let g:mode_titles = {
+    \ 'c'  : 'COMMAND',
     \ 'n'  : 'NORMAL',
     \ 'v'  : 'VISUAL',
     \ 'V'  : 'V·LINE',
@@ -52,7 +53,9 @@ endfunction
 
 " Changes status line mode color.
 function! StatusLineChangeColor(mode)
-    if a:mode ==# 'n'
+    if a:mode ==# 'c'
+        hi StatusLineMode ctermfg=215
+    elseif a:mode ==# 'n'
         hi StatusLineMode ctermfg=110
     elseif a:mode ==# 'i'
         hi StatusLineMode ctermfg=107
