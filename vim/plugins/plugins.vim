@@ -24,7 +24,7 @@ Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'on': 'Note' }
-Plug 'xolox/vim-easytags'
+" Plug 'xolox/vim-easytags'
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
@@ -44,7 +44,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " Look and feel
-Plug 'nanotech/jellybeans.vim'
+" Plug 'nanotech/jellybeans.vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentline'
 

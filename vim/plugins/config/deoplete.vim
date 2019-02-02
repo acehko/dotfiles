@@ -19,5 +19,5 @@ imap <silent><expr><tab>   pumvisible() ? "\<c-n>" : "\<tab>"
 imap <silent><expr><s-tab> pumvisible() ? "\<c-p>" : "\<s-tab>"
 
 " Custom completion menu colors
-hi Pmenu    ctermfg=231 ctermbg=235
-hi PmenuSel ctermfg=232 ctermbg=110
+" hi Pmenu    ctermfg=231 ctermbg=235
+" hi PmenuSel ctermfg=232 ctermbg=110

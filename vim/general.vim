@@ -22,7 +22,8 @@ set updatetime=50  " Faster update time
 let g:mapleader=','  " map <Leader> to ','
 
 syntax enable      " Enable syntax highlighting
-silent! colorscheme jellybeans
+silent! colorscheme nord
+
 
 " Always show the sign column
 augroup SignColumn
@@ -30,14 +31,8 @@ augroup SignColumn
     autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 augroup end
 
-" Sign column color
-hi SignColumn ctermbg=233
-
-" WildMenu colors
-hi WildMenu ctermfg=110 ctermbg=NONE
-
 " Search color
-hi Search cterm=NONE ctermfg=188 ctermbg=59
+" hi Search cterm=NONE ctermfg=188 ctermbg=59
 
 " Clear search
 nnoremap & :noh<CR>

@@ -9,10 +9,10 @@ let g:gitgutter_sign_removed_first_line = '┃'
 let g:gitgutter_sign_modified_removed   = '┃'
 
 " Custom colors
-hi GitGutterAdd          ctermfg=107 ctermbg=NONE
-hi GitGutterChange       ctermfg=215 ctermbg=NONE
-hi GitGutterDelete       ctermfg=167 ctermbg=NONE
-hi GitGutterChangeDelete ctermfg=215 ctermbg=NONE
+hi GitGutterAdd          ctermfg=2 ctermbg=NONE
+hi GitGutterChange       ctermfg=11 ctermbg=NONE
+hi GitGutterDelete       ctermfg=1 ctermbg=NONE
+hi GitGutterChangeDelete ctermfg=11 ctermbg=NONE
 
 " Update gutter on text change
 augroup GitGutterTextChangedGroup

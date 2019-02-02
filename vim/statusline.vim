@@ -7,16 +7,16 @@ set laststatus=2 " Enable the statusline
 " Colors
 hi StatusLine               ctermfg=59  ctermbg=NONE
 hi StatusLineNC             ctermfg=59  ctermbg=NONE
-hi StatusLineMode           ctermfg=110 ctermbg=NONE
+hi StatusLineMode           ctermfg=6 ctermbg=NONE
 hi StatusLineFilePrefix     ctermfg=59  ctermbg=NONE
 hi StatusLineFile           ctermfg=59  ctermbg=NONE
 hi StatusLineFileType       ctermfg=59  ctermbg=NONE
-hi StatusLineLocked         ctermfg=167 ctermbg=NONE
-hi StatusLineFileStatus     ctermfg=107 ctermbg=NONE
-hi StatusLinePosition       ctermfg=110 ctermbg=NONE
-hi StatusLineErrors         ctermfg=167 ctermbg=NONE
-hi StatusLineWarnings       ctermfg=215 ctermbg=NONE
-hi StatusLineCursorPosition ctermfg=110 ctermbg=NONE
+hi StatusLineLocked         ctermfg=1 ctermbg=NONE
+hi StatusLineFileStatus     ctermfg=2 ctermbg=NONE
+hi StatusLinePosition       ctermfg=6 ctermbg=NONE
+hi StatusLineErrors         ctermfg=1 ctermbg=NONE
+hi StatusLineWarnings       ctermfg=12 ctermbg=NONE
+hi StatusLineCursorPosition ctermfg=6 ctermbg=NONE
 
 " Mode titles
 let g:mode_titles = {
@@ -26,7 +26,7 @@ let g:mode_titles = {
     \ 'V'  : 'V·LINE',
     \ '' : 'V·BLOCK',
     \ 'i'  : 'INSERT',
-    \ 't'  : 'TERMINAL',
+    \ 't'  : 'TERMINAl',
     \ 's'  : 'SNIPPET',
 \}
 
@@ -44,27 +44,27 @@ function! StatusLineMode()
 
     " If the mode title exists return it
     if has_key(g:mode_titles, l:mode)
-        return '['.g:mode_titles[l:mode].']'
+        return g:mode_titles[l:mode]
     endif
 
     " The mode title is not set, return the original mode title
-    return '['.l:mode.']'
+    return l:mode
 endfunction
 
 " Changes status line mode color.
 function! StatusLineChangeColor(mode)
     if a:mode ==# 'c'
-        hi StatusLineMode ctermfg=215
+        hi StatusLineMode ctermfg=11
     elseif a:mode ==# 'n'
-        hi StatusLineMode ctermfg=110
+        hi StatusLineMode ctermfg=6
     elseif a:mode ==# 'i'
-        hi StatusLineMode ctermfg=107
+        hi StatusLineMode ctermfg=2
     elseif a:mode ==# 'v' || a:mode ==# 'V' || a:mode ==# ''
-        hi StatusLineMode ctermfg=167
+        hi StatusLineMode ctermfg=1
     elseif a:mode ==# 't'
-        hi StatusLineMode ctermfg=215
+        hi StatusLineMode ctermfg=11
     else
-        hi StatusLineMode ctermfg=110
+        hi StatusLineMode ctermfg=6
     endif
 endfunction
 
@@ -78,9 +78,9 @@ function! StatusLineBranch()
 
 	" Change color based on the git status
     if g:git_dirty
-        hi StatusLineBranch ctermfg=215 ctermbg=233
+        hi StatusLineBranch ctermfg=11 ctermbg=0
     else
-        hi StatusLineBranch ctermfg=107 ctermbg=233
+        hi StatusLineBranch ctermfg=6 ctermbg=0
     endif
 
 	" Return git branch name
@@ -93,7 +93,7 @@ function! StatusLineFilePrefix()
 	if g:win_active_nr == winnr()
 		" Change color
 		if &modified
-			hi StatusLineFile ctermfg=215
+			hi StatusLineFile ctermfg=11
 		else
 			hi StatusLineFile ctermfg=59
 		endif
@@ -117,11 +117,11 @@ endfunction
 function! StatusLineGitFileIndicator()
     if exists('b:git_file_status') && len(b:git_file_status)
         if b:git_file_status ==# 'Added'
-            hi StatusLineFileStatus ctermfg=107
+            hi StatusLineFileStatus ctermfg=2
         elseif b:git_file_status ==# 'Modified'
-            hi StatusLineFileStatus ctermfg=215
+            hi StatusLineFileStatus ctermfg=11
         else
-            hi StatusLineFileStatus ctermfg=167
+            hi StatusLineFileStatus ctermfg=1
         endif
 
         return GitFileStatusIndicator(b:git_file_status) . ' '
@@ -156,7 +156,7 @@ endfunction
 " Updates the statusline cursor position color
 function! StatusLineChangeCursorPositionColor()
     if g:win_active_nr == winnr()
-        hi StatusLineCursorPosition ctermfg=110
+        hi StatusLineCursorPosition ctermfg=6
     else
         hi StatusLineCursorPosition ctermfg=59
     endif

@@ -1,0 +1,195 @@
+# --- General config strt ---
+
+# Set mod key to "super"
+set $mod Mod4
+
+# Set font
+font pango:DroidSansMono 11
+
+# Restart i3
+bindsym $mod+Shift+r restart
+
+# Exit i3 (logout)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Logout?' -B 'Yes' 'i3-msg exit'"
+
+# Gaps
+gaps outer 10
+gaps inner 10
+
+# Wallpaper
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg &
+
+exec compton
+
+exec xinput set-prop 12 287 1
+exec xinput set-prop 12 295 1
+
+# Define color scheme
+set $color_background #2E3440
+set $color_foreground #ECEFF4
+set $color_primary    #88C0D0
+set $color_secondary  #A3BE8C
+set $color_alert      #BF616A
+set $color_inactive   #4C566A
+
+# --- General config end ---
+
+# --- Window config start ---
+
+# Use $mod+Mouse to move floating windows
+floating_modifier $mod
+
+# Don't focus windows on mouseover
+focus_follows_mouse no
+
+# Kill window
+bindsym $mod+q kill
+
+# Lock
+bindsym Control+Mod1+l exec "dm-tool lock"
+
+# Change focus (vim keys)
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Change focus (arrow keys)
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# Move window (vim keys)
+bindsym Control+Shift+h move left
+bindsym Control+Shift+j move down
+bindsym Control+Shift+k move up
+bindsym Control+Shift+l move right
+
+# Move window (arrow keys)
+bindsym Control+Shift+Left  move left
+bindsym Control+Shift+Down  move down
+bindsym Control+Shift+Up    move up
+bindsym Control+Shift+Right move right
+
+# Resize window (vim keys)
+bindsym $mod+Shift+h resize shrink width  10 px or 10 ppt
+bindsym $mod+Shift+j resize grow   height 10 px or 10 ppt
+bindsym $mod+Shift+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+l resize grow   width  10 px or 10 ppt
+
+# Resize window (arrow keys)
+bindsym $mod+Shift+Left  resize shrink width  10 px or 10 ppt
+bindsym $mod+Shift+Down  resize grow   height 10 px or 10 ppt
+bindsym $mod+Shift+Up    resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+Right resize grow   width  10 px or 10 ppt
+
+# Horizontal split
+bindsym $mod+b split h
+
+# Vertical split
+bindsym $mod+v split v
+
+# Fullscreen
+bindsym $mod+o fullscreen toggle
+
+# Change container layout
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle floating
+bindsym $mod+p floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+Tab focus mode_toggle
+
+# Focus parent container
+bindsym $mod+a focus parent
+
+# Focus child container
+bindsym $mod+c focus child
+
+# Borders
+default_border pixel 3
+# Hide borders when only one window is visible
+hide_edge_borders smart
+
+title_align center
+# Window colors     border     background  text
+client.focused      $color_primary        $color_primary       $color_background $color_secondary
+client.focused_inactive      $color_primary        $color_primary       $color_background
+client.unfocused    $color_inactive        $color_inactive       #D8DEE9
+client.urgent       $color_alert        $color_alert         $color_background
+
+# --- Window config end ---
+
+# --- Workspace config start ---
+
+# Workspace names
+set $ws0 "0"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+
+# Switch to workspace
+bindsym $mod+0 workspace $ws0
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+
+# Move window to workspace
+bindsym Control+Shift+0 move container to workspace $ws0
+bindsym Control+Shift+1 move container to workspace $ws1
+bindsym Control+Shift+2 move container to workspace $ws2
+bindsym Control+Shift+3 move container to workspace $ws3
+bindsym Control+Shift+4 move container to workspace $ws4
+bindsym Control+Shift+5 move container to workspace $ws5
+bindsym Control+Shift+6 move container to workspace $ws6
+bindsym Control+Shift+7 move container to workspace $ws7
+bindsym Control+Shift+8 move container to workspace $ws8
+bindsym Control+Shift+9 move container to workspace $ws9
+
+workspace_auto_back_and_forth yes
+# --- Workspace config end ---
+
+# --- Application config start ---
+
+# Terminal
+bindsym $mod+Return exec WINIT_HIDPI_FACTOR=1 alacritty
+
+# Rofi
+bindsym $mod+d exec rofi -show drun -p "❯"
+
+assign [class="^Franz$"] 4
+exec --no-startup-id franz
+
+assign [class="^Alacritty$" instance="^htop$"] 0
+exec --no-startup-id "WINIT_HIDPI_FACTOR=1 alacritty --class htop -e htop"
+
+assign [class="^Alacritty$" instance="^tmux"] 3
+exec --no-startup-id "WINIT_HIDPI_FACTOR=1 DOTFILES=/home/andrija/dotfiles alacritty --class tmux -e tmux new-session -A -s main"
+
+# Autostart
+exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh
+
+exec_always "setxkbmap -layout us,hr"
+exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+
+exec --no-startup-id unclutter
+
+exec --no-startup-id redshift-gtk
+
+# --- Application config end ---

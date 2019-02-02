@@ -8,7 +8,7 @@ let g:NERDTreeDirArrowCollapsible = ''       " Custom expanded icon
 let g:NERDTreeMinimalUI           = 1         " Hide help text
 
 " Custom directory color
-hi Directory ctermfg=110
+hi Directory ctermfg=6
 
 " Bind NERDTree to CTRL + B
 noremap <silent> <C-b> :NERDTreeToggle<CR>

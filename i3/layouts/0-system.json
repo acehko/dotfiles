@@ -1,0 +1,15 @@
+{
+  "border": "pixel",
+  "current_border_width": 3,
+  "floating": "auto_off",
+  "jname": "Alacritty",
+  "percent": 1,
+  "swallows": [
+    {
+      "class": "^Alacritty$",
+      "instance": "^Alacritty$",
+      "title": "^htop$"
+    }
+  ],
+  "type": "con"
+}
