@@ -162,7 +162,7 @@ workspace_auto_back_and_forth yes
 # Power control
 bindsym Control+Mod1+l         exec --no-startup-id $HOME/dotfiles/i3/scripts/lock.sh # Lock
 bindsym Control+Mod1+BackSpace exec --no-startup-id i3-msg exit                       # Logout
-bindsym Control+Mod1+R         exec --no-startup-id systemctl reboot                  # Reboot
+bindsym Control+Mod1+r         exec --no-startup-id systemctl reboot                  # Reboot
 bindsym Control+Mod1+Delete    exec --no-startup-id systemctl poweroff                # Poweroff
 
 # --- Application config start ---
