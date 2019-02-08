@@ -12,6 +12,7 @@ sudo pacman -S --needed --noconfirm \
     go \
     gvim \
     htop \
+    light \
     make \
     neovim \
     nodejs \
