@@ -6,7 +6,7 @@ MEM_HIGH=90
 SWAP_MEDIUM=1
 SWAP_HIGH=30
 
-COLOR_EMPTY="#[bg=colour$COLOR_BLACK]"
+COLOR_EMPTY="#[bg=default]"
 COLOR_MEDIUM="#[fg=colour$COLOR_BLACK,bg=colour$COLOR_ORANGE]"
 COLOR_HIGH="#[fg=colour188,bg=colour$COLOR_DARK_RED]"
 

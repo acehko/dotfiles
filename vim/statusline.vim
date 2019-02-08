@@ -5,18 +5,18 @@ set noshowmode   " Hide the default mode shower
 set laststatus=2 " Enable the statusline
 
 " Colors
-hi StatusLine               ctermfg=59  ctermbg=NONE
-hi StatusLineNC             ctermfg=59  ctermbg=NONE
-hi StatusLineMode           ctermfg=6 ctermbg=NONE
-hi StatusLineFilePrefix     ctermfg=59  ctermbg=NONE
-hi StatusLineFile           ctermfg=59  ctermbg=NONE
-hi StatusLineFileType       ctermfg=59  ctermbg=NONE
-hi StatusLineLocked         ctermfg=1 ctermbg=NONE
-hi StatusLineFileStatus     ctermfg=2 ctermbg=NONE
-hi StatusLinePosition       ctermfg=6 ctermbg=NONE
-hi StatusLineErrors         ctermfg=1 ctermbg=NONE
-hi StatusLineWarnings       ctermfg=12 ctermbg=NONE
-hi StatusLineCursorPosition ctermfg=6 ctermbg=NONE
+hi StatusLine               ctermfg=8 ctermbg=NONE
+hi StatusLineNC             ctermfg=8 ctermbg=NONE
+hi StatusLineMode           ctermfg=6  ctermbg=NONE
+hi StatusLineFilePrefix     ctermfg=8 ctermbg=NONE
+hi StatusLineFile           ctermfg=8 ctermbg=NONE
+hi StatusLineFileType       ctermfg=8 ctermbg=NONE
+hi StatusLineLocked         ctermfg=1  ctermbg=NONE
+hi StatusLineFileStatus     ctermfg=2  ctermbg=NONE
+hi StatusLinePosition       ctermfg=6  ctermbg=NONE
+hi StatusLineErrors         ctermfg=1  ctermbg=NONE
+hi StatusLineWarnings       ctermfg=11 ctermbg=NONE
+hi StatusLineCursorPosition ctermfg=6  ctermbg=NONE
 
 " Mode titles
 let g:mode_titles = {
@@ -78,9 +78,9 @@ function! StatusLineBranch()
 
 	" Change color based on the git status
     if g:git_dirty
-        hi StatusLineBranch ctermfg=11 ctermbg=0
+        hi StatusLineBranch ctermfg=11 ctermbg=NONE
     else
-        hi StatusLineBranch ctermfg=6 ctermbg=0
+        hi StatusLineBranch ctermfg=2 ctermbg=NONE
     endif
 
 	" Return git branch name
@@ -95,7 +95,7 @@ function! StatusLineFilePrefix()
 		if &modified
 			hi StatusLineFile ctermfg=11
 		else
-			hi StatusLineFile ctermfg=59
+			hi StatusLineFile ctermfg=8
 		endif
 
 		return '» '
@@ -158,7 +158,7 @@ function! StatusLineChangeCursorPositionColor()
     if g:win_active_nr == winnr()
         hi StatusLineCursorPosition ctermfg=6
     else
-        hi StatusLineCursorPosition ctermfg=59
+        hi StatusLineCursorPosition ctermfg=8
     endif
     return ''
 endfunction
@@ -177,7 +177,7 @@ function! DrawStatusLine()
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
         setlocal statusline+=%#StatusLineWarnings#%{StatusLineWarnings()}
         setlocal statusline+=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
-        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}[%l/%L\ :\ %c]
+        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}%L\ %c
     endif
 endfunction
 

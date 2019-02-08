@@ -12,6 +12,8 @@ set smartindent
 set list
 set listchars=tab:\ ,trail:·"
 
+let g:indentLine_color_term = 8
+
 " Default settings
 set tabstop=4
 set softtabstop=4
@@ -35,6 +37,7 @@ endfunction
 let g:indent_two_spaces = [
 \   'javascript',
 \   'json',
+\   'ruby',
 \   'toml',
 \   'typescript',
 \   'yaml',
@@ -43,6 +46,7 @@ let g:indent_two_spaces = [
 let g:indent_guides = [
 \   'toml',
 \   'yaml',
+\   'ruby',
 \]
 
 let g:no_indent_guides = [

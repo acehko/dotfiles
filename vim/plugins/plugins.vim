@@ -70,4 +70,9 @@ Plug 'zchee/deoplete-jedi',  { 'for': 'python' }
 " Vim
 Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
+" Ruby
+Plug 'tpope/vim-rails',           { 'for': 'ruby' }
+Plug 'tpope/vim-endwise',         { 'for': 'ruby' }
+" Plug 'uplus/deoplete-solargraph', { 'for': 'ruby' }
+
 call plug#end()

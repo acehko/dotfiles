@@ -8,17 +8,17 @@ print_info() {
     info title
     info underline
 
-    info "OS"       distro
-    info "Model"    model
-    info "Kernel"   kernel
-    info "Uptime"   uptime
-    info "Shell"    shell
+    info "OS" distro
+    info "Model" model
+    info "Kernel" kernel
+    info "Uptime" uptime
+    info "Shell" shell
     info "Terminal" term
-    info "CPU"      cpu
-    info "GPU"      gpu
-    info "Memory"   memory
-    info "Disk"     disk
-    info "IP"       local_ip
+    info "CPU" cpu
+    info "GPU" gpu
+    info "Memory" memory
+    info "Disk" disk
+    info "IP" local_ip
 
 }
 
@@ -37,7 +37,7 @@ for file in /etc/*-release; do
     # shellcheck disable=1090
     source "$file"
 done
- # Change colors for Arch
+# Change colors for Arch
 if [ "$NAME" == "Arch Linux" ]; then
     colors=(4 7 7 4 7 7)
     ascii_colors=(4 4)
