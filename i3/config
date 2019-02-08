@@ -194,6 +194,9 @@ exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh
 exec_always "setxkbmap -layout us,hr"
 exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
 
+# Configure keyboard sensitivity
+exec --no-startup-ip xset r rate 250 50
+
 exec --no-startup-id unclutter
 
 exec --no-startup-id redshift-gtk
