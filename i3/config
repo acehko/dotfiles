@@ -197,7 +197,8 @@ exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
 # Configure keyboard sensitivity
 exec --no-startup-ip xset r rate 250 50
 
-exec --no-startup-id unclutter
+# Hide mouse when inactive
+exec --no-startup-id unclutter --timeout 10
 
 exec --no-startup-id redshift-gtk
 

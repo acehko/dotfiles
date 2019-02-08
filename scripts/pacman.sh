@@ -25,6 +25,7 @@ sudo pacman -S --needed --noconfirm \
     shellcheck \
     tmux \
     the_silver_searcher \
+    unclutter \
     xclip \
     yarn \
     zsh
