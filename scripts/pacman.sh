@@ -16,6 +16,7 @@ sudo pacman -S --needed --noconfirm \
     make \
     neovim \
     nodejs \
+    polkit \
     python \
     python-neovim \
     python-pip \
@@ -33,5 +34,6 @@ sudo pacman -S --needed --noconfirm \
 # Install AUR packages
 echo -e "\\nInstalling AUR packages..."
 yay -S --noconfirm \
+    i3lock-color \
     neofetch \
     nerd-fonts-complete-mono-glyphs

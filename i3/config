@@ -9,9 +9,6 @@ font pango:DroidSansMono 11
 # Restart i3
 bindsym $mod+Shift+r restart
 
-# Exit i3 (logout)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Logout?' -B 'Yes' 'i3-msg exit'"
-
 # Gaps
 gaps outer 10
 gaps inner 10
@@ -44,9 +41,6 @@ focus_follows_mouse no
 
 # Kill window
 bindsym $mod+q kill
-
-# Lock
-bindsym Control+Mod1+l exec "dm-tool lock"
 
 # Change focus (vim keys)
 bindsym $mod+h focus left
@@ -164,6 +158,12 @@ bindsym Control+Shift+9 move container to workspace $ws9
 
 workspace_auto_back_and_forth yes
 # --- Workspace config end ---
+
+# Power control
+bindsym Control+Mod1+l         exec --no-startup-id $HOME/dotfiles/i3/scripts/lock.sh # Lock
+bindsym Control+Mod1+BackSpace exec --no-startup-id i3-msg exit                       # Logout
+bindsym Control+Mod1+R         exec --no-startup-id systemctl reboot                  # Reboot
+bindsym Control+Mod1+Delete    exec --no-startup-id systemctl poweroff                # Poweroff
 
 # --- Application config start ---
 
