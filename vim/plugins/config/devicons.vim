@@ -1,6 +1,7 @@
 " DevIcons config
 scriptencoding utf-8
 
+let g:WebDevIconsNerdTreeBeforeGlyphPadding              = ''   " Padding after the icon
 let g:WebDevIconsNerdTreeAfterGlyphPadding               = ' '   " Padding after the icon
 let g:WebDevIconsUnicodeDecorateFileNodesDefaultSymbol   = ''  " Default icon for unknown file types
 let g:WebDevIconsUnicodeDecorateFolderNodes              = 1    " Enable icons on folders
