@@ -180,6 +180,7 @@ assign [class="^Alacritty$" instance="^htop$"] 0
 exec --no-startup-id "WINIT_HIDPI_FACTOR=1 alacritty --class htop -e htop"
 
 assign [class="^Thunderbird$"] 1
+for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 exec --no-startup-id thunderbird
 
 assign [class="^Firefox$"] 2
