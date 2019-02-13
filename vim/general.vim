@@ -24,6 +24,8 @@ let g:mapleader=','  " map <Leader> to ','
 syntax enable      " Enable syntax highlighting
 silent! colorscheme nord
 
+" Color for current item in wildmenu
+hi WildMenu ctermfg=6 ctermbg=NONE
 
 " Always show the sign column
 augroup SignColumn
