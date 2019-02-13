@@ -165,12 +165,11 @@ ramp-used-2 =
 ramp-used-3 =
 ramp-used-4 =
 ramp-used-5 =
-ramp-used-6 = " RAM "
+ramp-used-6 =
 ramp-used-7 = " RAM "
 ramp-used-8 = " RAM "
 ramp-used-9 = " RAM "
 
-ramp-used-6-background = ${colors.warn}
 ramp-used-7-background = ${colors.warn}
 ramp-used-8-background = ${colors.warn}
 ramp-used-9-background = ${colors.alert}
