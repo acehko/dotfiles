@@ -44,9 +44,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " Look and feel
-" Plug 'nanotech/jellybeans.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'Yggdroot/indentline'
 
 " JavaScript

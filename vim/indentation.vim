@@ -41,20 +41,12 @@ let g:indent_two_spaces = [
 \   'toml',
 \   'typescript',
 \   'yaml',
+\   'eruby.yaml',
 \]
 
-let g:indent_guides = [
-\   'toml',
-\   'yaml',
-\   'ruby',
-\]
-
-let g:no_indent_guides = [
+let g:no_indent_lines = [
 \   'help',
 \   'nerdtree',
-\   'javascript',
-\   'json',
-\   'typescript',
 \]
 
 function! Indent()
@@ -65,16 +57,11 @@ function! Indent()
     endif
 endfunction
 
-function! IndentGuides()
-    if &filetype ==# '' || index(g:no_indent_guides, &filetype) > -1
+function! IndentLines()
+    if &filetype ==# '' || index(g:no_indent_lines, &filetype) > -1
         silent! IndentLinesDisable
-        silent! IndentGuidesDisable
-    elseif index(g:indent_guides, &filetype) > -1
-        silent! IndentLinesDisable
-        silent! IndentGuidesEnable
     else
         silent! IndentLinesEnable
-        silent! IndentGuidesDisable
     endif
 endfunction
 
@@ -82,5 +69,5 @@ endfunction
 augroup IndentationGroup
     autocmd!
     autocmd BufEnter * call Indent()
-    autocmd BufEnter * call IndentGuides()
+    autocmd BufEnter * call IndentLines()
 augroup end
