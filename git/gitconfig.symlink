@@ -53,5 +53,4 @@
     restore = checkout --
 
     # Last commit
-    last = log --stat "HEAD^..HEAD"
-    slast = show HEAD
+    last = "!f() { if [[ $1 == 'show' ]]; then git show HEAD; else git log --stat 'HEAD^..HEAD'; fi }; f"
