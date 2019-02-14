@@ -51,3 +51,7 @@
 
     # Restore
     restore = checkout --
+
+    # Last commit
+    last = log --stat "HEAD^..HEAD"
+    slast = show HEAD
