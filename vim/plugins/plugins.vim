@@ -47,6 +47,10 @@ Plug 'shime/vim-livedown', { 'for': 'markdown' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'Yggdroot/indentline'
 
+" HTML
+Plug 'tmhedberg/matchit', { 'for': 'html' }
+Plug 'mattn/emmet-vim',   { 'for': 'html' }
+
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 
