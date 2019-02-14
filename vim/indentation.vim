@@ -25,6 +25,7 @@ function! FourSpaceIndent()
     setlocal tabstop=4
     setlocal softtabstop=4
     setlocal shiftwidth=4
+    silent! IndentLinesReset
 endfunction
 
 " Function called for two-space indent files
@@ -32,16 +33,18 @@ function! TwoSpaceIndent()
     setlocal tabstop=2
     setlocal softtabstop=2
     setlocal shiftwidth=2
+    silent! IndentLinesReset
 endfunction
 
 let g:indent_two_spaces = [
+\   'eruby',
+\   'eruby.yaml',
 \   'javascript',
 \   'json',
 \   'ruby',
 \   'toml',
 \   'typescript',
 \   'yaml',
-\   'eruby.yaml',
 \]
 
 let g:no_indent_lines = [
