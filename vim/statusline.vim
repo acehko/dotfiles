@@ -177,7 +177,7 @@ function! DrawStatusLine()
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
         setlocal statusline+=%#StatusLineWarnings#%{StatusLineWarnings()}
         setlocal statusline+=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
-        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}%L\ %c
+        setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}%c\ %L
     endif
 endfunction
 
