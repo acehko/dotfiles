@@ -183,8 +183,8 @@ assign [class="^Thunderbird$"] 1
 for_window [window_role="Msgcompose" class="(?i)Thunderbird"] floating enable
 exec --no-startup-id thunderbird
 
-assign [class="^Firefox$"] 2
-exec --no-startup-id firefox
+assign [class="^Google-chrome$"] 2
+exec --no-startup-id google-chrome-stable
 
 assign [class="^Alacritty$" instance="^tmux"] 3
 exec --no-startup-id "WINIT_HIDPI_FACTOR=1 DOTFILES=/home/andrija/dotfiles alacritty --class tmux -e tmux new-session -A -s main"
