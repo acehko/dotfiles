@@ -64,3 +64,6 @@ nnoremap gk k
 " Yank to clipboard
 nnoremap YY "+Y
 vnoremap Y "+y
+
+" Matching parantheses color
+hi MatchParen ctermfg=0 ctermbg=4
