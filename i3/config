@@ -191,6 +191,7 @@ assign [class="^Alacritty$" instance="^tmux"] 3
 exec --no-startup-id "WINIT_HIDPI_FACTOR=1 DOTFILES=/home/andrija/dotfiles alacritty --class tmux -e tmux new-session -A -s main"
 
 for_window [class="^Gnome-calculator$"] border pixel 3, floating enable
+for_window [class="^Gnome-calendar"] border pixel 3, floating enable
 
 # Autostart
 exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh
