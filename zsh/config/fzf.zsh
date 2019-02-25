@@ -8,7 +8,7 @@ export FZF_DEFAULT_OPTS=$(echo -n "
     --prompt='❯ '
     --border
     --no-bold
-    --color hl:3,fg+:6,bg+:0,hl+:3
+    --color hl:3,fg+:6,bg+:-1,hl+:3
     --color info:$COLOR_GREEN,prompt:$COLOR_BLUE,spinner:$COLOR_GREEN,pointer:$COLOR_BLUE,marker:$COLOR_ORANGE,border:$COLOR_BLUE
 ")
 
