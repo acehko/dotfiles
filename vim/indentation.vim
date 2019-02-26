@@ -10,7 +10,7 @@ set smartindent
 
 " Show tab guides
 set list
-set listchars=tab:\ ,trail:·"
+set listchars=tab:\ "
 
 let g:indentLine_color_term = 8
 
