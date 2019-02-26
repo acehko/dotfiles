@@ -61,6 +61,9 @@ Plug 'mhartington/nvim-typescript',  { 'for': 'typescript', 'do': './install.sh'
 Plug 'Quramy/tsuquyomi',             { 'for': 'typescript' }
 Plug 'Shougo/vimproc.vim',           { 'for': 'typescript', 'do': 'make' }
 
+" Coffeescript"
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+
 " Go
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
