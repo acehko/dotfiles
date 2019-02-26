@@ -48,8 +48,9 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'Yggdroot/indentline'
 
 " HTML
-Plug 'tmhedberg/matchit', { 'for': 'html' }
-Plug 'mattn/emmet-vim',   { 'for': 'html' }
+Plug 'tmhedberg/matchit',  { 'for': 'html' }
+Plug 'mattn/emmet-vim',    { 'for': 'html' }
+Plug 'alvan/vim-closetag', { 'for': 'html' }
 
 " JavaScript
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
