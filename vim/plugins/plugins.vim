@@ -25,6 +25,7 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'on': 'Note' }
 " Plug 'xolox/vim-easytags'
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'vim'] }
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
@@ -69,7 +70,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
 Plug 'zchee/deoplete-go', { 'for': 'go', 'do': 'make'}
 
-" Python <3
+" Python
 Plug 'davidhalter/jedi-vim', { 'for': 'python' }
 Plug 'zchee/deoplete-jedi',  { 'for': 'python' }
 
@@ -78,7 +79,6 @@ Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
 " Ruby
 Plug 'tpope/vim-rails',           { 'for': 'ruby' }
-Plug 'tpope/vim-endwise',         { 'for': 'ruby' }
 " Plug 'uplus/deoplete-solargraph', { 'for': 'ruby' }
 
 call plug#end()
