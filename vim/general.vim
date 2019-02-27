@@ -33,19 +33,8 @@ augroup SignColumn
     autocmd BufRead,BufNewFile * setlocal signcolumn=yes
 augroup end
 
-" Search color
-" hi Search cterm=NONE ctermfg=188 ctermbg=59
-
 " Clear search
 nnoremap & :noh<CR>
-
-" Keep search results in the middle of the screen
-nnoremap n nzz
-nnoremap N Nzz
-nnoremap * *zz
-nnoremap # #zz
-nnoremap g* g*zz
-nnoremap g# g#zz
 
 " Scroll offset
 set scrolloff=5
