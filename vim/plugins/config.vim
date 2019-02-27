@@ -14,6 +14,7 @@ source $DOTFILES/vim/plugins/config/nerdcommenter.vim
 source $DOTFILES/vim/plugins/config/tagbar.vim
 source $DOTFILES/vim/plugins/config/tsuquyomi.vim
 source $DOTFILES/vim/plugins/config/go.vim
+source $DOTFILES/vim/plugins/config/gutentags.vim
 source $DOTFILES/vim/plugins/config/json.vim
 source $DOTFILES/vim/plugins/config/multiple-cursors.vim
 source $DOTFILES/vim/plugins/config/incsearch.vim

@@ -24,7 +24,7 @@ Plug 'dominikduda/vim_current_word'
 Plug 'haya14busa/incsearch.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'on': 'Note' }
-" Plug 'xolox/vim-easytags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-endwise', { 'for': ['ruby', 'vim'] }
 
 " File management
