@@ -45,6 +45,7 @@ let g:indent_two_spaces = [
 \   'toml',
 \   'typescript',
 \   'yaml',
+\   'coffee'
 \]
 
 let g:no_indent_lines = [
