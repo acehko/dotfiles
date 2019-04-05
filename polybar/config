@@ -1,12 +1,12 @@
 [colors]
-background     = #2E3440
-background-alt = #3B4252
-foreground     = #ECEFF4
-primary        = #88C0D0
-secondary      = #A3BE8C
-warn           = #D08770
-alert          = #BF616A
-inactive       = #4C566A
+background     = ${env:COLOR_WEB_BACKGROUND}
+background-alt = ${env:COLOR_WEB_BLACK}
+foreground     = ${env:COLOR_WEB_FOREGROUND}
+primary        = ${env:COLOR_WEB_BLUE}
+secondary      = ${env:COLOR_WEB_GREEN}
+warn           = ${env:COLOR_WEB_YELLOW}
+alert          = ${env:COLOR_WEB_RED}
+inactive       = ${env:COLOR_WEB_BRIGHT_BLACK}
 
 [bar/main]
 width = 100%
@@ -28,7 +28,7 @@ font-2 = Font Awesome 5 Brands:size=10;1
 font-3 = siji:pixelsize=10;1
 
 modules-left   = i3
-modules-center = date
+; modules-center = date
 modules-right  = filesystem temperature cpu memory pulseaudio xkeyboard wlan battery powermenu
 
 tray-position      = right
@@ -36,6 +36,12 @@ tray-padding-right = 2
 
 cursor-click  = pointer
 cursor-scroll = ns-resize
+
+[bar/secondary]
+inherit = bar/main
+monitor = HDMI-1
+modules-right =
+tray-position = none
 
 [module/i3]
 type            = internal/i3
@@ -50,26 +56,28 @@ ws-icon-1 = 1;
 ws-icon-2 = 2;
 ws-icon-3 = 3;
 ws-icon-4 = 4;
-ws-icon-5 = 5;
-ws-icon-6 = 6;
-ws-icon-7 = 7;
-ws-icon-8 = 8;
-ws-icon-9 = 9;
+ws-icon-5 = 5;
+ws-icon-6 = 6;6
+ws-icon-7 = 7;7
+ws-icon-8 = 8;8
+ws-icon-9 = 9;9
 
 ; Active workspace on focused monitor
-label-focused            = %icon%  %index%
+label-focused            = %icon%
+label-focused-foreground = ${colors.foreground}
 label-focused-background = ${colors.background-alt}
 label-focused-underline  = ${colors.primary}
-label-focused-padding    = 3
+label-focused-padding    = 4
 
 ; Inactive workspace on any monitor
-label-unfocused         = ${self.label-focused}
-label-unfocused-padding = ${self.label-focused-padding}
+label-unfocused            = ${self.label-focused}
+; label-unfocused-foreground = ${colors.inactive}
+label-unfocused-padding    = ${self.label-focused-padding}
 
 ; Active workspace on unfocused monitor
 label-visible            = ${self.label-focused}
 label-visible-background = ${self.label-focused-background}
-label-visible-underline  = ${self.label-focused-underline}
+label-visible-underline  = ${colors.inactive}
 label-visible-padding    = ${self.label-focused-padding}
 
 ; Workspace with urgency hint set
@@ -125,14 +133,14 @@ format-warn = <label-warn>
 
 label-warn            = " %temperature-c% "
 label-warn-underline  = ${colors.background}
-label-warn-foreground = #121212
+label-warn-foreground = ${colors.foreground}
 label-warn-background = ${colors.alert}
 
 [module/cpu]
 type              = internal/cpu
 interval          = 2
 format            = <ramp-load>
-format-foreground = #121212
+format-foreground = ${colors.background}
 format-underline  = ${colors.background}
 
 ramp-load-0 =
