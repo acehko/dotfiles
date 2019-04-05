@@ -17,4 +17,4 @@ EOF
 antigen apply
 
 # Load plugin config
-source "$DOTFILES_ZSH/plugins/config/config.zsh"
+source "$DOTFILES/zsh/plugins/config/config.zsh"

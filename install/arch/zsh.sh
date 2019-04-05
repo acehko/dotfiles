@@ -18,9 +18,9 @@ curl -Lo "$ANITGEN_LOCATION" --create-dirs git.io/antigen
 # Install plugins
 echo
 echo "Installing zsh plugins..."
-zsh -c "source $DOTFILES_ZSH/plugins/plugins.zsh"
+zsh -c "source $DOTFILES/zsh/plugins/plugins.zsh"
 
 # Link zsh config
 echo
 echo "Linking zsh config..."
-LINK "$DOTFILES_ZSH" "$HOME" ".zprofile" ".zshenv" ".zshrc"
+LINK "$DOTFILES/zsh" "$HOME" ".zprofile" ".zshenv" ".zshrc"

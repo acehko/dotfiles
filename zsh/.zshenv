@@ -2,8 +2,6 @@
 
 # Dotfiles location
 export DOTFILES="$HOME/dotfiles"
-export DOTFILES_ALACRITTY="$DOTFILES/alacritty"
-export DOTFILES_ZSH="$DOTFILES/zsh"
 
 # Defatul editors
 export VISUAL="nvim"
@@ -19,4 +17,4 @@ export RUBY_BIN="$(ruby -e 'print Gem.user_dir')/bin"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # Colors
-source "$DOTFILES_ZSH/config/colors.zsh"
+source "$DOTFILES/zsh/config/colors.zsh"

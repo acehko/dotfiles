@@ -10,4 +10,4 @@ PACMAN \
 
 echo
 echo "Linking alacritty config..."
-LINK "$DOTFILES_ALACRITTY" "$XDG_CONFIG_HOME/alacritty" "alacritty.yml"
+LINK "$DOTFILES/alacritty" "$XDG_CONFIG_HOME/alacritty" "alacritty.yml"
