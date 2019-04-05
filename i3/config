@@ -221,7 +221,7 @@ bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures
 bindsym Control+Print exec gnome-screenshot -i
 
 # Autostart
-exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh
+exec_always --no-startup-id $HOME/dotfiles/polybar/scripts/launch.sh
 
 exec_always "setxkbmap -layout us,hr"
 exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
