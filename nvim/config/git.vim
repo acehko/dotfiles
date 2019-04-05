@@ -1,11 +1,6 @@
 " Set the current git branch and status globally.
 scriptencoding utf8
 
-" hi DiffAdd    ctermfg=233 ctermbg=107
-" hi DiffChange ctermfg=233 ctermbg=215
-" hi DiffText   ctermfg=214 ctermbg=233
-" hi DiffDelete ctermfg=167 ctermbg=233
-
 let g:is_git_repo = 0  " 1 if the current directory is a git repo
 let g:git_branch  = '' " Current git branch name
 let g:git_dirty   = 0  " 1 if there are uncommited changes in the repo

@@ -4,20 +4,6 @@ scriptencoding utf-8
 set noshowmode   " Hide the default mode shower
 set laststatus=2 " Enable the statusline
 
-" Colors
-hi StatusLine               ctermfg=8 ctermbg=NONE
-hi StatusLineNC             ctermfg=8 ctermbg=NONE
-hi StatusLineMode           ctermfg=6  ctermbg=NONE
-hi StatusLineFilePrefix     ctermfg=8 ctermbg=NONE
-hi StatusLineFile           ctermfg=8 ctermbg=NONE
-hi StatusLineFileType       ctermfg=8 ctermbg=NONE
-hi StatusLineLocked         ctermfg=1  ctermbg=NONE
-hi StatusLineFileStatus     ctermfg=2  ctermbg=NONE
-hi StatusLinePosition       ctermfg=6  ctermbg=NONE
-hi StatusLineErrors         ctermfg=1  ctermbg=NONE
-hi StatusLineWarnings       ctermfg=11 ctermbg=NONE
-hi StatusLineCursorPosition ctermfg=6  ctermbg=NONE
-
 " Mode titles
 let g:mode_titles = {
     \ 'c'  : 'COMMAND',
@@ -32,11 +18,11 @@ let g:mode_titles = {
 
 " Returns the mode title and changes the mode color.
 function! StatusLineMode()
-	" If the current window is not the active one
-	" don't display the vim mode
-	if g:win_active_nr != winnr()
-		return ''
-	endif
+    " If the current window is not the active one
+    " don't display the vim mode
+    if g:win_active_nr != winnr()
+        return ''
+    endif
 
     " Get the current mode and change the color
     let l:mode = mode()
@@ -44,84 +30,86 @@ function! StatusLineMode()
 
     " If the mode title exists return it
     if has_key(g:mode_titles, l:mode)
-        return g:mode_titles[l:mode]
+        return g:mode_titles[l:mode] . ' '
     endif
 
     " The mode title is not set, return the original mode title
-    return l:mode
+    return l:mode . ' '
 endfunction
 
 " Changes status line mode color.
 function! StatusLineChangeColor(mode)
     if a:mode ==# 'c'
-        hi StatusLineMode ctermfg=11
+        hi! link StatusLineMode StatusLineCommandMode
     elseif a:mode ==# 'n'
-        hi StatusLineMode ctermfg=6
+        hi! link StatusLineMode StatusLineNormalMode
     elseif a:mode ==# 'i'
-        hi StatusLineMode ctermfg=2
+        hi! link StatusLineMode StatusLineInsertMode
     elseif a:mode ==# 'v' || a:mode ==# 'V' || a:mode ==# ''
-        hi StatusLineMode ctermfg=1
+        hi! link StatusLineMode StatusLineVisualMode
     elseif a:mode ==# 't'
-        hi StatusLineMode ctermfg=11
+        hi! link StatusLineMode StatusLineTerminalMode
     else
-        hi StatusLineMode ctermfg=6
+        hi! link StatusLineMode StatusLineNormalMode
     endif
 endfunction
 
 " Returns the current git branch and changes the color if clean/dirty.
 function! StatusLineBranch()
-	" If the current window is not the active one
-	" or not a git repo, don't show the branch
-	if g:win_active_nr != winnr() || !g:is_git_repo
-		return ''
-	endif
-
-	" Change color based on the git status
-    if g:git_dirty
-        hi StatusLineBranch ctermfg=11 ctermbg=NONE
-    else
-        hi StatusLineBranch ctermfg=2 ctermbg=NONE
+    " If the current window is not the active one
+    " or not a git repo, don't show the branch
+    if g:win_active_nr != winnr() || !g:is_git_repo
+        return ''
     endif
 
-	" Return git branch name
+    " Change color based on the git status
+    if g:git_dirty
+        hi! link StatusLineBranch StatusLineBranchDirty
+    else
+        hi! link StatusLineBranch StatusLineBranchClean
+    endif
+
+    " Return git branch name
     return '' . g:git_branch . ' '
 endfunction
 
 " Returns the '»' character if the current window is active
 " and change the color if the file has been modified.
 function! StatusLineFilePrefix()
-	if g:win_active_nr == winnr()
-		" Change color
-		if &modified
-			hi StatusLineFile ctermfg=11
-		else
-			hi StatusLineFile ctermfg=8
-		endif
+    if g:win_active_nr == winnr()
+        " Change color
+        if &modified
+            hi! link StatusLineFile StatusLineFileUnsaved
+        else
+            hi! link StatusLineFile StatusLineFileSaved
+        endif
 
-		return '» '
-	endif
+        return '» '
+    endif
 
-	return ''
+    return ''
 endfunction
 
 " Returns the '🔒' character if the file is read-only.
 function! StatusLineFileSuffix()
-	if &readonly
-		return '🔒'
-	endif
+    if &readonly
+        return '🔒'
+    endif
 
-	return ''
+    return ''
 endfunction
 
 " Returns the git status indicator and update the indicator color
 function! StatusLineGitFileIndicator()
     if exists('b:git_file_status') && len(b:git_file_status)
-        if b:git_file_status ==# 'Added'
-            hi StatusLineFileStatus ctermfg=2
+        if g:win_active_nr != winnr()
+            hi! link StatusLineFileStatus StatusLineInactive
+        elseif b:git_file_status ==# 'Added'
+            hi! link StatusLineFileStatus StatusLineFileStatusAdded
         elseif b:git_file_status ==# 'Modified'
-            hi StatusLineFileStatus ctermfg=11
+            hi! link StatusLineFileStatus StatusLineFileStatusModified
         else
-            hi StatusLineFileStatus ctermfg=1
+            hi! link StatusLineFileStatus StatusLineFileStatusRemoved
         endif
 
         return GitFileStatusIndicator(b:git_file_status) . ' '
@@ -133,6 +121,14 @@ endfunction
 function! StatusLineErrors()
     let l:ale_status = ale#statusline#Count(bufnr('%'))
     let l:errors = l:ale_status['error'] + l:ale_status['style_error']
+
+    if g:win_active_nr != winnr()
+        hi! link StatusLineErrors StatusLineInactive
+        hi! link StatusLineWarnings StatusLineInactive
+    else
+        hi! link StatusLineErrors ErrorMsg
+        hi! link StatusLineWarnings WarningMsg
+    endif
 
     if l:errors
         return '✘/' . l:errors . ' '
@@ -156,9 +152,9 @@ endfunction
 " Updates the statusline cursor position color
 function! StatusLineChangeCursorPositionColor()
     if g:win_active_nr == winnr()
-        hi StatusLineCursorPosition ctermfg=6
+        hi! link StatusLineCursorPosition StatusLineCursorPositionActive
     else
-        hi StatusLineCursorPosition ctermfg=8
+        hi! link StatusLineCursorPosition StatusLineCursorPositionInactive
     endif
     return ''
 endfunction
@@ -169,17 +165,18 @@ function! DrawStatusLine()
     if &modifiable && !exists('b:statusline')
         let b:statusline=1
         setlocal statusline=%#StatusLineMode#%{StatusLineMode()}
-        setlocal statusline+=\ %#StatusLineBranch#%{StatusLineBranch()}
+        setlocal statusline+=%#StatusLineBranch#%{StatusLineBranch()}
         setlocal statusline+=%#StatusLineFilePrefix#%{StatusLineFilePrefix()}
-        setlocal statusline+=%#StatusLineFile#%f\ %#StatusLineLocked#%{StatusLineFileSuffix()}
+        setlocal statusline+=%#StatusLineFile#%f\ %#StatusLineFileLocked#%{StatusLineFileSuffix()}
         setlocal statusline+=%#StatusLineFileStatus#%{StatusLineGitFileIndicator()}
         setlocal statusline+=%=
         setlocal statusline+=%#StatusLineErrors#%{StatusLineErrors()}
         setlocal statusline+=%#StatusLineWarnings#%{StatusLineWarnings()}
-        setlocal statusline+=%#StatusLineFileType#%{&filetype}\ [%{&fileencoding?&fileencoding:&encoding}]
+        setlocal statusline+=%#StatusLineFileType#%{&filetype}\ %{&fileencoding?&fileencoding:&encoding}
         setlocal statusline+=\ %#StatusLineCursorPosition#%{StatusLineChangeCursorPositionColor()}%c\ %L
     endif
 endfunction
+call DrawStatusLine()
 
 " Draw the statusline when entering a buffer.
 augroup DrawStatusLineGroup

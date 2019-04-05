@@ -8,9 +8,13 @@ set expandtab
 set autoindent
 set smartindent
 
+
 " Show tab guides
 set list
 set listchars=tab:\ "
+
+:vnoremap < <gv
+:vnoremap > >gv
 
 let g:indentLine_color_term = 8
 
@@ -51,6 +55,7 @@ let g:indent_two_spaces = [
 let g:no_indent_lines = [
 \   'help',
 \   'nerdtree',
+\   'tagbar',
 \]
 
 function! Indent()

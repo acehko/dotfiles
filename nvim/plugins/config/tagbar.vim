@@ -14,3 +14,6 @@ endfunction
 let g:tagbar_map_nexttag    = '<C-j>'
 let g:tagbar_map_prevtag    = '<C-k>'
 let g:tagbar_map_togglefold = '<Space>'
+
+" Custom fold characters
+let g:tagbar_iconchars = ['', '']

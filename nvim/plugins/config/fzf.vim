@@ -17,3 +17,10 @@ let g:cm_matcher = {
 \   'module': 'cm_matchers.abbrev_matcher',
 \   'case': 'smartcase',
 \}
+
+" Hide satus line
+augroup FZFGroup
+    autocmd! FileType fzf
+    autocmd  FileType fzf setlocal laststatus=0 noruler nonumber norelativenumber
+        \| autocmd BufLeave <buffer> set laststatus=2 ruler number relativenumber
+augroup end

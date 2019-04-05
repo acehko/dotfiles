@@ -1,12 +1,6 @@
 " Ale config
 scriptencoding utf-8
 
-" Custom colors
-hi ALEError       ctermfg=1 ctermbg=NONE
-hi ALEErrorSign   ctermfg=1 ctermbg=NONE
-hi ALEWarning     ctermfg=11 ctermbg=NONE
-hi ALEWarningSign ctermfg=11 ctermbg=NONE
-
 " Decrease delay
 let g:ale_lint_delay = 50
 
@@ -30,7 +24,6 @@ augroup QuickFixCloseGroup
     autocmd!
     autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
 augroup end
-
 
 " Enabed linters
 let g:ale_linters = {

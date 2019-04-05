@@ -25,7 +25,8 @@ Plug 'haya14busa/incsearch.vim'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes', { 'on': 'Note' }
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'tpope/vim-endwise', { 'for': ['ruby', 'vim'] }
+" Plug 'andymass/vim-matchup'
+Plug 'tpope/vim-endwise', { 'for': ['sh', 'ruby', 'vim', 'zsh'] }
 
 " File management
 Plug 'scrooloose/nerdtree',                     { 'on': ['NERDTree', 'NERDTreeToggle', 'NERDTreeFind'] }
@@ -45,11 +46,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'shime/vim-livedown', { 'for': 'markdown' }
 
 " Look and feel
-Plug 'arcticicestudio/nord-vim'
 Plug 'Yggdroot/indentline'
 
 " HTML
-Plug 'tmhedberg/matchit',  { 'for': 'html' }
 Plug 'mattn/emmet-vim',    { 'for': 'html' }
 Plug 'alvan/vim-closetag', { 'for': 'html' }
 
@@ -65,6 +64,7 @@ Plug 'Shougo/vimproc.vim',           { 'for': 'typescript', 'do': 'make' }
 
 " Coffeescript"
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
+Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
 
 " Go
 Plug 'fatih/vim-go',      { 'for': 'go', 'do': ':GoInstallBinaries' }
@@ -78,6 +78,6 @@ Plug 'zchee/deoplete-jedi',  { 'for': 'python' }
 Plug 'Shougo/neco-vim', { 'for': 'vim' }
 
 " Ruby
-Plug 'tpope/vim-rails',           { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 call plug#end()
