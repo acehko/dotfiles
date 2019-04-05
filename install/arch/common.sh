@@ -9,7 +9,9 @@ echo "Installing common packages..."
 PACMAN \
     curl \
     htop \
-    xclip
+    light \
+    xclip \
+    unclutter
 
 AUR \
     nerd-fonts-complete-mono-glyphs
