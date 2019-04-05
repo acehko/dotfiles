@@ -1,4 +1,13 @@
-# --- General config strt ---
+# General config {
+
+# Load colors
+set_from_resource $color_background   color.web.background
+set_from_resource $color_foreground   color.web.foreground
+set_from_resource $color_blue         color.web.blue
+set_from_resource $color_green        color.web.green
+set_from_resource $color_red          color.web.red
+set_from_resource $color_black        color.web.black
+set_from_resource $color_bright_black color.web.bright_black
 
 # Set mod key to "super"
 set $mod Mod4
@@ -14,22 +23,13 @@ gaps outer 10
 gaps inner 10
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg &
+exec_always --no-startup-id feh --bg-scale $HOME/Pictures/wallpaper.jpg/ &
 
 exec compton
 
-exec xinput set-prop 12 287 1
-exec xinput set-prop 12 295 1
-
-# Define color scheme
-set $color_background #2E3440
-set $color_foreground #ECEFF4
-set $color_primary    #88C0D0
-set $color_secondary  #A3BE8C
-set $color_alert      #BF616A
-set $color_inactive   #4C566A
-
-# --- General config end ---
+exec xinput set-prop 12 286 1
+exec xinput set-prop 12 294 1
+# }
 
 # --- Window config start ---
 
@@ -110,11 +110,12 @@ default_border pixel 3
 hide_edge_borders smart
 
 title_align center
-# Window colors     border     background  text
-client.focused      $color_primary        $color_primary       $color_background $color_secondary
-client.focused_inactive      $color_primary        $color_primary       $color_background
-client.unfocused    $color_inactive        $color_inactive       #D8DEE9
-client.urgent       $color_alert        $color_alert         $color_background
+
+# Window colors         border              background            text
+client.focused          $color_blue         $color_blue          $color_background   $color_green
+client.focused_inactive $color_bright_black $color_bright_black  $color_background
+client.unfocused        $color_black        $color_black         $color_bright_black
+client.urgent           $color_red          $color_red           $color_background
 
 # --- Window config end ---
 
@@ -156,6 +157,26 @@ bindsym Control+Shift+7 move container to workspace $ws7
 bindsym Control+Shift+8 move container to workspace $ws8
 bindsym Control+Shift+9 move container to workspace $ws9
 
+# Move workspace to monitor
+# bindsym Control+Mod1+h move workspace to output left
+# bindsym Control+Mod1+l move workspace to output right
+
+bindsym Control+Mod1+0 move workspace to output eDP1
+bindsym Control+Mod1+1 move workspace to output HDMI1
+
+workspace $ws0 output eDP1
+workspace $ws1 output HDMI1
+workspace $ws2 output HDMI1
+workspace $ws3 output eDP1
+workspace $ws4 output eDP1
+workspace $ws5 output HDMI1
+workspace $ws6 output HDMI1
+workspace $ws7 output HDMI1
+workspace $ws8 output HDMI1
+workspace $ws9 output HDMI1
+
+exec_always --no-startup-id xrandr | grep -q "HDMI1 connected" && xrandr --output HDMI2 --off --output HDMI1 --primary --mode 2560x1440 --pos 0x0 --rotate normal --output DP1 --off --output eDP1 --mode 1920x1080 --pos 2560x360 --rotate normal --output DP2 --off || xrandr --output eDP1 --auto --primary --output HDMI1 --off
+
 workspace_auto_back_and_forth yes
 # --- Workspace config end ---
 
@@ -188,10 +209,16 @@ assign [class="^Google-chrome$"] 2
 exec --no-startup-id google-chrome-stable
 
 assign [class="^Alacritty$" instance="^tmux"] 3
-exec --no-startup-id "WINIT_HIDPI_FACTOR=1 DOTFILES=/home/andrija/dotfiles alacritty --class tmux -e tmux new-session -A -s main"
+exec --no-startup-id "WINIT_HIDPI_FACTOR=1 DOTFILES=/home/andrija/dotfiles alacritty --class tmux -e zsh -c 'tmux new-session -A -s main'"
+
+assign [class="^VirtualBox"] 5
 
 for_window [class="^Gnome-calculator$"] border pixel 3, floating enable
 for_window [class="^Gnome-calendar"] border pixel 3, floating enable
+
+# Screenshots
+bindsym Print exec scrot '%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f ~/Pictures/'
+bindsym Control+Print exec gnome-screenshot -i
 
 # Autostart
 exec_always --no-startup-id $HOME/dotfiles/polybar/launch.sh

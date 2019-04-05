@@ -1,33 +1,22 @@
 #!/usr/bin/env bash
 
-color_background=2E3440FF
-color_ring=4C566AFF
-color_text=88C0D0FF
-color_keypress=88C0D0FF
-
-color_verify_background=$color_background
-color_verify_ring=88C0D0FF
-color_verify_text=88C0D0FF
-
-color_wrong_background=$color_background
-color_wrong_ring=BF616AFF
-color_wrong_text=BF616AFF
+source /home/andrija/dotfiles/zsh/config/colors.zsh
 
 i3lock \
     --blur=10 \
     --clock \
     --indicator \
     --line-uses-inside \
-    --insidecolor=$color_background \
-    --ringcolor=$color_ring \
-    --timecolor=$color_text \
-    --datecolor=$color_text \
-    --keyhlcolor=$color_keypress \
-    --separatorcolor=$color_background \
-    --insidevercolor=$color_verify_background \
-    --ringvercolor=$color_verify_ring \
-    --verifcolor=$color_verify_text \
-    --insidewrongcolor=$color_wrong_background \
-    --ringwrongcolor=$color_wrong_ring \
-    --wrongcolor=$color_wrong_text \
-    --bshlcolor=$color_wrong_text
+    --insidecolor="${COLOR_RAW_HEX_BLACK}FF" \
+    --ringcolor="${COLOR_RAW_HEX_BRIGHT_BLACK}FF" \
+    --timecolor="${COLOR_RAW_HEX_FOREGROUND}FF" \
+    --datecolor="${COLOR_RAW_HEX_FOREGROUND}FF" \
+    --keyhlcolor="${COLOR_RAW_HEX_BLUE}FF" \
+    --separatorcolor="${COLOR_RAW_HEX_BRIGHT_BLACK}FF" \
+    --insidevercolor="${COLOR_RAW_HEX_BLACK}FF" \
+    --ringvercolor="${COLOR_RAW_HEX_BLUE}FF" \
+    --verifcolor="${COLOR_RAW_HEX_FOREGROUND}FF" \
+    --insidewrongcolor="${COLOR_RAW_HEX_BLACK}FF" \
+    --ringwrongcolor="${COLOR_RAW_HEX_RED}FF" \
+    --wrongcolor="${COLOR_RAW_HEX_RED}FF" \
+    --bshlcolor="${COLOR_RAW_HEX_RED}FF"
