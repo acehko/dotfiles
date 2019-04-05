@@ -39,5 +39,14 @@ AUR() {
     yay -S --needed --noconfirm "$@"
 }
 
+LINK() {
+    local source_dir="$1"
+    local target_dir="$2"
+    for file in "${@:3}"; do
+        ln -sf "$source_dir/$file" "$target_dir/$file"
+        echo "$file"
+    done
+}
+
 # Mark as loaded
 HELPERS_LOADED=1

@@ -23,7 +23,4 @@ zsh -c "source $DOTFILES_ZSH/plugins/plugins.zsh"
 # Link zsh config
 echo
 echo "Linking zsh config..."
-for file in ".zprofile" ".zshenv" ".zshrc"; do
-    ln -sf "$DOTFILES_ZSH/$file" "$HOME/$file"
-    echo "$file"
-done
+LINK "$DOTFILES_ZSH" "$HOME" ".zprofile" ".zshenv" ".zshrc"
