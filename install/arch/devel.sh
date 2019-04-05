@@ -4,24 +4,27 @@ set -e
 
 source "$(dirname "$0")/helpers.sh"
 
-echo -e "\\nInstalling development tools..."
+echo "Installing development tools..."
 PACMAN \
     bazel \
     ctags \
     make
 
 # Go
-echo -e "\\nInstalling go..."
+echo
+echo "Installing go..."
 PACMAN \
     go
 
 # Node.js
-echo -e "\\nInstalling nodejs..."
+echo
+echo "Installing nodejs..."
 PACMAN \
     nodejs
 
 # Python
-echo -e "\\nInstalling python..."
+echo
+echo "Installing python..."
 PACMAN \
     python \
     python-pip \

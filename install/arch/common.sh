@@ -4,7 +4,7 @@ set -e
 
 source "$(dirname "$0")/helpers.sh"
 
-echo -e "\\nInstalling common packages..."
+echo "Installing common packages..."
 
 PACMAN \
     curl \
