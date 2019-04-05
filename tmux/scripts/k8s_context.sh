@@ -2,5 +2,5 @@
 
 context="$(kubectl config current-context)"
 if [[ $context != "minikube" && $context != "" ]]; then
-    echo "#[fg=colour6]k8s: $context "
+    echo "#[fg=$COLOR_TMUX_BLUE]k8s: $context "
 fi

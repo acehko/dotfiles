@@ -2,9 +2,9 @@
 
 BATTERY_LOW=30
 
-COLOR_CHARGING="#[fg=colour$COLOR_GREEN]"
-COLOR_DISCHARGING="#[fg=colour$COLOR_ORANGE]"
-COLOR_LOW="#[fg=colour$COLOR_RED]"
+COLOR_CHARGING="#[fg=$COLOR_TMUX_GREEN]"
+COLOR_DISCHARGING="#[fg=$COLOR_TMUX_YELLOW]"
+COLOR_LOW="#[fg=$COLOR_TMUX_RED]"
 
 if [[ $(acpi) =~ ^Battery\ 0:\ ([a-zA-Z]+),\ ([0-9]+)%.*$ ]]; then
     status=${BASH_REMATCH[1]}

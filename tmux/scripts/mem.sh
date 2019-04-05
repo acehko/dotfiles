@@ -7,8 +7,8 @@ SWAP_MEDIUM=1
 SWAP_HIGH=30
 
 COLOR_EMPTY="#[bg=default]"
-COLOR_MEDIUM="#[fg=colour$COLOR_BLACK,bg=colour$COLOR_ORANGE]"
-COLOR_HIGH="#[fg=colour188,bg=colour$COLOR_DARK_RED]"
+COLOR_MEDIUM="#[fg=$COLOR_TMUX_BACKGROUND,bg=$COLOR_TMUX_YELLOW]"
+COLOR_HIGH="#[fg=$COLOR_TMUX_BACKGROUND,bg=$COLOR_TMUX_RED]"
 
 get_mem() {
     free | grep "$1" | awk '{printf "%.0f\n", ($3+$5)/$2*100}'

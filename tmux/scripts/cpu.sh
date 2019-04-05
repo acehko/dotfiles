@@ -5,8 +5,8 @@ CPU_MEDIUM=75
 CPU_HIGH=90
 
 COLOR_EMPTY="#[bg=default]"
-COLOR_MEDIUM="#[fg=colour$COLOR_BLACK,bg=colour$COLOR_ORANGE]"
-COLOR_HIGH="#[fg=colour188,bg=colour$COLOR_DARK_RED]"
+COLOR_MEDIUM="#[fg=$COLOR_TMUX_BACKGROUND,bg=$COLOR_TMUX_YELLOW]"
+COLOR_HIGH="#[fg=$COLOR_TMUX_BACKGROUND,bg=$COLOR_TMUX_RED]"
 
 get_idle() {
     echo "$1" | awk '/^cpu /{print $5}'
