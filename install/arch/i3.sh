@@ -11,4 +11,6 @@ PACMAN \
 AUR \
     i3lock-color
 
+echo
+echo "Linking i3 config..."
 LINK "$DOTFILES/i3" "$XDG_CONFIG_HOME/i3" "config"
