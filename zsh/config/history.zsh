@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 # History config
 
 HISTFILE=~/.zsh_history # History file
@@ -19,3 +20,7 @@ zle -N history-beginning-search-forward-end history-search-end
 
 bindkey '\e[A' history-beginning-search-backward-end
 bindkey '\e[B' history-beginning-search-forward-end
+
+# Use Ctrl + J and Ctrl + K to search history
+bindkey '^K' history-beginning-search-backward-end
+bindkey '^J' history-beginning-search-forward-end

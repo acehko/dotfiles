@@ -1,5 +1,10 @@
 #!/usr/bin/env zsh
 
+# Custom functions
+
+# Run a command forever
+# Options:
+#   - s N : sleep for N before restarting
 forever() {
     if [[ "$1" = "-s" ]]; then
         local s=$2

@@ -1,13 +1,14 @@
 #!/usr/bin/env zsh
 
 # Aliases
+
 alias open='xdg-open'
 
 alias watch='watch '
 
 alias ls='ls --color=auto'
-alias ll='ls -l'
-alias la='ls -la'
+alias ll='ls -lF'
+alias la='ls -lFa'
 
 alias sz='sudo -E zsh'
 

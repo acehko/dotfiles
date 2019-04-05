@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+
 # General config
 
 setopt nobeep              # Disable beep on errors

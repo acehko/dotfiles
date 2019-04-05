@@ -1,8 +1,9 @@
 #!/usr/bin/env zsh
-# Plugins
 
+# Load anitgen
 source $HOME/.zsh/antigen/antigen.zsh
 
+# Plugins
 antigen bundles <<EOF
     hlissner/zsh-autopair
     littleq0903/gcloud-zsh-completion
@@ -12,8 +13,8 @@ antigen bundles <<EOF
     zsh-users/zsh-syntax-highlighting
 EOF
 
+# Install plugins
 antigen apply
 
-# Load plugin configs
-source $DOTFILES/zsh/config/plugins/autosuggest.zsh
-source $DOTFILES/zsh/config/plugins/syntax-highlighting.zsh
+# Load plugin config
+source "$DOTFILES_ZSH/plugins/config/config.zsh"

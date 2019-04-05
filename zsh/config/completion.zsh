@@ -8,9 +8,12 @@ autoload -Uz compinit && compinit
 # Enable completion menu selection
 zstyle ':completion:*' menu select
 
-# Bind SHIFT + TAB for previous selection
+# Bind Shift + Tab for previous selection
 bindkey '^[[Z' reverse-menu-complete
 
 # Use cache
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
+# Expand last command (!!) on Space
+bindkey ' ' magic-space

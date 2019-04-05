@@ -1,10 +1,38 @@
 #!/usr/bin/env zsh
 
+export KEYTIMEOUT=1
+
 setopt prompt_subst
 autoload -Uz vcs_info
 
 zstyle ":vcs_info:*" enable git
 zstyle ":vcs_info:*" formats "%b"
+
+# Vim modes
+VIM_INS_MODE=""
+VIM_CMD_MODE=" %F{$COLOR_TERM_BLUE}[CMD]%f"
+VIM_MODE="$VIM_INS_MODE"
+
+# Update vim mode on change
+function zle-keymap-select {
+    VIM_MODE="${${KEYMAP/vicmd/${VIM_CMD_MODE}}/(main|viins)/${VIM_INS_MODE}}"
+    draw_prompt
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
+# Reset vim mode
+function zle-line-finish {
+    VIM_MODE=$VIM_INS_MODE
+}
+zle -N zle-line-finish
+
+# Reset vim mode on CTRL+C
+function TRAPINT() {
+    VIM_MODE=$VIM_INS_MODE
+    draw_prompt
+    return $(( 128 + $1 ))
+}
 
 precmd () {
     # Send alert to tmux if last command failed
@@ -13,15 +41,18 @@ precmd () {
     fi
 
     vcs_info
+    draw_prompt
+}
+
+# Draws the entire prompt
+draw_prompt() {
     left_prompt
     right_prompt
 }
 
-
 # Draws the left prompt
 left_prompt() {
-
-    local COLOR_BRANCH=$COLOR_GREEN
+    local COLOR_BRANCH=$COLOR_TERM_GREEN
 
     # Show exclamation mark if running with admin privileges
     PROMPT="%F{$COLOR_RED}%(!. .)%f"
@@ -30,55 +61,28 @@ left_prompt() {
     if [[ -n ${vcs_info_msg_0_} ]]; then
         # Git status dirty
         git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
-        if [[ -n $git_status ]]; then
-            COLOR_BRANCH=$COLOR_ORANGE
-        fi
+        if [[ -n $git_status ]]; then COLOR_BRANCH=$COLOR_TERM_YELLOW fi
 
         PROMPT+="%F{$COLOR_BRANCH}$vcs_info_msg_0_%f "
     fi
 
     # If connected through ssh
     if [[ -n $SSH_CONNECTION ]]; then
-        PROMPT+="@%F{$COLOR_BLUE}$(hostname)%f "
+        PROMPT+="@%F{$COLOR_TERM_BLUE}$(hostname)%f "
     fi
 
-    PROMPT+="%(?.%F{$COLOR_BLUE}.%F{$COLOR_RED}%? )❯%f "
+    PROMPT+="%(?.%F{$COLOR_TERM_BLUE}.%F{$COLOR_TERM_RED}%? )❯%f "
 
 }
 
 # Draws the right prompt
 right_prompt() {
-    # Vim modes
-    vim_ins_mode=""
-    vim_cmd_mode=" %F{$COLOR_ORANGE}[CMD]%f"
-    vim_mode=$vim_ins_mode
-
-    # Update vim mode on change
-    function zle-keymap-select {
-        vim_mode="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
-        zle reset-prompt
-    }
-    zle -N zle-keymap-select
-
-    # Reset vim mode
-    function zle-line-finish {
-        vim_mode=$vim_ins_mode
-    }
-    zle -N zle-line-finish
-
-    # Reset vim mode on CTRL+C
-    function TRAPINT() {
-        vim_mode=$vim_ins_mode
-        return $(( 128 + $1 ))
-    }
-
-    RPROMPT="%F{$COLOR_GREY}%~%f"
+    RPROMPT="%F{$COLOR_TERM_BRIGHT_BLACK}%~%f"
 
     # Python virtualenv
     if [[ -n $VIRTUAL_ENV ]]; then
-        RPROMPT+="%F{$COLOR_GREY} ( $(basename $VIRTUAL_ENV))%f"
+        RPROMPT+="%F{$COLOR_TERM_BRIGHT_BLACK} ( $(basename $VIRTUAL_ENV))%f"
     fi
 
-    RPROMPT+="$vim_mode"
-
+    RPROMPT+="${VIM_MODE}"
 }

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Fzf config
 
 export FZF_DEFAULT_OPTS=$(echo -n "
@@ -8,8 +10,8 @@ export FZF_DEFAULT_OPTS=$(echo -n "
     --prompt='❯ '
     --border
     --no-bold
-    --color hl:3,fg+:6,bg+:-1,hl+:3
-    --color info:$COLOR_GREEN,prompt:$COLOR_BLUE,spinner:$COLOR_GREEN,pointer:$COLOR_BLUE,marker:$COLOR_ORANGE,border:$COLOR_BLUE
+    --color hl:$COLOR_TERM_MAGENTA,fg+:$COLOR_TERM_BLUE,bg+:$COLOR_TERM_BLACK,hl+:$COLOR_TERM_MAGENTA
+    --color info:$COLOR_TERM_GREEN,prompt:$COLOR_TERM_BLUE,spinner:$COLOR_TERM_GREEN,pointer:$COLOR_TERM_BLUE,marker:$COLOR_TERM_YELLOW,border:$COLOR_TERM_BLUE
 ")
 
 export FZF_DEFAULT_COMMAND='rg --files --smart-case --hidden --follow --glob "!.git/*"'

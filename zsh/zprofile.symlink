@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-export PATH="$PATH:$GOPATH/bin:$(ruby -e 'print Gem.user_dir')/bin"
