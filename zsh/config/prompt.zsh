@@ -10,7 +10,7 @@ zstyle ":vcs_info:*" formats "%b"
 
 # Vim modes
 VIM_INS_MODE=""
-VIM_CMD_MODE=" %F{$COLOR_TERM_BLUE}[CMD]%f"
+VIM_CMD_MODE=" %F{$COLOR_TERM_YELLOW}[CMD]%f"
 VIM_MODE="$VIM_INS_MODE"
 
 # Update vim mode on change
