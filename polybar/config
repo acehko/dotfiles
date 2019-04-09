@@ -28,7 +28,7 @@ font-2 = Font Awesome 5 Brands:size=10;1
 font-3 = siji:pixelsize=10;1
 
 modules-left   = i3
-; modules-center = date
+modules-center = date
 modules-right  = filesystem temperature cpu memory pulseaudio xkeyboard wlan battery powermenu
 
 tray-position      = right
