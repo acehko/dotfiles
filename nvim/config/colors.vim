@@ -275,7 +275,7 @@ hi! link jsBlockLabel Normal
 hi! link jsObjectMethodType Normal
 hi! link jsClassKeyword Define
 hi! link jsFunction jsClassKeyword
-hi! link jsStorageClass jsClassKeyword
+hi! link jsStorageClass Function
 hi! link jsTry Function
 hi! link jsCatch jsTry
 hi! link jsFinally jsTry
