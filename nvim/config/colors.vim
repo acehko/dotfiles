@@ -149,7 +149,7 @@ call s:h('Visual', '', s:background_alt, '')
 call s:h('VisualNC', '', s:background_alt, '')
 call s:h('VisualNOS', '', s:background_alt, '')
 
-call s:h('ColorColumn', '', s:black, '')
+call s:h('ColorColumn', '', s:background_alt, '')
 call s:h('Conceal', s:bright_black, '', '')
 call s:h('Whitespace', s:bright_black, '', '')
 call s:h('Directory', s:blue, '', '')
