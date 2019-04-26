@@ -18,4 +18,4 @@ xdg-user-dirs-update
 
 echo
 echo "Linking xorg config..."
-LINK "$DOTFILES/xorg" "$HOME" ".xinitrc" ".Xresources"
+LINK "$DOTFILES/xorg" "$HOME" ".xinitrc" ".XCompose" ".Xresources"
