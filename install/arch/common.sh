@@ -12,6 +12,3 @@ PACMAN \
     light \
     xclip \
     unclutter
-
-AUR \
-    nerd-fonts-complete-mono-glyphs
