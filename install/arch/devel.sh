@@ -30,3 +30,9 @@ PACMAN \
     python-pip \
     python2 \
     python2-pip
+
+# Ruby
+echo
+echo "Installing ruby..."
+PACMAN \
+    ruby
