@@ -6,6 +6,7 @@ source "$(dirname "$0")/helpers.sh"
 
 echo "Installing i3..."
 PACMAN \
+    feh \
     i3-gaps
 
 AUR \
