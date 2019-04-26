@@ -92,7 +92,7 @@ call s:h('IncSearch', s:background, s:magenta, '')
 call s:h('Search', s:background, s:bright_black, '')
 
 call s:h('ErrorMsg', s:red, '', '')
-call s:h('ModeMsg', s:bright_black, '', '')
+call s:h('ModeMsg', s:green, '', '')
 call s:h('MoreMsg', s:blue, '', '')
 call s:h('WarningMsg', s:yellow, '', '')
 call s:h('Question', s:green, '', '')
@@ -242,6 +242,7 @@ call s:h('coffeeInterpDelim', s:blue, '', '')
 
 hi! link coffeeObject Normal
 hi! link coffeeSpecialVar Normal
+hi! link coffeeException coffeeStatement
 
 " Go
 call s:h('goDeclaration', s:magenta, '', '')
