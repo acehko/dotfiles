@@ -1,0 +1,109 @@
+color.term.background: 0
+color.term.background.alt: 0
+color.term.foreground: 7
+
+color.term.black:   0
+color.term.red:     1
+color.term.green:   2
+color.term.yellow:  3
+color.term.blue:    4
+color.term.magenta: 5
+color.term.cyan:    6
+color.term.white:   7
+
+color.term.bright_black:   8
+color.term.bright_red:     9
+color.term.bright_green:   10
+color.term.bright_yellow:  11
+color.term.bright_blue:    12
+color.term.bright_magenta: 13
+color.term.bright_cyan:    14
+color.term.bright_white:   15
+
+color.tmux.background: colour0
+color.tmux.background.alt: colour0
+color.tmux.foreground: colour7
+
+color.tmux.black:   colour0
+color.tmux.red:     colour1
+color.tmux.green:   colour2
+color.tmux.yellow:  colour3
+color.tmux.blue:    colour4
+color.tmux.magenta: colour5
+color.tmux.cyan:    colour6
+color.tmux.white:   colour7
+
+color.tmux.bright_black:   colour8
+color.tmux.bright_red:     colour9
+color.tmux.bright_green:   colour10
+color.tmux.bright_yellow:  colour11
+color.tmux.bright_blue:    colour12
+color.tmux.bright_magenta: colour13
+color.tmux.bright_cyan:    colour14
+color.tmux.bright_white:   colour15
+
+color.hex.background: 0x282c34
+color.hex.background.alt: 0x424852
+color.hex.foreground: 0xabb2bf
+
+color.hex.black:   0x313640
+color.hex.red:     0xe06c75
+color.hex.green:   0x98c379
+color.hex.yellow:  0xd19a66
+color.hex.blue:    0x61afef
+color.hex.magenta: 0xc678dd
+color.hex.cyan:    0x56b6c2
+color.hex.white:   0xabb2bf
+
+color.hex.bright_black:   0x5c6370
+color.hex.bright_red:     0xe06c75
+color.hex.bright_green:   0x98c379
+color.hex.bright_yellow:  0xd19a66
+color.hex.bright_blue:    0x61afef
+color.hex.bright_magenta: 0xc678dd
+color.hex.bright_cyan:    0x56b6c2
+color.hex.bright_white:   0xffffff
+
+color.web.background: #282c34
+color.web.background.alt: #393E48
+color.web.foreground: #abb2bf
+
+color.web.black:   #313640
+color.web.red:     #e06c75
+color.web.green:   #98c379
+color.web.yellow:  #d19a66
+color.web.blue:    #61afef
+color.web.magenta: #c678dd
+color.web.cyan:    #56b6c2
+color.web.white:   #abb2bf
+
+color.web.bright_black:   #5c6370
+color.web.bright_red:     #e06c75
+color.web.bright_green:   #98c379
+color.web.bright_yellow:  #d19a66
+color.web.bright_blue:    #61afef
+color.web.bright_magenta: #c678dd
+color.web.bright_cyan:    #56b6c2
+color.web.bright_white:   #ffffff
+
+color.raw_hex.background: 282c34
+color.raw.hex.background.alt: 424852
+color.raw_hex.foreground: abb2bf
+
+color.raw_hex.black:   313640
+color.raw_hex.red:     e06c75
+color.raw_hex.green:   98c379
+color.raw_hex.yellow:  d19a66
+color.raw_hex.blue:    61afef
+color.raw_hex.magenta: c678dd
+color.raw_hex.cyan:    56b6c2
+color.raw_hex.white:   abb2bf
+
+color.raw_hex.bright_black:   5c6370
+color.raw_hex.bright_red:     e06c75
+color.raw_hex.bright_green:   98c379
+color.raw_hex.bright_yellow:  d19a66
+color.raw_hex.bright_blue:    61afef
+color.raw_hex.bright_magenta: c678dd
+color.raw_hex.bright_cyan:    56b6c2
+color.raw_hex.bright_white:   ffffff
