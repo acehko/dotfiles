@@ -10,4 +10,4 @@ AUR \
 
 echo
 echo "Linking compton config..."
-sudo bash -c "$(declare -f LINK); LINK '$DOTFILES/compton' 'etc/xdg/compton' 'compton.conf'"
+sudo bash -c "$(declare -f LINK); LINK '$DOTFILES/compton' 'etc/xdg' 'compton.conf'"
