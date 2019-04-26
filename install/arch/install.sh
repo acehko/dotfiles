@@ -23,5 +23,6 @@ source "$DIR/nvim.sh"
 source "$DIR/neofetch.sh"
 
 source "$DIR/xorg.sh"
+source "$DIR/lightdm.sh"
 source "$DIR/i3.sh"
 source "$DIR/polybar.sh"
