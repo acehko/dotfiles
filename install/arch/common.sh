@@ -8,7 +8,6 @@ echo "Installing common packages..."
 
 PACMAN \
     curl \
+    downgrade \
     htop \
-    light \
-    xclip \
-    unclutter
+    xclip

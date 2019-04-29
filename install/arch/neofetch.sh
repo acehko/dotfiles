@@ -10,3 +10,4 @@ AUR \
 
 echo
 echo "Linking neofetch config..."
+LINK "$DOTFILES/neofetch" "$XDG_CONFIG_HOME/neofetch" "config"

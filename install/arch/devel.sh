@@ -8,7 +8,8 @@ echo "Installing development tools..."
 PACMAN \
     bazel \
     ctags \
-    make
+    make \
+    shellcheck
 
 # Go
 echo
@@ -36,3 +37,12 @@ echo
 echo "Installing ruby..."
 PACMAN \
     ruby
+
+# Docker
+echo
+echo "Installing docker..."
+PACMAN \
+    docker
+
+sudo groupadd docker || true
+sudo usermod -aG docker "$USER"

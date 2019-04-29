@@ -7,6 +7,7 @@ source "$(dirname "$0")/helpers.sh"
 echo "Installing xorg..."
 PACMAN \
     xdg-user-dirs \
+    xdg-settings \
     xorg-apps \
     xorg-server \
     xorg-xclock \

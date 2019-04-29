@@ -7,7 +7,9 @@ source "$(dirname "$0")/helpers.sh"
 echo "Installing i3..."
 PACMAN \
     feh \
-    i3-gaps
+    i3-gaps \
+    light \
+    unclutter
 
 AUR \
     i3lock-color
