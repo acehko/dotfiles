@@ -19,3 +19,4 @@ xdg-user-dirs-update
 echo
 echo "Linking xorg config..."
 LINK "$DOTFILES/xorg" "$HOME" ".xinitrc" ".XCompose" ".Xresources"
+sudo bash -c "$(declare -f LINK); LINK '$DOTFILES/xorg' '/etc/X11/xorg.conf.d' '30-touchpad.conf'"
