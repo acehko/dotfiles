@@ -320,11 +320,10 @@ call s:h('EasyMotionMoveHL', '', s:green, '')
 call s:h('EasyMotionIncSearch', '', s:green, '')
 
 " Ale
-call s:h('ALEError', s:red, '', 'underline')
+call s:h('ALEError', s:background, s:red, '')
 call s:h('ALEErrorSign', s:red, '', '')
 
-call s:h('ALEWarning', s:yellow, '', 'underline')
-call s:h('ALEWarningSign', s:yellow, '', '')
+call s:h('ALEWarning', s:background, s:yellow, '')
 call s:h('ALEWarningSign', s:yellow, '', '')
 
 " CurrentWord
