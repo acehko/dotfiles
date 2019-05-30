@@ -55,7 +55,7 @@ left_prompt() {
     local COLOR_BRANCH=$COLOR_TERM_GREEN
 
     # Show exclamation mark if running with admin privileges
-    PROMPT="%F{$COLOR_RED}%(!. .)%f"
+    PROMPT="%F{$COLOR_TERM_RED}%(!. .)%f"
 
     # If in a git repository
     if [[ -n ${vcs_info_msg_0_} ]]; then
