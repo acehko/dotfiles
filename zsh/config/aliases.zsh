@@ -31,3 +31,7 @@ alias ks='kubectl config use-context'
 alias d='docker'
 alias dc='docker-compose'
 alias dm='docker-machine'
+
+alias a='ansible'
+alias ap='ansible-playbook'
+alias ac='ansible -m command -a'
