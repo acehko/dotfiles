@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+
+# fzf
+
+export FZF_DEFAULT_OPTS=$(echo -n "
+    --bind=ctrl-space:toggle
+    --height 40%
+    --no-reverse
+    --multi
+    --prompt='❯ '
+    --border=horizontal
+    --no-bold
+    --color hl:{{ dotfiles_color.term.magenta }},fg+:{{ dotfiles_color.term.blue }},bg+:{{ dotfiles_color.term.black }},hl+:{{ dotfiles_color.term.magenta }}
+    --color info:{{ dotfiles_color.term.green }},prompt:{{ dotfiles_color.term.blue }},spinner:{{ dotfiles_color.term.green }},pointer:{{ dotfiles_color.term.blue }},marker:{{ dotfiles_color.term.yellow }},border:{{ dotfiles_color.term.blue }}
+")
+
+export FZF_DEFAULT_COMMAND='rg --files --smart-case --hidden --follow --glob "!.git/*"'
+
+# Load fzf key bindings.
+{% if dotfiles_distribution == "MacOSX" %}
+source "$(brew --prefix)/opt/fzf/shell/key-bindings.zsh"
+{% else %}
+source "/usr/share/doc/fzf/examples/key-bindings.zsh"
+{% endif %}

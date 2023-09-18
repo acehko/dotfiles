@@ -1,0 +1,18 @@
+#!/usr/bin/env zsh
+
+# Load anitgen.
+source "{{ zsh_plugins_dir }}/antigen.zsh"
+
+# Plugin list.
+antigen bundles <<EOF
+    hlissner/zsh-autopair
+    zsh-users/zsh-autosuggestions
+    zsh-users/zsh-syntax-highlighting
+EOF
+
+# Install plugins.
+antigen apply
+
+# Load plugin config.
+source "{{ zsh_plugins_dir }}/autosuggest.zsh"
+source "{{ zsh_plugins_dir }}/syntax_highlighting.zsh"

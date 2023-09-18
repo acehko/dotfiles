@@ -1,0 +1,17 @@
+#!/usr/bin/env zsh
+
+# Load external config
+for file in $(find "{{ zsh_external_dir }}" -type f -name "*"); do
+  source "$file"
+done
+
+# Load plugins.
+source {{ zsh_config_dir }}/plugins.zsh
+
+# Load config.
+source {{ zsh_config_dir }}/general.zsh
+source {{ zsh_config_dir }}/aliases.zsh
+source {{ zsh_config_dir }}/completion.zsh
+source {{ zsh_config_dir }}/keys.zsh
+source {{ zsh_config_dir }}/history.zsh
+source {{ zsh_config_dir }}/prompt.zsh

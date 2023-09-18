@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+# Completion
+
+# Enable completion.
+autoload -Uz compinit && compinit
+
+# Enable completion menu selection.
+zstyle ':completion:*' menu select
+
+# Bind Shift + Tab for previous selection.
+bindkey '^[[Z' reverse-menu-complete
+
+# Use cache.
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path {{ dotfiles_home }}/.cache/zsh/completion
+
+# Use LS colors in completion.
+eval "$(dircolors)"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} "ma={{ dotfiles_theme.term.background | int + 30 }};{{ dotfiles_theme.term.primary | int + 40 }}"
+
+# Expand last command (!!) on Space.
+bindkey ' ' magic-space

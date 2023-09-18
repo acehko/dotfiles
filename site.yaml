@@ -1,0 +1,14 @@
+---
+- hosts:
+    - localhost
+  gather_facts: true
+
+  roles:
+    - role: zsh
+      tags: zsh
+
+    - role: fzf
+      tags: fzf
+
+    - role: neovim
+      tags: neovim

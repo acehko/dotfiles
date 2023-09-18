@@ -1,0 +1,79 @@
+#!/usr/bin/env zsh
+
+# Prompt
+
+export KEYTIMEOUT=1
+
+setopt prompt_subst
+autoload -Uz vcs_info
+
+zstyle ":vcs_info:*" enable git
+zstyle ":vcs_info:*" formats "%b"
+
+# Colors
+COLOR_PRIMARY="{{ dotfiles_theme.term.primary }}"
+COLOR_ERROR="{{ dotfiles_theme.term.error }}"
+COLOR_DIR="{{ dotfiles_color.term.bright_black }}"
+
+COLOR_GIT_ADD="{{ dotfiles_theme.term.git.add }}"
+COLOR_GIT_CHANGE="{{ dotfiles_theme.term.git.change }}"
+
+# Vim modes
+VIM_INSERT_MODE=""
+VIM_NORMAL_MODE=" %F{$COLOR_PRIMARY}[NORMAL]%f"
+VIM_MODE="$VIM_INSERT_MODE"
+
+# Update vim mode on change.
+function zle-keymap-select {
+    VIM_MODE="${${KEYMAP/vicmd/${VIM_NORMAL_MODE}}/(main|viins)/${VIM_INSERT_MODE}}"
+    draw_prompt
+    zle reset-prompt
+}
+zle -N zle-keymap-select
+
+# Reset vim mode.
+function zle-line-finish {
+    VIM_MODE=$VIM_INSERT_MODE
+}
+zle -N zle-line-finish
+
+# Reset vim mode on CTRL+C.
+function TRAPINT() {
+    VIM_MODE=$VIM_INSERT_MODE
+    draw_prompt
+    return $(( 128 + $1 ))
+}
+
+precmd () {
+    vcs_info
+    draw_prompt
+}
+
+# Draw the prompt.
+draw_prompt() {
+    local COLOR_BRANCH="$COLOR_GIT_ADD"
+
+    # Show exclamation mark if running as sudo.
+    PROMPT="%F{$COLOR_ERROR}%(!. .)%f"
+
+    # If in a git repository.
+    if [[ -n ${vcs_info_msg_0_} ]]; then
+        # Git status is changed.
+        git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
+        if [[ -n $git_status ]]; then 
+            COLOR_BRANCH="$COLOR_GIT_CHANGE" 
+        fi
+
+        PROMPT+="%F{$COLOR_BRANCH}$vcs_info_msg_0_%f "
+    fi
+
+    # If connected through ssh.
+    if [[ -n $SSH_CONNECTION ]]; then
+        PROMPT+="%F{$COLOR_PRIMARY}@$(cat /etc/hostname)%f "
+    fi
+
+    PROMPT+="%(?.%F{$COLOR_PRIMARY}.%F{$COLOR_ERROR}%? )❯%f "
+
+    RPROMPT="%F{$COLOR_DIR}%~%f"
+    RPROMPT+="${VIM_MODE}"
+}

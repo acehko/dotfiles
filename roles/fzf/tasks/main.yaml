@@ -1,0 +1,22 @@
+---
+- name: Install fzf
+  community.general.homebrew:
+    name:
+      - fzf
+      - ripgrep
+    state: present
+  when: dotfiles_distribution == "MacOSX"
+
+- name: Install fzf
+  become: true
+  ansible.builtin.apt:
+    name:
+      - fzf
+      - ripgrep
+    state: present
+  when: dotfiles_distribution == "Debian"
+
+- name: Add fzf config to Zsh
+  template:
+    src: fzf.zsh.j2
+    dest: "{{ zsh_external_dir }}/fzf.zsh"

@@ -1,0 +1,4 @@
+---
+- import_tasks: install.yaml
+- import_tasks: configure.yaml
+- import_tasks: plugins.yaml

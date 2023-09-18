@@ -1,0 +1,49 @@
+#!/usr/bin/env zsh
+
+# Aliases
+
+alias c='clear'
+alias e='exit'
+
+alias ls='ls -G --color=auto'
+alias ll='ls -lF'
+alias la='ls -lFa'
+
+alias watch='watch -c '
+alias grep='grep --color=auto'
+
+# Vim
+alias vim='nvim'
+alias ovim='/usr/bin/vim'
+
+# Run zsh as sudo.
+alias szsh='sudo -E zsh'
+
+# Create a new temporary directory and cd to it.
+alias temp='cd $(mktemp -d)'
+
+# Ansible
+alias a='ansible'
+alias ac='ansible -m command -a'
+alias ap='ansible-playbook'
+alias app='ansible-playbook --ask-become-pass'
+alias av='ansible-vault'
+alias ag='ansible-galaxy'
+
+# Docker
+alias d='docker'
+alias dc='docker-compose'
+
+# Kubernetes
+alias k='kubectl'
+alias ke='kubectl exec -it'
+alias kl='kubectl logs'
+alias klf='kubectl logs -f'
+alias kw='watch -n 1 kubectl get pods -o wide'
+alias kp='kubectl get pods -o wide'
+
+{% if dotfiles_distribution == 'MacOSX' %}
+# Mac Aliases
+
+alias dircolors='gdircolors'
+{% endif %}

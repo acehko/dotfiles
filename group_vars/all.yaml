@@ -1,0 +1,79 @@
+---
+dotfiles_distribution: "{{ ansible_facts['distribution'] }}"
+dotfiles_home: "{{ ansible_env.HOME }}"
+dotfiles_config: "{{ dotfiles_home }}/.config"
+
+dotfiles_color:
+  term:
+    background: 0
+    background_alt: 0
+    foreground: 7
+
+    black: 0
+    red: 1
+    green: 2
+    yellow: 3
+    blue: 4
+    magenta: 5
+    cyan: 6
+    white: 7
+
+    bright_black: 8
+    bright_red: 9
+    bright_green: 10
+    bright_yellow: 11
+    bright_blue: 12
+    bright_magenta: 13
+    bright_cyan: 14
+    bright_white: 15
+
+  gui:
+    background: "282c34"
+    background_alt: "424852"
+    foreground: "abb2bf"
+
+    black: "313640"
+    red: "e06c75"
+    green: "98c379"
+    yellow: "d19a66"
+    blue: "61afef"
+    magenta: "c678dd"
+    cyan: "56b6c2"
+    white: "abb2bf"
+
+    bright_black: "5c6370"
+    bright_red: "e06c75"
+    bright_green: "98c379"
+    bright_yellow: "d19a66"
+    bright_blue: "61afef"
+    bright_magenta: "c678dd"
+    bright_cyan: "56b6c2"
+    bright_white: "ffffff"
+
+dotfiles_theme:
+  term:
+    primary: "{{ dotfiles_color.term.blue }}"
+    background: "{{ dotfiles_color.term.background }}"
+
+    warning: "{{ dotfiles_color.term.yellow }}"
+    error: "{{ dotfiles_color.term.red }}"
+
+    git:
+      add: "{{ dotfiles_color.term.green }}"
+      change: "{{ dotfiles_color.term.yellow }}"
+      delete: "{{ dotfiles_color.term.red }}"
+
+    vim:
+      normal: "{{ dotfiles_color.term.green }}"
+      insert: "{{ dotfiles_color.term.yellow }}"
+      visual: "{{ dotfiles_color.term.magenta }}"
+
+zsh_config_dir: "{{ dotfiles_home }}/.config/zsh"
+zsh_plugins_dir: "{{ zsh_config_dir }}/plugins"
+zsh_external_dir: "{{ zsh_config_dir }}/external"
+zsh_antigen_url: "http://git.io/antigen"
+zsh_users:
+  - root
+  - "{{ home.user }}"
+
+neovim_config_dir: "{{ dotfiles_config }}/nvim"
