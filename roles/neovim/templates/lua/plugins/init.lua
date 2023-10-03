@@ -53,7 +53,7 @@ packer.startup(function(use)
 
   -- Languages
   use {'nvim-treesitter/nvim-treesitter', tag = 'v0.9.1', run = ':TSUpdate'}
-  use({'tpope/vim-endwise', tag = 'v1.3', ft = {'lua', 'ruby'}})
+  use({'RRethy/nvim-treesitter-endwise', commit = '4c344ff'})
   use({'kchmck/vim-coffee-script', commit = '2842125'})
   use({'tpope/vim-rails', commit = '2b8c4fc'})
   use({'tpope/vim-commentary', commit = 'e87cd90'})

@@ -20,5 +20,8 @@ configs.setup({
   commentary_integration = {
     Commentary = 'g/',
     CommentaryLine = false
+  },
+  endwise = {
+    enable = true
   }
 })
