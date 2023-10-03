@@ -4,6 +4,7 @@ local neovim = require('neovim')
 
 neovim.filetype({
   extension = {
-    ['js.coffee.erb'] = 'coffee'
+    ['js.coffee.erb'] = 'coffee',
+    ['axlsx'] = 'ruby'
   },
 })
