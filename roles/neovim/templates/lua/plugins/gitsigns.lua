@@ -67,7 +67,3 @@ gitsigns.setup({
     end, {expr=true})
   end
 })
-
-neovim.highlight_link('GitSignsAdd', 'Number')
-neovim.highlight_link('GitSignsChange', 'Question')
-neovim.highlight_link('GitSignsDelete', 'ErrorMsg')

@@ -27,13 +27,13 @@ local mode_colors = {
   t = 'StatusLineModeTerminal'
 }
 
-neovim.highlight_link('StatusLineModeCommand', 'Conditional')
-neovim.highlight_link('StatusLineModeNormal', 'Conditional')
+neovim.highlight_link('StatusLineModeCommand', 'Function')
+neovim.highlight_link('StatusLineModeNormal', 'Function')
 neovim.highlight_link('StatusLineModeVisual', 'Statement')
-neovim.highlight_link('StatusLineModeInsert', 'Number')
-neovim.highlight_link('StatusLineModeTerminal', 'Conditional')
-neovim.highlight_link('StatusLineGitNew', 'Number')
-neovim.highlight_link('StatusLineGitDirty', 'Question')
+neovim.highlight_link('StatusLineModeInsert', 'String')
+neovim.highlight_link('StatusLineModeTerminal', 'Function')
+neovim.highlight_link('StatusLineGitNew', 'String')
+neovim.highlight_link('StatusLineGitDirty', 'Boolean')
 
 local function separator()
   return '%='

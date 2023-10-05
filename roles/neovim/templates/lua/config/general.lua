@@ -20,7 +20,8 @@ neovim.option('scrolloff', 3)         -- Scroll offset
 neovim.option('signcolumn', 'yes')    -- Always show the sign column
 
 -- Set colorscheme
-neovim.command('colorscheme darkplus')
+neovim.option('termguicolors', true)
+neovim.command('colorscheme onedark')
 
 local opts = {noremap = true, silent = true}
 

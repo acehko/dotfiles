@@ -24,8 +24,8 @@ packer.startup(function(use)
   use({'nvim-lua/plenary.nvim', tag = 'v0.1.3'})
 
   -- General
-  use({'tpope/vim-surround', tag = 'v2.2'})
-  use({'tpope/vim-repeat', tag = 'v1.2'})
+  use({'tpope/vim-surround', commit = '3d188ed'})
+  use({'tpope/vim-repeat', commit = '24afe92'})
   use({'windwp/nvim-autopairs', commit = 'defad64'})
   use({'junegunn/fzf', commit = 'd2b852f'})
   use({'junegunn/fzf.vim', commit = '678ee1a'})
@@ -37,7 +37,7 @@ packer.startup(function(use)
   use({'lewis6991/gitsigns.nvim', commit = '907ae86'})
 
   -- Colorschemes
-  use({'LunarVim/Colorschemes', commit = 'e29f329'})
+  use({'joshdick/onedark.vim', commit = '57b7774'})
 
   -- LSP
   use({'neovim/nvim-lspconfig', commit = '3817092'})
@@ -52,12 +52,10 @@ packer.startup(function(use)
   use({'L3MON4D3/LuaSnip', commit = 'ea7d7ea'})
 
   -- Languages
-  use {'nvim-treesitter/nvim-treesitter', tag = 'v0.9.1', run = ':TSUpdate'}
-  use({'RRethy/nvim-treesitter-endwise', commit = '4c344ff'})
+  use({'tpope/vim-endwise', commit = 'e714ac3', ft = {'lua', 'ruby'}})
   use({'kchmck/vim-coffee-script', commit = '2842125'})
-  use({'tpope/vim-rails', commit = '2b8c4fc'})
+  use({'tpope/vim-rails', commit = '2b8c4fc', ft = 'ruby'})
   use({'tpope/vim-commentary', commit = 'e87cd90'})
-  use({'JoosepAlviste/nvim-ts-context-commentstring', commit = '9bff161'})
 end)
 
 -- Plugin configs
@@ -68,5 +66,4 @@ require('plugins.gitsigns')
 require('plugins.lsp')
 require('plugins.cmp')
 require('plugins.lsp')
-require('plugins.treesitter')
 require('plugins.commentary')
