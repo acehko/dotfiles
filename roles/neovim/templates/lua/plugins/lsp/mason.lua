@@ -5,6 +5,7 @@ local lspconfig = require('lspconfig')
 local servers = {
   'eslint',
   'lua_ls',
+  'pyright',
   'solargraph',
   'tsserver'
 }

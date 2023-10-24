@@ -17,20 +17,22 @@ packer.init({
 
 -- Plugins list
 packer.startup(function(use)
-  -- Manage itself
-  use({'wbthomason/packer.nvim', commit = '1d0cf98'})
-
   -- Dependencies
-  use({'nvim-lua/plenary.nvim', tag = 'v0.1.3'})
+  use({'nvim-lua/plenary.nvim', commit = '5001291'})
 
   -- General
   use({'tpope/vim-surround', commit = '3d188ed'})
   use({'tpope/vim-repeat', commit = '24afe92'})
   use({'windwp/nvim-autopairs', commit = 'defad64'})
-  use({'junegunn/fzf', commit = 'd2b852f'})
-  use({'junegunn/fzf.vim', commit = '678ee1a'})
   use({'Yggdroot/indentLine', tag = 'v2.0'})
-  use({'tpope/vim-vinegar', commit = 'bb1bcdd'})
+  use({'nvim-tree/nvim-tree.lua', commit = '78a9ca5'})
+  use({'nvim-tree/nvim-web-devicons', commit = 'f026792'})
+  use({'nvim-telescope/telescope.nvim', commit = '4522d7e'})
+  use({
+    'nvim-telescope/telescope-fzf-native.nvim',
+    commit = '6c921ca',
+    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+  })
 
   -- Git
   use({'tpope/vim-fugitive', commit = '43f18ab'})
@@ -40,8 +42,7 @@ packer.startup(function(use)
   use({'joshdick/onedark.vim', commit = '57b7774'})
 
   -- LSP
-  use({'neovim/nvim-lspconfig', commit = '3817092'})
-  use({'williamboman/mason.nvim', commit = 'd66c60e', run = ':MasonUpdate'})
+  use({'neovim/nvim-lspconfig', commit = '3817092'}) use({'williamboman/mason.nvim', commit = 'd66c60e', run = ':MasonUpdate'})
   use({'williamboman/mason-lspconfig.nvim', commit = 'e270506'})
 
   -- Completion
@@ -61,7 +62,8 @@ end)
 -- Plugin configs
 require('plugins.autopairs')
 require('plugins.indentline')
-require('plugins.fzf')
+require('plugins.tree')
+require('plugins.telescope')
 require('plugins.gitsigns')
 require('plugins.lsp')
 require('plugins.cmp')

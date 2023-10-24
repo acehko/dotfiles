@@ -7,8 +7,8 @@ gitsigns.setup({
   signs = {
     add = {hl = 'GitSignsAdd', text = '┃', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn'},
     change = {hl = 'GitSignsChange', text = '┃', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn'},
-    delete = {hl = 'GitSignsDelete', text = '契', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn'},
-    topdelete = {hl = 'GitSignsDelete', text = '契', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn'},
+    delete = {hl = 'GitSignsDelete', text = '┃', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn'},
+    topdelete = {hl = 'GitSignsDelete', text = '┃', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn'},
     changedelete = {hl = 'GitSignsChange', text = '┃', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn'},
     untracked = {hl = 'GitSignsAdd', text = '┃', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn'},
   },
@@ -54,6 +54,8 @@ gitsigns.setup({
       opts.buffer = bufnr
       neovim.keymap(mode, l, r, opts)
     end
+
+    map('n', 'hr', gs.reset_hunk)
 
     map('n', ']c', function()
       if vim.wo.diff then return ']c' end
