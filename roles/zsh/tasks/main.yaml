@@ -1,4 +1,52 @@
 ---
-- import_tasks: install.yaml
-- import_tasks: configure.yaml
-- import_tasks: plugins.yaml
+- name: Install Zsh
+  become: true
+  ansible.builtin.apt:
+    name: zsh
+    state: present
+  when: dotfiles_distribution == 'Debian'
+
+- name: create Zsh config directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  with_items:
+    - "{{ dotfiles_zsh.config_dir }}"
+    - "{{ dotfiles_zsh.plugins_dir }}"
+    - "{{ dotfiles_zsh.external_dir }}"
+
+- name: copy main Zsh config
+  template:
+    src: "{{ item }}"
+    dest: "{{ dotfiles_home }}/{{ item | regex_replace('.j2', '') }}"
+  with_items:
+    - .zshrc.j2
+    - .zshenv
+    - .zprofile
+  register: main_config
+
+- name: copyZzsh config
+  template:
+    src: "config/{{ item.path }}"
+    dest: "{{ dotfiles_zsh.config_dir }}/{{ item.path | regex_replace('.j2', '') }}"
+    mode: preserve
+  with_filetree: ../templates/config
+  when: item.state == 'file'
+  register: config
+
+- name: change default shell
+  become: true
+  user:
+    name: "{{ item }}"
+    shell: /bin/zsh
+  with_items: "{{ dotfiles_zsh.users }}"
+
+- name: Install Antigen
+  get_url:
+    url: "{{ dotfiles_zsh.antigen_url }}"
+    dest: "{{ dotfiles_zsh.plugins_dir }}/antigen.zsh"
+  register: antigen
+
+- name: Install Zsh plugins
+  shell: "zsh -c {{ dotfiles_zsh.config_dir }}/plugins.zsh"
+  when: main_config.changed or config.changed or antigen.changed

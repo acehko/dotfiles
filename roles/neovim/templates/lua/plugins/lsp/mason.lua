@@ -3,11 +3,8 @@ local mason_lspconfig = require('mason-lspconfig')
 local lspconfig = require('lspconfig')
 
 local servers = {
-  'eslint',
   'lua_ls',
-  'pyright',
-  'solargraph',
-  'tsserver'
+  'pyright'
 }
 
 mason.setup({

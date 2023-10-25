@@ -42,7 +42,8 @@ packer.startup(function(use)
   use({'joshdick/onedark.vim', commit = '57b7774'})
 
   -- LSP
-  use({'neovim/nvim-lspconfig', commit = '3817092'}) use({'williamboman/mason.nvim', commit = 'd66c60e', run = ':MasonUpdate'})
+  use({'neovim/nvim-lspconfig', commit = '3817092'})
+  use({'williamboman/mason.nvim', commit = 'cd7835b', run = ':MasonUpdate'})
   use({'williamboman/mason-lspconfig.nvim', commit = 'e270506'})
 
   -- Completion

@@ -55,7 +55,7 @@ gitsigns.setup({
       neovim.keymap(mode, l, r, opts)
     end
 
-    map('n', 'hr', gs.reset_hunk)
+    -- map('n', 'hr', gs.reset_hunk)
 
     map('n', ']c', function()
       if vim.wo.diff then return ']c' end

@@ -1,7 +1,0 @@
----
-- name: Install Zsh
-  become: true
-  ansible.builtin.apt:
-    name: zsh
-    state: present
-  when: dotfiles_distribution == 'Debian'

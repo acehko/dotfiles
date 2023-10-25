@@ -17,16 +17,16 @@
     path: "{{ item }}"
     state: directory
   with_items:
-    - "{{ neovim_config_dir }}"
-    - "{{ neovim_config_dir }}/lua"
-    - "{{ neovim_config_dir }}/lua/config"
-    - "{{ neovim_config_dir }}/lua/plugins"
-    - "{{ neovim_config_dir }}/lua/plugins/lsp"
+    - "{{ dotfiles_neovim.config_dir }}"
+    - "{{ dotfiles_neovim.config_dir }}/lua"
+    - "{{ dotfiles_neovim.config_dir }}/lua/config"
+    - "{{ dotfiles_neovim.config_dir }}/lua/plugins"
+    - "{{ dotfiles_neovim.config_dir }}/lua/plugins/lsp"
 
 - name: Copy Neovim config
   template:
     src: "{{ item.path }}"
-    dest: "{{ neovim_config_dir }}/{{ item.path | regex_replace('.j2', '') }}"
+    dest: "{{ dotfiles_neovim.config_dir }}/{{ item.path | regex_replace('.j2', '') }}"
     mode: preserve
   with_filetree: ../templates
   when: item.state == 'file'

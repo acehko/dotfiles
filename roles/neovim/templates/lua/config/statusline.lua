@@ -27,14 +27,6 @@ local mode_colors = {
   t = 'StatusLineModeTerminal'
 }
 
-neovim.highlight_link('StatusLineModeCommand', 'Function')
-neovim.highlight_link('StatusLineModeNormal', 'Function')
-neovim.highlight_link('StatusLineModeVisual', 'Statement')
-neovim.highlight_link('StatusLineModeInsert', 'String')
-neovim.highlight_link('StatusLineModeTerminal', 'Function')
-neovim.highlight_link('StatusLineGitNew', 'String')
-neovim.highlight_link('StatusLineGitDirty', 'Boolean')
-
 local function separator()
   return '%='
 end
@@ -86,7 +78,7 @@ local function git()
 
     local color = 'StatusLineGitNew'
     if dirty ~= 0 then
-      color = 'StatusLineGitDirty'
+      color = 'StatusLineGitModified'
     end
 
     line = '%#' .. color .. '# ' .. branch

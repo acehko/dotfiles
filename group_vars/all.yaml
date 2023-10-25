@@ -29,7 +29,7 @@ dotfiles_color:
 
   gui:
     background: "282c34"
-    background_alt: "424852"
+    background_alt: "2c323c"
     foreground: "abb2bf"
 
     black: "313640"
@@ -54,6 +54,7 @@ dotfiles_theme:
   term:
     primary: "{{ dotfiles_color.term.blue }}"
     background: "{{ dotfiles_color.term.background }}"
+    border: "{{ dotfiles_color.term.bright_black }}"
 
     warning: "{{ dotfiles_color.term.yellow }}"
     error: "{{ dotfiles_color.term.red }}"
@@ -64,16 +65,43 @@ dotfiles_theme:
       delete: "{{ dotfiles_color.term.red }}"
 
     vim:
-      normal: "{{ dotfiles_color.term.green }}"
+      normal: "{{ dotfiles_color.term.blue }}"
       insert: "{{ dotfiles_color.term.yellow }}"
       visual: "{{ dotfiles_color.term.magenta }}"
 
-zsh_config_dir: "{{ dotfiles_home }}/.config/zsh"
-zsh_plugins_dir: "{{ zsh_config_dir }}/plugins"
-zsh_external_dir: "{{ zsh_config_dir }}/external"
-zsh_antigen_url: "http://git.io/antigen"
-zsh_users:
-  - root
-  - "{{ home.user }}"
+  gui:
+    primary: "{{ dotfiles_color.gui.blue }}"
+    background: "{{ dotfiles_color.gui.background }}"
+    background_alt: "{{ dotfiles_color.gui.background_alt }}"
+    border: "{{ dotfiles_color.gui.bright_black }}"
 
-neovim_config_dir: "{{ dotfiles_config }}/nvim"
+    warning: "{{ dotfiles_color.gui.yellow }}"
+    error: "{{ dotfiles_color.gui.red }}"
+
+    git:
+      add: "{{ dotfiles_color.gui.green }}"
+      change: "{{ dotfiles_color.gui.yellow }}"
+      delete: "{{ dotfiles_color.gui.red }}"
+
+    vim:
+      normal: "{{ dotfiles_color.gui.blue }}"
+      insert: "{{ dotfiles_color.gui.yellow }}"
+      visual: "{{ dotfiles_color.gui.magenta }}"
+
+dotfiles_alacritty:
+  config_dir: "{{ dotfiles_home }}/.config/alacritty"
+
+dotfiles_tmux:
+  config_dir: "{{ dotfiles_home }}/.config/tmux"
+
+dotfiles_zsh:
+  config_dir: "{{ dotfiles_home }}/.config/zsh"
+  plugins_dir: "{{ dotfiles_home }}/.config/zsh/plugins"
+  external_dir: "{{ dotfiles_home }}/.config/zsh/external"
+  antigen_url: "http://git.io/antigen"
+  users:
+    - root
+    - "{{ home.user }}"
+
+dotfiles_neovim:
+  config_dir: "{{ dotfiles_config }}/nvim"

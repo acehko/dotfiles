@@ -42,6 +42,21 @@ function neovim.filetype(...)
   vim.filetype.add(...)
 end
 
+-- Add new highlight
+function neovim.highlight(group, fg, bg, attr)
+  if fg then
+    neovim.command('hi ' .. group .. ' guifg=' .. fg)
+  end
+
+  if bg then
+    neovim.command('hi ' .. group .. ' guibg=' .. bg)
+  end
+
+  if attr then
+    neovim.command('hi ' .. group .. ' gui=' .. attr)
+  end
+end
+
 -- Link highlight group
 function neovim.highlight_link(group, link_group)
   vim.api.nvim_set_hl(0, group, {link = link_group})

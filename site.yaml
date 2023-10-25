@@ -4,6 +4,12 @@
   gather_facts: true
 
   roles:
+    - role: alacritty
+      tags: alacritty
+
+    - role: tmux
+      tags: tmux
+
     - role: zsh
       tags: zsh
 

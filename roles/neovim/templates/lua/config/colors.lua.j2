@@ -1,0 +1,11 @@
+local neovim = require('neovim')
+
+-- Status line
+neovim.highlight('StatusLine', nil, '#{{ dotfiles_theme.gui.background_alt }}')
+neovim.highlight('StatusLineModeNormal', '#{{ dotfiles_theme.gui.vim.normal }}', '#{{ dotfiles_theme.gui.background_alt }}')
+neovim.highlight('StatusLineModeVisual', '#{{ dotfiles_theme.gui.vim.visual }}', '#{{ dotfiles_theme.gui.background_alt }}')
+neovim.highlight('StatusLineModeInsert', '#{{ dotfiles_theme.gui.vim.insert }}', '#{{ dotfiles_theme.gui.background_alt }}')
+neovim.highlight_link('StatusLineModeCommand', 'StatusLineModeNormal')
+neovim.highlight_link('StatusLineModeTerminal', 'StatusLineModeNormal')
+neovim.highlight('StatusLineGitNew', '#{{ dotfiles_theme.gui.git.add }}', '#{{ dotfiles_theme.gui.background_alt }}')
+neovim.highlight('StatusLineGitModified', '#{{ dotfiles_theme.gui.git.change }}', '#{{ dotfiles_theme.gui.background_alt }}')

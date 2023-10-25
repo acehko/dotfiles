@@ -21,7 +21,7 @@ neovim.option('signcolumn', 'yes')    -- Always show the sign column
 
 -- Set colorscheme
 neovim.option('termguicolors', true)
-neovim.command('colorscheme onedark')
+neovim.command('silent! colorscheme onedark')
 
 local opts = {noremap = true, silent = true}
 
