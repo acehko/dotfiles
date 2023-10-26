@@ -6,7 +6,15 @@
     state: present
   when: dotfiles_distribution == 'Debian'
 
-- name: create Zsh config directories
+- name: Change default shell
+  become: true
+  user:
+    name: "{{ item }}"
+    shell: /bin/zsh
+  with_items: "{{ dotfiles_zsh.users }}"
+  when: dotfiles_distribution == 'Debian'
+
+- name: Create Zsh config directories
   file:
     path: "{{ item }}"
     state: directory
@@ -15,7 +23,7 @@
     - "{{ dotfiles_zsh.plugins_dir }}"
     - "{{ dotfiles_zsh.external_dir }}"
 
-- name: copy main Zsh config
+- name: Copy main Zsh config
   template:
     src: "{{ item }}"
     dest: "{{ dotfiles_home }}/{{ item | regex_replace('.j2', '') }}"
@@ -25,7 +33,7 @@
     - .zprofile
   register: main_config
 
-- name: copyZzsh config
+- name: Copy Zsh config
   template:
     src: "config/{{ item.path }}"
     dest: "{{ dotfiles_zsh.config_dir }}/{{ item.path | regex_replace('.j2', '') }}"
@@ -33,13 +41,6 @@
   with_filetree: ../templates/config
   when: item.state == 'file'
   register: config
-
-- name: change default shell
-  become: true
-  user:
-    name: "{{ item }}"
-    shell: /bin/zsh
-  with_items: "{{ dotfiles_zsh.users }}"
 
 - name: Install Antigen
   get_url:
