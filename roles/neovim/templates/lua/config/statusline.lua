@@ -1,6 +1,7 @@
 -- Statusline
 
 local neovim = require('neovim')
+local devicons = require('nvim-web-devicons')
 
 -- Hide the default mode status
 neovim.option('showmode', false)
@@ -39,26 +40,10 @@ local function space()
   return text(' ')
 end
 
-local function is_fzf_open()
-  return vim.bo.filetype == 'fzf'
-end
-
-local function non_fzf(line)
-  if is_fzf_open() then
-    return ''
-  end
-
-  return line
-end
-
 function Statusline_mode()
   local mode = tostring(vim.fn.mode())
   local color = mode_colors[mode]
   local title = mode_titles[mode]
-
-  if is_fzf_open() then
-    title = 'FZF'
-  end
 
   neovim.highlight_link('StatusLineMode', color)
   return title
@@ -129,19 +114,20 @@ local function indentation()
 end
 
 local function filetype()
-  return text('  ' .. vim.bo.filetype)
+  local icon = devicons.get_icon_by_filetype(vim.bo.filetype) or ''
+  return text('  ' .. icon .. ' ' .. vim.bo.filetype)
 end
 
 local function statusline()
   return (
     space() ..
     mode() ..
-    non_fzf(git()) ..
-    non_fzf(file()) ..
+    git() ..
+    file() ..
     separator() ..
-    non_fzf(linecolumn()) ..
-    non_fzf(indentation()) ..
-    non_fzf(filetype()) ..
+    linecolumn() ..
+    indentation() ..
+    filetype() ..
     space()
   )
 end
