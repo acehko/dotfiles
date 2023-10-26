@@ -17,6 +17,9 @@ packer.init({
 
 -- Plugins list
 packer.startup(function(use)
+  -- Manage itself
+  use({'wbthomason/packer.nvim', commit = 'ea0cc3c'})
+
   -- Dependencies
   use({'nvim-lua/plenary.nvim', commit = '5001291'})
 
@@ -24,7 +27,8 @@ packer.startup(function(use)
   use({'tpope/vim-surround', commit = '3d188ed'})
   use({'tpope/vim-repeat', commit = '24afe92'})
   use({'windwp/nvim-autopairs', commit = 'defad64'})
-  use({'Yggdroot/indentLine', tag = 'v2.0'})
+  use({'Yggdroot/indentLine', commit = 'b96a759'})
+  use({'christoomey/vim-tmux-navigator', commit = '7db70e0'})
   use({'nvim-tree/nvim-tree.lua', commit = '78a9ca5'})
   use({'nvim-tree/nvim-web-devicons', commit = 'f026792'})
   use({'nvim-telescope/telescope.nvim', commit = '4522d7e'})
