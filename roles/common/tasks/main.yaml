@@ -1,0 +1,6 @@
+- name: Install packages
+  community.general.homebrew:
+    name:
+      - cmake
+    state: present
+  when: dotfiles_distribution == "MacOSX"
