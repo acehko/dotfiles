@@ -52,3 +52,4 @@ neovim.autocmd('BufEnter', {pattern = {'*'}, command = 'echo'})
 -- Remember vim state after reopening file
 neovim.autocmd('BufWinLeave', {pattern = '*', command = 'silent! mkview'})
 neovim.autocmd('BufWinEnter', {pattern = '*', command = 'silent! loadview'})
+neovim.command('set viewoptions-=curdir]')
