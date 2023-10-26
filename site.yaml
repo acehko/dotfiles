@@ -13,8 +13,5 @@
     - role: zsh
       tags: zsh
 
-    - role: fzf
-      tags: fzf
-
     - role: neovim
       tags: neovim

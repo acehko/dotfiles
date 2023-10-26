@@ -1,10 +1,5 @@
 #!/usr/bin/env zsh
 
-# Load external config
-for file in $(find "{{ dotfiles_zsh.external_dir }}" -type f -name "*"); do
-  source "$file"
-done
-
 # Load plugins.
 source {{ dotfiles_zsh.config_dir }}/plugins.zsh
 
@@ -15,3 +10,4 @@ source {{ dotfiles_zsh.config_dir }}/completion.zsh
 source {{ dotfiles_zsh.config_dir }}/keys.zsh
 source {{ dotfiles_zsh.config_dir }}/history.zsh
 source {{ dotfiles_zsh.config_dir }}/prompt.zsh
+source {{ dotfiles_zsh.config_dir }}/fzf.zsh

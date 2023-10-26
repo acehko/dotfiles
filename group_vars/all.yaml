@@ -59,7 +59,6 @@ dotfiles_tmux:
 dotfiles_zsh:
   config_dir: "{{ dotfiles_home }}/.config/zsh"
   plugins_dir: "{{ dotfiles_home }}/.config/zsh/plugins"
-  external_dir: "{{ dotfiles_home }}/.config/zsh/external"
   antigen_url: "http://git.io/antigen"
   users:
     - root

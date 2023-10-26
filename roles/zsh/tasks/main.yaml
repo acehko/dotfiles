@@ -21,7 +21,6 @@
   with_items:
     - "{{ dotfiles_zsh.config_dir }}"
     - "{{ dotfiles_zsh.plugins_dir }}"
-    - "{{ dotfiles_zsh.external_dir }}"
 
 - name: Copy main Zsh config
   template:
@@ -51,3 +50,20 @@
 - name: Install Zsh plugins
   shell: "zsh -c {{ dotfiles_zsh.config_dir }}/plugins.zsh"
   when: main_config.changed or config.changed or antigen.changed
+
+- name: Install fzf
+  community.general.homebrew:
+    name:
+      - fzf
+      - ripgrep
+    state: present
+  when: dotfiles_distribution == "MacOSX"
+
+- name: Install fzf
+  become: true
+  ansible.builtin.apt:
+    name:
+      - fzf
+      - ripgrep
+    state: present
+  when: dotfiles_distribution == "Debian"
