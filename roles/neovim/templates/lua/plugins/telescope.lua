@@ -32,6 +32,3 @@ neovim.keymap('n', '<C-p>', builtin.find_files, opts)
 neovim.keymap('n', '<C-g>', builtin.live_grep, opts)
 neovim.keymap('n', '<C-\\>', builtin.buffers, opts)
 neovim.keymap('n', '<C-[>', builtin.lsp_references, opts)
-
-neovim.highlight_link('TelescopePromptPrefix', 'TelescopeMatching')
--- neovim.highlight_link('TelescopeSelectionCaret', 'TelescopeMatching')

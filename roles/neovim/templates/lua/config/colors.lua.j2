@@ -9,3 +9,11 @@ neovim.highlight_link('StatusLineModeCommand', 'StatusLineModeNormal')
 neovim.highlight_link('StatusLineModeTerminal', 'StatusLineModeNormal')
 neovim.highlight('StatusLineGitNew', '#{{ dotfiles_color.gui.green }}', '#{{ dotfiles_color.gui.background_alt }}')
 neovim.highlight('StatusLineGitModified', '#{{ dotfiles_color.gui.yellow }}', '#{{ dotfiles_color.gui.background_alt }}')
+
+-- Plugins
+
+-- Telescope
+neovim.highlight('TelescopePromptPrefix', '#{{ dotfiles_color.gui.blue }}')
+neovim.highlight('TelescopeSelection', '#{{ dotfiles_color.gui.foreground }}', '#{{ dotfiles_color.gui.background_alt }}')
+neovim.highlight('TelescopeSelectionCaret', '#{{ dotfiles_color.gui.blue }}', '#{{ dotfiles_color.gui.background_alt }}')
+neovim.highlight('TelescopeMatching', '#{{ dotfiles_color.gui.magenta }}', '#{{ dotfiles_color.gui.background_alt }}')
