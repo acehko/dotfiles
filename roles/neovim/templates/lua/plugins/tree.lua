@@ -5,14 +5,15 @@ local function on_attach(bufnr)
   local api = require "nvim-tree.api"
 
   local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+    return {desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true}
   end
 
-  -- default mappings
+  -- Default mappings
   api.config.mappings.default_on_attach(bufnr)
 
-  -- custom mappings
+  -- Custom mappings
   vim.keymap.set('n', '<Space>', api.node.open.edit, opts('Open Space'))
+  vim.keymap.set('n', '<Esc>', api.tree.close, opts('Close Esc'))
 end
 
 tree.setup({
@@ -49,7 +50,5 @@ tree.setup({
 
 neovim.keymap('n', '<C-b>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
+-- Automatically close if it is the only window left
 neovim.autocmd('QuitPre', {command = 'NvimTreeClose'})
-
-neovim.highlight_link('NvimTreeGitDirty', 'GitSignsChange')
-neovim.highlight_link('NvimTreeGitNew', 'GitSignsAdd')

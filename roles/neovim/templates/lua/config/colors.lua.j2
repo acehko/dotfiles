@@ -12,6 +12,10 @@ neovim.highlight('StatusLineGitModified', '#{{ dotfiles_color.gui.yellow }}', '#
 
 -- Plugins
 
+-- NvimTree
+neovim.highlight('NvimTreeGitNew', '#{{ dotfiles_color.gui.green }}')
+neovim.highlight('NvimTreeGitDirty', '#{{ dotfiles_color.gui.yellow }}')
+
 -- Telescope
 neovim.highlight('TelescopePromptPrefix', '#{{ dotfiles_color.gui.blue }}')
 neovim.highlight('TelescopeSelection', '#{{ dotfiles_color.gui.foreground }}', '#{{ dotfiles_color.gui.background_alt }}')
