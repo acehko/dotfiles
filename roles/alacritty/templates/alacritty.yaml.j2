@@ -32,9 +32,19 @@ colors:
     white:   "#{{ dotfiles_color.gui.bright_white }}"
 
 window:
+  startup_mode: Maximized
+
   padding:
     x: 5
     y: 5
+
+shell:
+  program: /opt/homebrew/bin/tmux
+  args:
+    - new-session
+    - -A
+    - -s
+    - main
 
 env:
   TERM: screen-256color
