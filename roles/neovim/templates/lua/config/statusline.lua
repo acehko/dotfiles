@@ -73,6 +73,11 @@ local function git()
 end
 
 local function file()
+  local ft = vim.bo.filetype
+  if ft == '' or ft == 'NvimTree' then
+    return ''
+  end
+
   local f = vim.fn.expand('%:.')
   local line = '%#StatusLineText# ' .. f
 
@@ -114,8 +119,13 @@ local function indentation()
 end
 
 local function filetype()
-  local icon = devicons.get_icon_by_filetype(vim.bo.filetype) or ''
-  return text('  ' .. icon .. ' ' .. vim.bo.filetype)
+  local ft = vim.bo.filetype
+  if ft == '' or ft == 'NvimTree' then
+    return ''
+  end
+
+  local icon = devicons.get_icon_by_filetype(ft) or ''
+  return text('  ' .. icon .. ' ' .. ft)
 end
 
 local function statusline()
