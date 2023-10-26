@@ -17,7 +17,7 @@ zstyle ':completion:*' cache-path {{ dotfiles_home }}/.cache/zsh/completion
 
 # Use LS colors in completion.
 eval "$(dircolors)"
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} "ma={{ dotfiles_theme.term.background | int + 30 }};{{ dotfiles_theme.term.primary | int + 40 }}"
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS} "ma={{ dotfiles_color.term.background | int + 30 }};{{ dotfiles_color.term.blue | int + 40 }}"
 
 # Expand last command (!!) on Space.
 bindkey ' ' magic-space

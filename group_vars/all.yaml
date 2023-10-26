@@ -50,44 +50,6 @@ dotfiles_color:
     bright_cyan: "56b6c2"
     bright_white: "ffffff"
 
-dotfiles_theme:
-  term:
-    primary: "{{ dotfiles_color.term.blue }}"
-    background: "{{ dotfiles_color.term.background }}"
-    border: "{{ dotfiles_color.term.bright_black }}"
-
-    warning: "{{ dotfiles_color.term.yellow }}"
-    error: "{{ dotfiles_color.term.red }}"
-
-    git:
-      add: "{{ dotfiles_color.term.green }}"
-      change: "{{ dotfiles_color.term.yellow }}"
-      delete: "{{ dotfiles_color.term.red }}"
-
-    vim:
-      normal: "{{ dotfiles_color.term.blue }}"
-      insert: "{{ dotfiles_color.term.yellow }}"
-      visual: "{{ dotfiles_color.term.magenta }}"
-
-  gui:
-    primary: "{{ dotfiles_color.gui.blue }}"
-    background: "{{ dotfiles_color.gui.background }}"
-    background_alt: "{{ dotfiles_color.gui.background_alt }}"
-    border: "{{ dotfiles_color.gui.bright_black }}"
-
-    warning: "{{ dotfiles_color.gui.yellow }}"
-    error: "{{ dotfiles_color.gui.red }}"
-
-    git:
-      add: "{{ dotfiles_color.gui.green }}"
-      change: "{{ dotfiles_color.gui.yellow }}"
-      delete: "{{ dotfiles_color.gui.red }}"
-
-    vim:
-      normal: "{{ dotfiles_color.gui.blue }}"
-      insert: "{{ dotfiles_color.gui.yellow }}"
-      visual: "{{ dotfiles_color.gui.magenta }}"
-
 dotfiles_alacritty:
   config_dir: "{{ dotfiles_home }}/.config/alacritty"
 

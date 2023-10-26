@@ -11,12 +11,12 @@ zstyle ":vcs_info:*" enable git
 zstyle ":vcs_info:*" formats "%b"
 
 # Colors
-COLOR_PRIMARY="{{ dotfiles_theme.term.primary }}"
-COLOR_ERROR="{{ dotfiles_theme.term.error }}"
+COLOR_PRIMARY="{{ dotfiles_color.term.blue }}"
+COLOR_ERROR="{{ dotfiles_color.term.red }}"
 COLOR_DIR="{{ dotfiles_color.term.bright_black }}"
 
-COLOR_GIT_ADD="{{ dotfiles_theme.term.git.add }}"
-COLOR_GIT_CHANGE="{{ dotfiles_theme.term.git.change }}"
+COLOR_GIT_ADD="{{ dotfiles_color.term.green }}"
+COLOR_GIT_CHANGE="{{ dotfiles_color.term.yellow }}"
 
 # Vim modes
 VIM_INSERT_MODE=""
@@ -60,8 +60,8 @@ draw_prompt() {
     if [[ -n ${vcs_info_msg_0_} ]]; then
         # Git status is changed.
         git_status=$(command git status --porcelain 2> /dev/null | tail -n1)
-        if [[ -n $git_status ]]; then 
-            COLOR_BRANCH="$COLOR_GIT_CHANGE" 
+        if [[ -n $git_status ]]; then
+            COLOR_BRANCH="$COLOR_GIT_CHANGE"
         fi
 
         PROMPT+="%F{$COLOR_BRANCH}$vcs_info_msg_0_%f "

@@ -19,4 +19,4 @@
 - name: Add fzf config to Zsh
   template:
     src: fzf.zsh.j2
-    dest: "{{ zsh_external_dir }}/fzf.zsh"
+    dest: "{{ dotfiles_zsh.external_dir }}/fzf.zsh"
