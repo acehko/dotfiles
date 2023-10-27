@@ -7,6 +7,12 @@
     - role: common
       tags: common
 
+    - role: alacritty
+      tags: alacritty
+
+    - role: tmux
+      tags: tmux
+
     - role: zsh
       tags: zsh
 

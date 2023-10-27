@@ -1,0 +1,26 @@
+# Pane config
+
+# Border color
+set -g pane-border-style        "fg=#{{ dotfiles_color.gui.bright_black }}"
+set -g pane-active-border-style "fg=#{{ dotfiles_color.gui.blue }}"
+
+# Create pane
+bind h split-window -h -b -c '#{pane_current_path}'
+bind j split-window -c '#{pane_current_path}'
+bind k split-window -b -c '#{pane_current_path}'
+bind l split-window -h -c '#{pane_current_path}'
+
+# Switch pane
+bind C-h select-pane -L
+bind C-j select-pane -D
+bind C-k select-pane -U
+bind C-l select-pane -R
+
+# Select next pane
+bind C-a select-pane -t :.+
+
+# Kill pane
+bind x kill-pane
+
+# Zoom pane
+bind o resize-pane -Z
