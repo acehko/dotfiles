@@ -41,7 +41,7 @@ window:
 key_bindings:
   - {key: Slash, mods: Control, chars: "\x1f"}
 
-  - {key: T,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['new-window']}}
+  - {key: T,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['new-window', '-c', '#{pane_current_path}']}}
   - {key: W,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['kill-pane']}}
   - {key: D,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['split-window', '-h', '-c', '#{pane_current_path}']}}
   - {key: Tab,   mods: Control,       command: {program: '/opt/homebrew/bin/tmux', args: ['select-window', '-n']}}
