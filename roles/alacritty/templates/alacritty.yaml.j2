@@ -38,14 +38,6 @@ window:
     x: 5
     y: 5
 
-shell:
-  program: /opt/homebrew/bin/tmux
-  args:
-    - new-session
-    - -A
-    - -s
-    - main
-
 key_bindings:
   - {key: T,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['new-window']}}
   - {key: W,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['kill-pane']}}
