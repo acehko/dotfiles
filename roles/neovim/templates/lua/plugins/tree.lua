@@ -34,7 +34,7 @@ tree.setup({
       git_placement = 'after',
       glyphs = {
         git = {
-          unstaged = '*',
+          unstaged = '~',
           staged = '',
           unmerged = '',
           renamed = '',

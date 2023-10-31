@@ -73,8 +73,7 @@ local function git()
 end
 
 local function file()
-  local ft = vim.bo.filetype
-  if ft == '' or ft == 'NvimTree' then
+  if vim.fn.expand('%:p') == '' or vim.bo.filetype == 'NvimTree' then
     return ''
   end
 
@@ -90,7 +89,7 @@ local function file()
 
     local dirty = os.execute('git diff --exit-code --quiet ' .. f)
     if dirty ~= 0 then
-      line = line .. '%#StatusLineGitDirty# *'
+      line = line .. '%#StatusLineGitModified# ~'
       return line
     end
   end
@@ -120,11 +119,11 @@ end
 
 local function filetype()
   local ft = vim.bo.filetype
-  if ft == '' or ft == 'NvimTree' then
+  if vim.fn.expand('%:p') == '' or ft == 'NvimTree' then
     return ''
   end
 
-  local icon = devicons.get_icon_by_filetype(ft) or ''
+  local icon = devicons.get_icon_by_filetype(fmt) or ''
   return text('  ' .. icon .. ' ' .. ft)
 end
 
