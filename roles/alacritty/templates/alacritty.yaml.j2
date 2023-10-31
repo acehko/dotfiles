@@ -46,7 +46,7 @@ key_bindings:
   - {key: D,     mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['split-window', '-h', '-c', '#{pane_current_path}']}}
   - {key: Tab,   mods: Control,       command: {program: '/opt/homebrew/bin/tmux', args: ['select-window', '-n']}}
   - {key: Tab,   mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-window', '-p']}}
-  - {key: Grave, mods: Control, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-t', ':.+']}}
+  - {key: Grave, mods: Control,       command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-t', ':.+']}}
 
   - {key: H, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-L']}}
   - {key: J, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-D']}}
