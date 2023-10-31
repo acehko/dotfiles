@@ -1,20 +1,19 @@
 -- Indentation
 
-local neovim = require('neovim')
 local opts = {noremap = true, silent = true}
 
 -- Better autoindent
-neovim.option('smartindent', true)
+vim.opt.smartindent = true
 
 -- Show tab guides
-neovim.option('listchars', {
+vim.optlistchars = {
   tab = '| ',
   trail = '·'
-})
+}
 
 -- Keep lines selected when changing indentation
-neovim.keymap('v', '<', '<gv', opts)
-neovim.keymap('v', '>', '>gv', opts)
+vim.keymap.set('v', '<', '<gv', opts)
+vim.keymap.set('v', '>', '>gv', opts)
 
 -- Change indentation for current buffer
 local function indent(width, guides)
@@ -29,7 +28,7 @@ local function indent(width, guides)
     vim.opt_local.softtabstop = 4
     vim.opt_local.shiftwidth = 4
 
-    neovim.command('silent! IndentLinesDisable')
+    vim.cmd('silent! IndentLinesDisable')
   else
     width = tonumber(width)
 
@@ -39,18 +38,18 @@ local function indent(width, guides)
     vim.opt_local.shiftwidth = width
 
     if guides then
-      neovim.command('silent! IndentLinesReset')
+      vim.cmd('silent! IndentLinesReset')
     else
-      neovim.command('silent! IndentLinesDisable')
+      vim.cmd('silent! IndentLinesDisable')
     end
   end
 end
 
 -- Commmand to change indentation for current buffer
-neovim.user_command('Indent', function(opts) indent(opts.args) end, {nargs = 1})
+vim.api.nvim_create_user_command('Indent', function(opts) indent(opts.args) end, {nargs = 1})
 
 -- Default indentation
-neovim.autocmd(
+vim.api.nvim_create_autocmd(
   'BufEnter',
   {
     pattern = '*',

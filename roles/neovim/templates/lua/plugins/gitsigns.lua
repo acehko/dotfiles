@@ -1,7 +1,6 @@
 -- Gitsigns plugin config
 
 local gitsigns = require('gitsigns')
-local neovim = require('neovim')
 
 gitsigns.setup({
   signs = {
@@ -52,7 +51,7 @@ gitsigns.setup({
     local function map(mode, l, r, opts)
       opts = opts or {}
       opts.buffer = bufnr
-      neovim.keymap(mode, l, r, opts)
+      vim.keymap.set(mode, l, r, opts)
     end
 
     -- map('n', 'hr', gs.reset_hunk)

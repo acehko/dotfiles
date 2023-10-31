@@ -1,4 +1,3 @@
-local neovim = require('neovim')
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
@@ -28,7 +27,7 @@ telescope.setup({
 telescope.load_extension('fzf')
 
 local opts = {noremap = true, silent = true}
-neovim.keymap('n', '<C-p>', builtin.find_files, opts)
-neovim.keymap('n', '<C-g>', builtin.live_grep, opts)
-neovim.keymap('n', '<C-\\>', builtin.buffers, opts)
-neovim.keymap('n', '<C-[>', builtin.lsp_references, opts)
+vim.keymap.set('n', '<C-p>', builtin.find_files, opts)
+vim.keymap.set('n', '<C-g>', builtin.live_grep, opts)
+vim.keymap.set('n', '<C-\\>', builtin.buffers, opts)
+vim.keymap.set('n', '<C-[>', builtin.lsp_references, opts)

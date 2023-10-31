@@ -1,23 +1,41 @@
-local neovim = require('neovim')
+-- Add new highlight
+local function highlight(group, fg, bg, attr)
+  if fg then
+    vim.cmd('hi ' .. group .. ' guifg=' .. fg)
+  end
+
+  if bg then
+    vim.cmd('hi ' .. group .. ' guibg=' .. bg)
+  end
+
+  if attr then
+    vim.cmd('hi ' .. group .. ' gui=' .. attr)
+  end
+end
+
+-- Link highlight group
+local function highlight_link(group, link_group)
+  vim.api.nvim_set_hl(0, group, {link = link_group})
+end
 
 -- Status line
-neovim.highlight('StatusLine', nil, '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('StatusLineModeNormal', '#{{ dotfiles_color.gui.blue }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('StatusLineModeVisual', '#{{ dotfiles_color.gui.magenta }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('StatusLineModeInsert', '#{{ dotfiles_color.gui.yellow }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight_link('StatusLineModeCommand', 'StatusLineModeNormal')
-neovim.highlight_link('StatusLineModeTerminal', 'StatusLineModeNormal')
-neovim.highlight('StatusLineGitNew', '#{{ dotfiles_color.gui.green }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('StatusLineGitModified', '#{{ dotfiles_color.gui.yellow }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('StatusLine', nil, '#{{ dotfiles_color.gui.background_alt }}')
+highlight('StatusLineModeNormal', '#{{ dotfiles_color.gui.blue }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('StatusLineModeVisual', '#{{ dotfiles_color.gui.magenta }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('StatusLineModeInsert', '#{{ dotfiles_color.gui.yellow }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight_link('StatusLineModeCommand', 'StatusLineModeNormal')
+highlight_link('StatusLineModeTerminal', 'StatusLineModeNormal')
+highlight('StatusLineGitNew', '#{{ dotfiles_color.gui.green }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('StatusLineGitModified', '#{{ dotfiles_color.gui.yellow }}', '#{{ dotfiles_color.gui.background_alt }}')
 
 -- Plugins
 
 -- NvimTree
-neovim.highlight('NvimTreeGitNew', '#{{ dotfiles_color.gui.green }}')
-neovim.highlight('NvimTreeGitDirty', '#{{ dotfiles_color.gui.yellow }}')
+highlight('NvimTreeGitNew', '#{{ dotfiles_color.gui.green }}')
+highlight('NvimTreeGitDirty', '#{{ dotfiles_color.gui.yellow }}')
 
 -- Telescope
-neovim.highlight('TelescopePromptPrefix', '#{{ dotfiles_color.gui.blue }}')
-neovim.highlight('TelescopeSelection', '#{{ dotfiles_color.gui.foreground }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('TelescopeSelectionCaret', '#{{ dotfiles_color.gui.blue }}', '#{{ dotfiles_color.gui.background_alt }}')
-neovim.highlight('TelescopeMatching', '#{{ dotfiles_color.gui.magenta }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('TelescopePromptPrefix', '#{{ dotfiles_color.gui.blue }}')
+highlight('TelescopeSelection', '#{{ dotfiles_color.gui.foreground }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('TelescopeSelectionCaret', '#{{ dotfiles_color.gui.blue }}', '#{{ dotfiles_color.gui.background_alt }}')
+highlight('TelescopeMatching', '#{{ dotfiles_color.gui.magenta }}', '#{{ dotfiles_color.gui.background_alt }}')

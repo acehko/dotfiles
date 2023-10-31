@@ -1,4 +1,3 @@
-local neovim = require('neovim')
 local tree = require('nvim-tree')
 
 local function on_attach(bufnr)
@@ -48,7 +47,7 @@ tree.setup({
   on_attach = on_attach
 })
 
-neovim.keymap('n', '<C-b>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<C-b>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 
 -- Automatically close if it is the only window left
-neovim.autocmd('QuitPre', {command = 'NvimTreeClose'})
+vim.api.nvim_create_autocmd('QuitPre', {command = 'NvimTreeClose'})

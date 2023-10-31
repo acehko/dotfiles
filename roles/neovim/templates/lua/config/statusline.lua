@@ -1,10 +1,9 @@
 -- Statusline
 
-local neovim = require('neovim')
 local devicons = require('nvim-web-devicons')
 
 -- Hide the default mode status
-neovim.option('showmode', false)
+vim.opt.showmode = false
 
 -- Mode titles
 local mode_titles = {
@@ -45,7 +44,7 @@ function Statusline_mode()
   local color = mode_colors[mode]
   local title = mode_titles[mode]
 
-  neovim.highlight_link('StatusLineMode', color)
+  vim.api.nvim_set_hl(0, 'StatusLineMode', {link = color})
   return title
 end
 
