@@ -53,6 +53,8 @@ key_bindings:
   - {key: K, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-U']}}
   - {key: L, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-R']}}
 
+  - {key: Left,  mods: Command, chars: "\x1bOH", mode: AppCursor}
+  - {key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor}
 
 env:
   TERM: screen-256color
