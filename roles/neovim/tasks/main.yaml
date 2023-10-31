@@ -12,7 +12,7 @@
     state: present
   when: dotfiles_distribution == "Debian"
 
-- name: Create Neovim config directory
+- name: Create Neovim config directories
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
