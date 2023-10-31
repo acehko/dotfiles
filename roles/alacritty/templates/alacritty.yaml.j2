@@ -39,7 +39,11 @@ window:
     y: 5
 
 key_bindings:
-  - {key: Slash, mods: Control, chars: "\x1f"}
+  - {key: Slash,  mods: Control, chars: "\x1f"}
+  - {key: Return, mods: Control, chars: "\x1bM"}
+
+  - {key: Left,  mods: Command, chars: "\x1bOH", mode: AppCursor}
+  - {key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor}
 
   - {key: T,      mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['new-window', '-c', '#{pane_current_path}']}}
   - {key: W,      mods: Command,       command: {program: '/opt/homebrew/bin/tmux', args: ['kill-pane']}}
@@ -53,9 +57,6 @@ key_bindings:
   - {key: J, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-D']}}
   - {key: K, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-U']}}
   - {key: L, mods: Control|Shift, command: {program: '/opt/homebrew/bin/tmux', args: ['select-pane', '-R']}}
-
-  - {key: Left,  mods: Command, chars: "\x1bOH", mode: AppCursor}
-  - {key: Right, mods: Command, chars: "\x1bOF", mode: AppCursor}
 
 env:
   TERM: screen-256color
