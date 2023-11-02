@@ -72,7 +72,7 @@ draw_prompt() {
         PROMPT+="%F{$COLOR_PRIMARY}@$(cat /etc/hostname)%f "
     fi
 
-    PROMPT+="%(?.%F{$COLOR_PRIMARY}.%F{$COLOR_ERROR}%? )❯%f "
+    PROMPT+="%(?.%F{$COLOR_PRIMARY}.%F{$COLOR_ERROR})❯%f "
 
     RPROMPT="%F{$COLOR_DIR}%~%f"
     RPROMPT+="${VIM_MODE}"
