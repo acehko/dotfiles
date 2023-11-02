@@ -54,7 +54,7 @@ gitsigns.setup({
       vim.keymap.set(mode, l, r, opts)
     end
 
-    -- map('n', 'hr', gs.reset_hunk)
+    map('n', '<Leader>hr', gs.reset_hunk)
 
     map('n', ']c', function()
       if vim.wo.diff then return ']c' end
