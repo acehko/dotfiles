@@ -128,15 +128,13 @@ end
 
 local function statusline()
   return (
-    space() ..
     mode() ..
     git() ..
     file() ..
     separator() ..
     linecolumn() ..
     indentation() ..
-    filetype() ..
-    space()
+    filetype()
   )
 end
 
