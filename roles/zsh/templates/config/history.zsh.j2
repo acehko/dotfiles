@@ -12,15 +12,6 @@ unsetopt share_history      # Don't share history between multiple running insta
 setopt   extended_history   # Save timestamps.
 setopt   hist_ignore_dups   # Don't save duplicate lines.
 
-# Use arrow keys to search history matching the current buffer.
-autoload -U history-search-end
-
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-
-bindkey '\e[A' history-beginning-search-backward-end
-bindkey '\e[B' history-beginning-search-forward-end
-
 # Use Ctrl + J and Ctrl + K to search history.
-bindkey '^K' history-beginning-search-backward-end
-bindkey '^J' history-beginning-search-forward-end
+bindkey '^K' up-history
+bindkey '^J' down-history
