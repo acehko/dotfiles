@@ -124,7 +124,7 @@ local function filetype()
     return ''
   end
 
-  local icon = devicons.get_icon_by_filetype(fmt) or ''
+  local icon = devicons.get_icon_by_filetype(ft) or ''
   return text('  ' .. icon .. ' ' .. ft)
 end
 
