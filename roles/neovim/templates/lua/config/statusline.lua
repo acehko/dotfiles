@@ -27,6 +27,8 @@ local mode_colors = {
   t = 'StatusLineModeTerminal'
 }
 
+vim.api.nvim_set_hl(0, 'StatusLineMode', {link = 'StatusLineModeNormal'})
+
 local function separator()
   return '%='
 end
@@ -152,15 +154,6 @@ vim.api.nvim_create_autocmd(
   {'BufEnter', 'BufWritePost'},
   {
     pattern = {'*'},
-    callback = show_statusline
-  }
-)
-
--- Show statusline when FZF is open
-vim.api.nvim_create_autocmd(
-  {'User'},
-  {
-    pattern = 'FzfStatusLine',
     callback = show_statusline
   }
 )
