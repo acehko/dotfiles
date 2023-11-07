@@ -4,3 +4,17 @@
       - cmake
     state: present
   when: dotfiles_distribution == "MacOSX"
+
+- name: Install packages
+  become: true
+  ansible.builtin.apt:
+    name:
+      - cmake
+      - snapd
+    state: present
+  when: dotfiles_distribution == "Debian"
+
+- name: Disable login message
+  ansible.builtin.file:
+    path: "{{ dotfiles_home }}/.hushlogin"
+    state: touch
