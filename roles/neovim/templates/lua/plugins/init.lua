@@ -46,7 +46,7 @@ packer.startup(function(use)
 
   -- LSP
   use({'neovim/nvim-lspconfig', commit = '3817092'})
-  use({'williamboman/mason.nvim', commit = 'cd7835b', run = ':MasonUpdate'})
+  use({'williamboman/mason.nvim', commit = 'cd7835b'})
   use({'williamboman/mason-lspconfig.nvim', commit = 'e270506'})
 
   -- Completion

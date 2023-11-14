@@ -7,9 +7,10 @@
 
 - name: Install Neovim
   become: true
-  ansible.builtin.apt:
-    name: neovim
+  community.general.snap:
+    name: nvim
     state: present
+    classic: true
   when: dotfiles_distribution == "Debian"
 
 - name: Create Neovim config directories
@@ -30,3 +31,8 @@
     mode: preserve
   with_filetree: ../templates
   when: item.state == 'file'
+
+- name: Install packer
+  ansible.builtin.git:
+    repo: https://github.com/wbthomason/packer.nvim
+    dest: "{{ dotfiles_home }}/.local/share/nvim/site/pack/packer/start/packer.nvim"
