@@ -18,11 +18,13 @@ export NVM_DIR="$HOME/.nvm"
 autoload -U add-zsh-hook
 
 load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use > /dev/null 2>&1
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default > /dev/null 2>&1
+  if command -v nvm &> /dev/null; then
+    if [[ -f .nvmrc && -r .nvmrc ]]; then
+      nvm use > /dev/null 2>&1
+    elif [[ $(nvm version) != $(nvm version default)  ]]; then
+      echo "Reverting to nvm default version"
+      nvm use default > /dev/null 2>&1
+    fi
   fi
 }
 
